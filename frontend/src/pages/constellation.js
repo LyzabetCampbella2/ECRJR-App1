@@ -1,187 +1,216 @@
 import { useEffect, useMemo, useState } from "react";
 import { apiGet } from "../api/apiClient";
 
-export default function Constellation() {
-  const profileId = localStorage.getItem("eirden_profile");
+const TESTS = [
+  { id: "language_v1", label: "Language", realm: "Tongues" },
+  { id: "artist_v1", label: "Artist", realm: "Craft" },
+  { id: "archetype_v1", label: "Archetype", realm: "Core" },
+  { id: "shadow_v1", label: "Shadow", realm: "Depth" },
+  { id: "luminary_v1", label: "Luminary", realm: "Light" }
+];
 
-  const [results, setResults] = useState({});
-  const [selectedTestId, setSelectedTestId] = useState("");
+function safeArr(x) {
+  return Array.isArray(x) ? x : [];
+}
+
+export default function Constellation() {
+  const profileId = localStorage.getItem("eirden_profile") || "";
+
+  const [progress, setProgress] = useState({ activeTestId: "", completedTestIds: [] });
+  const [results, setResults] = useState({}); // { testId: {primary, secondary, overview, flags} }
+
+  const [selectedTestId, setSelectedTestId] = useState("archetype_v1");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  /* =========================
-     LOAD RESULTS
-     ========================= */
-  useEffect(() => {
+  const selectedResult = results?.[selectedTestId] || null;
+
+  const completedSet = useMemo(() => new Set(progress.completedTestIds || []), [progress.completedTestIds]);
+
+  async function loadAll() {
     if (!profileId) {
       setLoading(false);
       return;
     }
 
-    apiGet(`/api/tests/results/${profileId}`)
-      .then((res) => {
-        const r = res.results || {};
-        setResults(r);
+    setLoading(true);
+    setError("");
 
-        const first = Object.keys(r)[0];
-        if (first) setSelectedTestId(first);
-      })
-      .catch((e) => setError(e.message || "Failed to load constellation"))
-      .finally(() => setLoading(false));
+    try {
+      const p = await apiGet(`/api/tests/progress/${profileId}`);
+      setProgress({
+        activeTestId: p.activeTestId || "",
+        completedTestIds: p.completedTestIds || []
+      });
+
+      const r = await apiGet(`/api/tests/results/${profileId}`);
+      setResults(r.results || {});
+
+      // Choose default selection:
+      // Prefer archetype result if exists, else first completed, else first test
+      const hasArchetype = !!(r.results && r.results["archetype_v1"]);
+      if (hasArchetype) setSelectedTestId("archetype_v1");
+      else if ((p.completedTestIds || []).length > 0) setSelectedTestId(p.completedTestIds[0]);
+      else setSelectedTestId("language_v1");
+    } catch (e) {
+      setError(e.message || "Failed to load constellation");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadAll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profileId]);
 
-  const entries = useMemo(() => Object.entries(results), [results]);
+  function loreUrlFor(primary) {
+    return `/lore/${encodeURIComponent(primary || "Unknown")}`;
+  }
 
-  if (!profileId) return <p style={{ padding: 12 }}>No profile loaded.</p>;
-  if (loading) return <p style={{ padding: 12 }}>Constellation forming…</p>;
-  if (error) return <p style={{ padding: 12, color: "crimson" }}>{error}</p>;
-  if (entries.length === 0)
-    return <p style={{ padding: 12 }}>No constellation yet.</p>;
+  if (!profileId) {
+    return (
+      <div className="container">
+        <h2>Constellation</h2>
+        <p>No profile loaded yet.</p>
+        <a href="/dashboard">Go to Dashboard →</a>
+      </div>
+    );
+  }
 
-  /* =========================
-     SVG GEOMETRY
-     ========================= */
-  const size = 520;
-  const center = size / 2;
-  const radius = 190;
-
-  const nodes = entries.map(([testId, result], i) => {
-    const angle = (2 * Math.PI * i) / entries.length - Math.PI / 2;
-    return {
-      testId,
-      result,
-      x: center + radius * Math.cos(angle),
-      y: center + radius * Math.sin(angle)
-    };
-  });
-
-  const selectedNode =
-    nodes.find((n) => n.testId === selectedTestId) || nodes[0];
+  if (loading) {
+    return (
+      <div className="container">
+        <h2>Constellation</h2>
+        <p>Loading…</p>
+      </div>
+    );
+  }
 
   return (
-    <div style={{ padding: 24 }}>
-      <h2>Constellation</h2>
+    <div className="container">
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+        <div>
+          <h2 style={{ marginBottom: 4 }}>Constellation</h2>
+          <p className="muted small">
+            Click a node to view its result panel. Open Lore for shareable archetype pages.
+          </p>
+          <p className="muted small">
+            <b>Active:</b> {progress.activeTestId || "None"} • <b>Completed:</b>{" "}
+            {(progress.completedTestIds || []).length}/5
+          </p>
+        </div>
 
-      <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
-        {/* =========================
-            SVG
-           ========================= */}
-        <svg
-          width={size}
-          height={size}
-          viewBox={`0 0 ${size} ${size}`}
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: 12,
-            background: "#fafafa"
-          }}
-        >
-          {/* Connections */}
-          {nodes.map((node, i) => {
-            const next = nodes[(i + 1) % nodes.length];
-            return (
-              <line
-                key={`line-${i}`}
-                x1={node.x}
-                y1={node.y}
-                x2={next.x}
-                y2={next.y}
-                stroke="#bbb"
-                strokeWidth="1.5"
-              />
-            );
-          })}
-
-          {/* Nodes */}
-          {nodes.map((node) => {
-            const selected = node.testId === selectedTestId;
-
-            return (
-              <g
-                key={node.testId}
-                onClick={() => setSelectedTestId(node.testId)}
-                style={{ cursor: "pointer" }}
-              >
-                <circle
-                  cx={node.x}
-                  cy={node.y}
-                  r={22}
-                  fill={selected ? "#222" : "#fff"}
-                  stroke="#222"
-                  strokeWidth="2"
-                  style={{
-                    filter: "drop-shadow(0 0 6px rgba(0,0,0,0.2))"
-                  }}
-                />
-                <text
-                  x={node.x}
-                  y={node.y + 4}
-                  textAnchor="middle"
-                  fontSize="10"
-                  fontWeight="600"
-                  fill={selected ? "#fff" : "#222"}
-                >
-                  {node.result.primary}
-                </text>
-              </g>
-            );
-          })}
-
-          <circle cx={center} cy={center} r={8} fill="#222" />
-        </svg>
-
-        {/* =========================
-            ARCHETYPE PANEL
-           ========================= */}
-        <div style={{ flex: 1, minWidth: 320 }}>
-          <ArchetypePanel
-            testId={selectedNode.testId}
-            result={selectedNode.result}
-          />
+        <div style={{ display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
+          <a href="/test">Test Runner →</a>
+          <a href="/results">Results →</a>
+          <a href="/dashboard">Dashboard →</a>
+          <button onClick={loadAll}>Refresh</button>
         </div>
       </div>
-    </div>
-  );
-}
 
-/* =========================
-   ARCHETYPE PANEL
-   ========================= */
-function ArchetypePanel({ testId, result }) {
-  if (!result) return null;
-
-  return (
-    <div
-      style={{
-        border: "1px solid #ddd",
-        borderRadius: 14,
-        padding: 20
-      }}
-    >
-      <h3 style={{ textTransform: "uppercase", letterSpacing: "0.04em" }}>
-        {testId}
-      </h3>
-
-      <p style={{ fontSize: 22, fontWeight: 700 }}>{result.primary}</p>
-
-      {result.secondary && (
-        <p style={{ color: "#666" }}>{result.secondary}</p>
+      {error && (
+        <div className="panel mt-md" style={{ borderColor: "#f1b3b3" }}>
+          <b style={{ color: "crimson" }}>Error:</b> {error}
+        </div>
       )}
 
-      {result.overview && <p>{result.overview}</p>}
+      {/* Node grid */}
+      <div className="mt-lg" style={{ display: "grid", gap: 12 }}>
+        {TESTS.map((t) => {
+          const done = completedSet.has(t.id);
+          const isActive = progress.activeTestId === t.id;
+          const isSelected = selectedTestId === t.id;
+          const r = results?.[t.id];
 
-      <a
-        href={`/lore/${encodeURIComponent(result.primary)}`}
-        style={{ display: "inline-block", marginTop: 8 }}
-      >
-        Read Archetype Lore →
-      </a>
+          const primary = r?.primary || (done ? "Completed" : "Not yet");
+          const secondary = r?.secondary || "";
 
-      {result.flags && result.flags.length > 0 && (
-        <p style={{ color: "darkred", marginTop: 12 }}>
-          <b>Flags:</b> {result.flags.join(", ")}
-        </p>
-      )}
+          return (
+            <button
+              key={t.id}
+              onClick={() => setSelectedTestId(t.id)}
+              className="panel"
+              style={{
+                textAlign: "left",
+                cursor: "pointer",
+                borderColor: isSelected ? "rgba(255,255,255,0.35)" : "rgba(255,255,255,0.12)",
+                background: isSelected ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.03)"
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+                <div>
+                  <div style={{ fontSize: 18, fontWeight: 800 }}>
+                    {t.label}{" "}
+                    <span className="muted small" style={{ fontWeight: 400 }}>
+                      • {t.realm}
+                    </span>
+                  </div>
+
+                  <div className="muted small" style={{ marginTop: 6 }}>
+                    {isActive ? <b>Active</b> : done ? <b>Completed</b> : <b>Locked</b>}
+                    {" • "}
+                    {primary}
+                    {secondary ? ` — ${secondary}` : ""}
+                  </div>
+                </div>
+
+                <div className="muted small" style={{ minWidth: 180, textAlign: "right" }}>
+                  {done ? "✓" : "○"} {t.id}
+                </div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Result panel */}
+      <div className="panel mt-lg">
+        <h3 style={{ marginTop: 0 }}>Archetype Result Panel</h3>
+
+        {!selectedResult ? (
+          <p className="muted">
+            No result data found for <b>{selectedTestId}</b> yet. Complete the test to populate this node.
+          </p>
+        ) : (
+          <>
+            <div style={{ display: "flex", justifyContent: "space-between", gap: 14, flexWrap: "wrap" }}>
+              <div>
+                <div style={{ fontSize: 22, fontWeight: 900 }}>
+                  {selectedResult.primary || "Unknown"}
+                </div>
+                {selectedResult.secondary && (
+                  <div className="muted" style={{ marginTop: 4 }}>
+                    {selectedResult.secondary}
+                  </div>
+                )}
+              </div>
+
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+                <a href="/results">Go to Results →</a>
+                <a href={loreUrlFor(selectedResult.primary)}>Open Lore →</a>
+              </div>
+            </div>
+
+            {selectedResult.overview && (
+              <p className="mt-md" style={{ whiteSpace: "pre-line" }}>
+                {selectedResult.overview}
+              </p>
+            )}
+
+            {safeArr(selectedResult.flags).length > 0 && (
+              <p className="flags">
+                <b>Flags:</b> {safeArr(selectedResult.flags).join(", ")}
+              </p>
+            )}
+
+            <details className="mt-md">
+              <summary style={{ cursor: "pointer" }}>Raw JSON</summary>
+              <pre>{JSON.stringify(selectedResult, null, 2)}</pre>
+            </details>
+          </>
+        )}
+      </div>
     </div>
   );
 }
