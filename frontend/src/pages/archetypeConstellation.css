@@ -1,0 +1,8 @@
+.archetype-constellation {
+  padding: 24px;
+}
+
+.constellation-grid {
+  display: grid;
+  gap: 16px;
+}

@@ -1,23 +1,27 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.1",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-router-dom": "^7.10.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+
+    "sync:arch": "node scripts/syncArchetypeCatalog.mjs",
+    "lore:arch": "node scripts/generateLoreForCatalog.mjs",
+    "links:arch": "node scripts/normalizeArchetypeLinks.mjs",
+    "families:arch": "node scripts/exportFamilySets.mjs",
+
+    "build:arch": "npm run sync:arch && npm run lore:arch && npm run links:arch && npm run families:arch",
+    "merge:arch": "node scripts/mergeArchetypeCatalog.mjs",
+    "build:all": "node scripts/buildAllCatalogs.mjs"
   },
   "eslintConfig": {
     "extends": [

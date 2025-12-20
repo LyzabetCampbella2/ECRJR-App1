@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { apiGet } from "../api/apiClient";
+import { apiGet } from "../apiClient";
 
 const TESTS = [
   { id: "language_v1", label: "Language", realm: "Tongues" },

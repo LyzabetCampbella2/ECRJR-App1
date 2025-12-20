@@ -1,237 +1,59 @@
-/* =========================
-   GLOBAL RESET
-   ========================= */
-* {
+/* ===== Global Reset ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
-  background-color: #fafafa;
-  color: #222;
-  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f7f7f8;
+  color: #1f2937;
 }
 
-#root {
-  min-height: 100vh;
-}
-
-/* =========================
-   TYPOGRAPHY
-   ========================= */
-h1, h2, h3, h4 {
-  margin-top: 0;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-}
-
-h3 {
-  font-size: 1.1rem;
-}
-
-p {
-  margin: 0.4rem 0;
-}
-
+/* ===== Links ===== */
 a {
-  color: #1a1a1a;
+  color: #2563eb;
   text-decoration: none;
-  font-weight: 500;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
-button {
-  appearance: none;
-  border: 1px solid #222;
-  background: #fff;
-  color: #222;
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-button:hover {
-  background: #222;
-  color: #fff;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* =========================
-   LAYOUT HELPERS
-   ========================= */
-.container {
-  max-width: 1100px;
+/* ===== Layout helpers ===== */
+.page {
+  padding: 32px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.gap-sm {
-  gap: 8px;
-}
-
-.gap-md {
-  gap: 16px;
-}
-
-.gap-lg {
-  gap: 24px;
-}
-
-.center {
-  align-items: center;
-  justify-content: center;
-}
-
-/* =========================
-   PANELS / CARDS
-   ========================= */
-.panel {
-  border: 1px solid #ddd;
-  border-radius: 14px;
-  padding: 20px;
-  background: #fff;
 }
 
 .card {
-  border: 1px solid #222;
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 12px;
   padding: 20px;
-  background: #fff;
-  width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
-.card small {
-  color: #777;
+/* ===== Buttons ===== */
+button {
+  font-family: inherit;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-/* =========================
-   RESULTS PAGE
-   ========================= */
-.results-block {
-  border: 1px solid #e2e2e2;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 24px;
+button.primary {
+  background: #2563eb;
+  color: white;
 }
 
-.results-title {
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.85rem;
-  margin-bottom: 6px;
-}
-
-/* =========================
-   CONSTELLATION
-   ========================= */
-svg {
-  user-select: none;
-}
-
-.constellation-wrapper {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
-.constellation-panel {
-  flex: 1;
-  min-width: 320px;
-}
-
-/* =========================
-   LORE PAGES
-   ========================= */
-.lore-section {
-  margin-top: 32px;
-}
-
-.lore-section h2 {
-  margin-bottom: 8px;
-}
-
-.lore-stage {
-  border-left: 3px solid #222;
-  padding-left: 16px;
-  margin-bottom: 20px;
-}
-
-.lore-stage h3 {
-  margin-bottom: 4px;
-}
-
-/* =========================
-   FLAGS / WARNINGS
-   ========================= */
-.flags {
-  color: darkred;
-  margin-top: 12px;
-  font-size: 0.9rem;
-}
-
-/* =========================
-   UTILITIES
-   ========================= */
-.muted {
-  color: #666;
-}
-
-.small {
-  font-size: 0.85rem;
-}
-
-.mt-sm {
-  margin-top: 8px;
-}
-
-.mt-md {
-  margin-top: 16px;
-}
-
-.mt-lg {
-  margin-top: 32px;
-}
-
-.mb-md {
-  margin-bottom: 16px;
-}
-
-pre {
-  background: #f7f7f7;
-  padding: 12px;
-  border-radius: 8px;
-  overflow-x: auto;
-  font-size: 0.8rem;
+button.secondary {
+  background: #e5e7eb;
+  color: #111827;
 }
