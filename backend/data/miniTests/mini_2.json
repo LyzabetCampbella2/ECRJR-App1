@@ -1,0 +1,107 @@
+{
+  "id": "mini_2",
+  "title": "Mini Test 2 — The Spark & The Scar",
+  "intro": "Pick what you do most often—not what you wish you did.",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "When a plan falls apart, you…",
+      "options": [
+        { "value": "a", "label": "Reassess quietly and find the hidden pattern" },
+        { "value": "b", "label": "Take charge and rebuild the structure fast" },
+        { "value": "c", "label": "Pivot creatively—improvise something new" },
+        { "value": "d", "label": "Tighten boundaries and reduce exposure" }
+      ]
+    },
+    {
+      "id": "q2",
+      "prompt": "People tend to come to you for…",
+      "options": [
+        { "value": "a", "label": "Perspective and insight" },
+        { "value": "b", "label": "Execution and reliability" },
+        { "value": "c", "label": "Inspiration and emotional understanding" },
+        { "value": "d", "label": "Protection, standards, and honesty" }
+      ]
+    },
+    {
+      "id": "q3",
+      "prompt": "Your default focus is…",
+      "options": [
+        { "value": "a", "label": "Truth and meaning" },
+        { "value": "b", "label": "Results and systems" },
+        { "value": "c", "label": "Beauty and resonance" },
+        { "value": "d", "label": "Safety and discernment" }
+      ]
+    },
+    {
+      "id": "q4",
+      "prompt": "When you feel unseen, you…",
+      "options": [
+        { "value": "a", "label": "Go inward and detach" },
+        { "value": "b", "label": "Push harder to prove value" },
+        { "value": "c", "label": "Seek affirmation or dramatic change" },
+        { "value": "d", "label": "Close off and become cold" }
+      ]
+    },
+    {
+      "id": "q5",
+      "prompt": "When you feel powerful, you…",
+      "options": [
+        { "value": "a", "label": "Speak calmly, precisely, and decisively" },
+        { "value": "b", "label": "Move fast and build momentum" },
+        { "value": "c", "label": "Create, perform, or express boldly" },
+        { "value": "d", "label": "Hold the line and protect what matters" }
+      ]
+    },
+    {
+      "id": "q6",
+      "prompt": "A hard truth: your weakness is most often…",
+      "options": [
+        { "value": "a", "label": "Analysis paralysis / emotional distance" },
+        { "value": "b", "label": "Control / rigidity" },
+        { "value": "c", "label": "Escapism / inconsistency" },
+        { "value": "d", "label": "Guardedness / suspicion" }
+      ]
+    },
+    {
+      "id": "q7",
+      "prompt": "You recharge by…",
+      "options": [
+        { "value": "a", "label": "Solitude and deep study" },
+        { "value": "b", "label": "Finishing tasks and feeling progress" },
+        { "value": "c", "label": "Art, music, stories, and atmosphere" },
+        { "value": "d", "label": "Quiet order, safety, and control of your space" }
+      ]
+    },
+    {
+      "id": "q8",
+      "prompt": "In conflict, you usually…",
+      "options": [
+        { "value": "a", "label": "Ask questions and expose contradictions" },
+        { "value": "b", "label": "Set terms and enforce consequences" },
+        { "value": "c", "label": "Try to soften it or redirect emotionally" },
+        { "value": "d", "label": "Withdraw unless a boundary is crossed" }
+      ]
+    },
+    {
+      "id": "q9",
+      "prompt": "Your inner drive is…",
+      "options": [
+        { "value": "a", "label": "Understanding" },
+        { "value": "b", "label": "Achievement" },
+        { "value": "c", "label": "Expression" },
+        { "value": "d", "label": "Protection" }
+      ]
+    },
+    {
+      "id": "q10",
+      "prompt": "If you could erase one fear, it would be…",
+      "options": [
+        { "value": "a", "label": "Being wrong / misled" },
+        { "value": "b", "label": "Being powerless" },
+        { "value": "c", "label": "Being unloved / unseen" },
+        { "value": "d", "label": "Being violated / unsafe" }
+      ]
+    }
+  ]
+}

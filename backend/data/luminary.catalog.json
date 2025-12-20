@@ -1,0 +1,902 @@
+[
+  {
+    "id": "LUM_BEACON",
+    "name": "The Beacon",
+    "family": "Luminary",
+    "tags": {
+      "clarity": 1,
+      "truth": 0.7,
+      "guidance": 0.5
+    },
+    "overview": "A steady light that reveals the path forward for others.",
+    "coreVirtue": "Clarity",
+    "shadowRisk": "Becoming distant, cold, or morally rigid.",
+    "growthPrompt": "Where are you illuminating truth — and where are you blinding others with it?",
+    "lore": {
+      "short": "The Beacon does not move the sea — it simply shines.",
+      "long": "Those who walk as Beacons are not meant to command. Their duty is revelation: to show what is already real."
+    }
+  },
+  {
+    "id": "LUM_GUARDIAN",
+    "name": "The Guardian",
+    "family": "Luminary",
+    "tags": {
+      "protection": 1,
+      "loyalty": 0.6,
+      "oath": 0.4
+    },
+    "overview": "A sworn protector who stands between harm and the vulnerable.",
+    "coreVirtue": "Devotion",
+    "shadowRisk": "Overprotection that stifles growth.",
+    "growthPrompt": "Who are you protecting — and who are you preventing from becoming strong?",
+    "lore": {
+      "short": "The Guardian does not seek glory — only duty.",
+      "long": "Guardians bind themselves to causes, people, or principles. Their test is knowing when to loosen their grip."
+    }
+  },
+  {
+    "id": "LUM_ARCHITECT",
+    "name": "The Architect",
+    "family": "Luminary",
+    "tags": {
+      "structure": 1,
+      "discipline": 0.7,
+      "strategy": 0.5
+    },
+    "overview": "A designer of systems, order, and long-term foundations.",
+    "coreVirtue": "Structure",
+    "shadowRisk": "Rigidity and emotional detachment.",
+    "growthPrompt": "What are you building — and who must live inside it?",
+    "lore": {
+      "short": "Every lasting civilization begins with an Architect.",
+      "long": "Architects see patterns others miss. Their danger is forgetting that living things are not machines."
+    }
+  },
+  {
+    "id": "LUM_MENTOR",
+    "name": "The Mentor",
+    "family": "Luminary",
+    "tags": {
+      "wisdom": 1,
+      "teaching": 0.7,
+      "patience": 0.4
+    },
+    "overview": "A guide who shapes others through insight and restraint.",
+    "coreVirtue": "Wisdom",
+    "shadowRisk": "Withholding action in the name of guidance.",
+    "growthPrompt": "When is it time to stop advising — and act?",
+    "lore": {
+      "short": "The Mentor teaches so they may one day be surpassed.",
+      "long": "True Mentors measure success by independence, not obedience."
+    }
+  },
+  {
+    "id": "LUM_SOVEREIGN",
+    "name": "The Sovereign",
+    "family": "Luminary",
+    "tags": {
+      "stewardship": 1,
+      "responsibility": 0.6,
+      "temperance": 0.4
+    },
+    "overview": "A bearer of responsibility whose choices shape many lives.",
+    "coreVirtue": "Stewardship",
+    "shadowRisk": "Control masquerading as leadership.",
+    "growthPrompt": "Are you ruling for order — or for certainty?",
+    "lore": {
+      "short": "The crown is a burden before it is a privilege.",
+      "long": "Sovereigns exist to hold chaos at bay. Their failure comes when fear replaces responsibility."
+    }
+  },
+  {
+    "id": "LUM_JUDGE",
+    "name": "The Judge",
+    "family": "Luminary",
+    "tags": {
+      "judgment": 1,
+      "fairness": 0.6,
+      "clarity": 0.3
+    },
+    "overview": "A calm arbiter who weighs truth with restraint.",
+    "coreVirtue": "Justice",
+    "shadowRisk": "Turning discernment into condemnation.",
+    "growthPrompt": "Where are you judging to protect truth — and where are you punishing to soothe yourself?",
+    "lore": {
+      "short": "A verdict can be mercy when spoken without vanity.",
+      "long": "Judges do not exist to win. They exist to steady the scales when others would tip them."
+    }
+  },
+  {
+    "id": "LUM_FORGE",
+    "name": "The Forge",
+    "family": "Luminary",
+    "tags": {
+      "craft": 1,
+      "discipline": 0.6,
+      "resilience": 0.4
+    },
+    "overview": "A maker who turns pressure into mastery.",
+    "coreVirtue": "Craft",
+    "shadowRisk": "Defining worth only through output.",
+    "growthPrompt": "If you stopped producing, would you still feel valuable?",
+    "lore": {
+      "short": "Heat does not destroy — it reveals what’s true metal.",
+      "long": "The Forge refines by repetition. Its lesson is that mastery is devotion, not obsession."
+    }
+  },
+  {
+    "id": "LUM_HEALER",
+    "name": "The Healer",
+    "family": "Luminary",
+    "tags": {
+      "mercy": 1,
+      "restoration": 0.6,
+      "presence": 0.4
+    },
+    "overview": "A restorer who brings people back to themselves.",
+    "coreVirtue": "Mercy",
+    "shadowRisk": "Taking on pain that isn’t yours to carry.",
+    "growthPrompt": "What pain do you keep as proof you loved enough?",
+    "lore": {
+      "short": "Mercy is not softness — it is strength without cruelty.",
+      "long": "Healers mend what is torn, but must remember: compassion without boundaries becomes self-erasure."
+    }
+  },
+  {
+    "id": "LUM_SENTINEL",
+    "name": "The Sentinel",
+    "family": "Luminary",
+    "tags": {
+      "vigilance": 1,
+      "protection": 0.5,
+      "discipline": 0.4
+    },
+    "overview": "A watcher who notices what everyone else misses.",
+    "coreVirtue": "Vigilance",
+    "shadowRisk": "Living in permanent readiness.",
+    "growthPrompt": "What threat are you still preparing for that no longer exists?",
+    "lore": {
+      "short": "The Sentinel sleeps lightly so others may rest.",
+      "long": "Sentinels keep the line. Their growth is learning when the war is over."
+    }
+  },
+  {
+    "id": "LUM_EMISSARY",
+    "name": "The Emissary",
+    "family": "Luminary",
+    "tags": {
+      "diplomacy": 1,
+      "empathy": 0.6,
+      "clarity": 0.3
+    },
+    "overview": "A bridge-builder who speaks between worlds.",
+    "coreVirtue": "Diplomacy",
+    "shadowRisk": "People-pleasing disguised as peacekeeping.",
+    "growthPrompt": "Are you making peace — or avoiding conflict?",
+    "lore": {
+      "short": "Words can be treaties or weapons.",
+      "long": "Emissaries translate the unsaid. Their integrity is tested when both sides demand loyalty."
+    }
+  },
+  {
+    "id": "LUM_LIBRARIAN",
+    "name": "The Librarian",
+    "family": "Luminary",
+    "tags": {
+      "knowledge": 1,
+      "curiosity": 0.6,
+      "wisdom": 0.4
+    },
+    "overview": "A collector of patterns, language, and meaning.",
+    "coreVirtue": "Knowledge",
+    "shadowRisk": "Hiding behind research instead of living.",
+    "growthPrompt": "What do you study that you’re afraid to attempt?",
+    "lore": {
+      "short": "Ink remembers what panic forgets.",
+      "long": "Librarians catalog truth, but must not confuse understanding with intimacy."
+    }
+  },
+  {
+    "id": "LUM_VANGUARD",
+    "name": "The Vanguard",
+    "family": "Luminary",
+    "tags": {
+      "courage": 1,
+      "initiative": 0.6,
+      "protection": 0.3
+    },
+    "overview": "A first-mover who steps forward when others freeze.",
+    "coreVirtue": "Courage",
+    "shadowRisk": "Charging ahead without listening.",
+    "growthPrompt": "Where would restraint be braver than action?",
+    "lore": {
+      "short": "Someone must go first.",
+      "long": "Vanguards ignite motion. Their refinement is learning when to lead and when to follow."
+    }
+  },
+  {
+    "id": "LUM_ORACLE",
+    "name": "The Oracle",
+    "family": "Luminary",
+    "tags": {
+      "vision": 1,
+      "clarity": 0.5,
+      "discernment": 0.4
+    },
+    "overview": "A seer of trajectories and consequences.",
+    "coreVirtue": "Vision",
+    "shadowRisk": "Becoming fatalistic or aloof.",
+    "growthPrompt": "What future are you clinging to so tightly you can’t see the present?",
+    "lore": {
+      "short": "Prophecy is pattern-recognition, not destiny.",
+      "long": "Oracles perceive the arc — but must still choose tenderness in the moment."
+    }
+  },
+  {
+    "id": "LUM_STEWARD",
+    "name": "The Steward",
+    "family": "Luminary",
+    "tags": {
+      "service": 1,
+      "stewardship": 0.5,
+      "humility": 0.4
+    },
+    "overview": "A keeper who maintains what others overlook.",
+    "coreVirtue": "Service",
+    "shadowRisk": "Resenting the unseen labor you provide.",
+    "growthPrompt": "What do you need acknowledged — and why?",
+    "lore": {
+      "short": "Quiet work holds the world together.",
+      "long": "Stewards preserve continuity. Their task is to serve without self-abandonment."
+    }
+  },
+  {
+    "id": "LUM_TEMPERER",
+    "name": "The Temperer",
+    "family": "Luminary",
+    "tags": {
+      "balance": 1,
+      "temperance": 0.6,
+      "clarity": 0.3
+    },
+    "overview": "A stabilizer who prevents extremes from swallowing the room.",
+    "coreVirtue": "Balance",
+    "shadowRisk": "Avoiding decisive choices.",
+    "growthPrompt": "Where does your balance become indecision?",
+    "lore": {
+      "short": "Moderation is a blade with two edges.",
+      "long": "Temperers keep systems steady, but must remember: sometimes the moment demands a clear stance."
+    }
+  },
+  {
+    "id": "LUM_WARDEN",
+    "name": "The Warden",
+    "family": "Luminary",
+    "tags": {
+      "containment": 1,
+      "protection": 0.6,
+      "discipline": 0.4
+    },
+    "overview": "A refined force defined by containment.",
+    "coreVirtue": "Containment",
+    "shadowRisk": "When distorted, containment becomes excess.",
+    "growthPrompt": "How can you practice containment without losing softness?",
+    "lore": {
+      "short": "The Warden holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Warden is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_LAWGIVER",
+    "name": "The Lawgiver",
+    "family": "Luminary",
+    "tags": {
+      "principle": 1,
+      "judgment": 0.6,
+      "temperance": 0.4
+    },
+    "overview": "A refined force defined by principle.",
+    "coreVirtue": "Principle",
+    "shadowRisk": "When distorted, principle becomes excess.",
+    "growthPrompt": "How can you practice principle without losing softness?",
+    "lore": {
+      "short": "The Lawgiver holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Lawgiver is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_BASTION",
+    "name": "The Bastion",
+    "family": "Luminary",
+    "tags": {
+      "fortitude": 1,
+      "resilience": 0.6,
+      "protection": 0.4
+    },
+    "overview": "A refined force defined by fortitude.",
+    "coreVirtue": "Fortitude",
+    "shadowRisk": "When distorted, fortitude becomes excess.",
+    "growthPrompt": "How can you practice fortitude without losing softness?",
+    "lore": {
+      "short": "The Bastion holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Bastion is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_LIGHTBRINGER",
+    "name": "The Lightbringer",
+    "family": "Luminary",
+    "tags": {
+      "hope": 1,
+      "guidance": 0.6,
+      "mercy": 0.4
+    },
+    "overview": "A refined force defined by hope.",
+    "coreVirtue": "Hope",
+    "shadowRisk": "When distorted, hope becomes excess.",
+    "growthPrompt": "How can you practice hope without losing softness?",
+    "lore": {
+      "short": "The Lightbringer holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Lightbringer is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_ASTRONOMER",
+    "name": "The Astronomer",
+    "family": "Luminary",
+    "tags": {
+      "perspective": 1,
+      "knowledge": 0.6,
+      "vision": 0.4
+    },
+    "overview": "A refined force defined by perspective.",
+    "coreVirtue": "Perspective",
+    "shadowRisk": "When distorted, perspective becomes excess.",
+    "growthPrompt": "How can you practice perspective without losing softness?",
+    "lore": {
+      "short": "The Astronomer holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Astronomer is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_CHAMPION",
+    "name": "The Champion",
+    "family": "Luminary",
+    "tags": {
+      "valor": 1,
+      "courage": 0.6,
+      "loyalty": 0.4
+    },
+    "overview": "A refined force defined by valor.",
+    "coreVirtue": "Valor",
+    "shadowRisk": "When distorted, valor becomes excess.",
+    "growthPrompt": "How can you practice valor without losing softness?",
+    "lore": {
+      "short": "The Champion holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Champion is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_SCRIBE",
+    "name": "The Scribe",
+    "family": "Luminary",
+    "tags": {
+      "precision": 1,
+      "knowledge": 0.6,
+      "discipline": 0.4
+    },
+    "overview": "A refined force defined by precision.",
+    "coreVirtue": "Precision",
+    "shadowRisk": "When distorted, precision becomes excess.",
+    "growthPrompt": "How can you practice precision without losing softness?",
+    "lore": {
+      "short": "The Scribe holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Scribe is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_WEAVER",
+    "name": "The Weaver",
+    "family": "Luminary",
+    "tags": {
+      "cohesion": 1,
+      "diplomacy": 0.6,
+      "empathy": 0.4
+    },
+    "overview": "A refined force defined by cohesion.",
+    "coreVirtue": "Cohesion",
+    "shadowRisk": "When distorted, cohesion becomes excess.",
+    "growthPrompt": "How can you practice cohesion without losing softness?",
+    "lore": {
+      "short": "The Weaver holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Weaver is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_PILLAR",
+    "name": "The Pillar",
+    "family": "Luminary",
+    "tags": {
+      "steadfastness": 1,
+      "balance": 0.6,
+      "fortitude": 0.4
+    },
+    "overview": "A refined force defined by steadfastness.",
+    "coreVirtue": "Steadfastness",
+    "shadowRisk": "When distorted, steadfastness becomes excess.",
+    "growthPrompt": "How can you practice steadfastness without losing softness?",
+    "lore": {
+      "short": "The Pillar holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Pillar is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_PHOENIX",
+    "name": "The Phoenix",
+    "family": "Luminary",
+    "tags": {
+      "renewal": 1,
+      "resilience": 0.6,
+      "hope": 0.4
+    },
+    "overview": "A refined force defined by renewal.",
+    "coreVirtue": "Renewal",
+    "shadowRisk": "When distorted, renewal becomes excess.",
+    "growthPrompt": "How can you practice renewal without losing softness?",
+    "lore": {
+      "short": "The Phoenix holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Phoenix is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_GARDENER",
+    "name": "The Gardener",
+    "family": "Luminary",
+    "tags": {
+      "nurture": 1,
+      "mercy": 0.6,
+      "patience": 0.4
+    },
+    "overview": "A refined force defined by nurture.",
+    "coreVirtue": "Nurture",
+    "shadowRisk": "When distorted, nurture becomes excess.",
+    "growthPrompt": "How can you practice nurture without losing softness?",
+    "lore": {
+      "short": "The Gardener holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Gardener is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_ARTISAN",
+    "name": "The Artisan",
+    "family": "Luminary",
+    "tags": {
+      "mastery": 1,
+      "craft": 0.6,
+      "discipline": 0.4
+    },
+    "overview": "A refined force defined by mastery.",
+    "coreVirtue": "Mastery",
+    "shadowRisk": "When distorted, mastery becomes excess.",
+    "growthPrompt": "How can you practice mastery without losing softness?",
+    "lore": {
+      "short": "The Artisan holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Artisan is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_ARBITER",
+    "name": "The Arbiter",
+    "family": "Luminary",
+    "tags": {
+      "equity": 1,
+      "judgment": 0.6,
+      "clarity": 0.4
+    },
+    "overview": "A refined force defined by equity.",
+    "coreVirtue": "Equity",
+    "shadowRisk": "When distorted, equity becomes excess.",
+    "growthPrompt": "How can you practice equity without losing softness?",
+    "lore": {
+      "short": "The Arbiter holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Arbiter is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_PILGRIM",
+    "name": "The Pilgrim",
+    "family": "Luminary",
+    "tags": {
+      "devotion": 1,
+      "service": 0.6,
+      "wisdom": 0.4
+    },
+    "overview": "A refined force defined by devotion.",
+    "coreVirtue": "Devotion",
+    "shadowRisk": "When distorted, devotion becomes excess.",
+    "growthPrompt": "How can you practice devotion without losing softness?",
+    "lore": {
+      "short": "The Pilgrim holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Pilgrim is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_HERALD",
+    "name": "The Herald",
+    "family": "Luminary",
+    "tags": {
+      "revelation": 1,
+      "truth": 0.6,
+      "guidance": 0.4
+    },
+    "overview": "A refined force defined by revelation.",
+    "coreVirtue": "Revelation",
+    "shadowRisk": "When distorted, revelation becomes excess.",
+    "growthPrompt": "How can you practice revelation without losing softness?",
+    "lore": {
+      "short": "The Herald holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Herald is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_NAVIGATOR",
+    "name": "The Navigator",
+    "family": "Luminary",
+    "tags": {
+      "direction": 1,
+      "orientation": 0.6,
+      "strategy": 0.4
+    },
+    "overview": "A refined force defined by direction.",
+    "coreVirtue": "Direction",
+    "shadowRisk": "When distorted, direction becomes excess.",
+    "growthPrompt": "How can you practice direction without losing softness?",
+    "lore": {
+      "short": "The Navigator holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Navigator is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_MEDIATOR",
+    "name": "The Mediator",
+    "family": "Luminary",
+    "tags": {
+      "reconciliation": 1,
+      "diplomacy": 0.6,
+      "balance": 0.4
+    },
+    "overview": "A refined force defined by reconciliation.",
+    "coreVirtue": "Reconciliation",
+    "shadowRisk": "When distorted, reconciliation becomes excess.",
+    "growthPrompt": "How can you practice reconciliation without losing softness?",
+    "lore": {
+      "short": "The Mediator holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Mediator is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_TUTOR",
+    "name": "The Tutor",
+    "family": "Luminary",
+    "tags": {
+      "instruction": 1,
+      "teaching": 0.6,
+      "patience": 0.4
+    },
+    "overview": "A refined force defined by instruction.",
+    "coreVirtue": "Instruction",
+    "shadowRisk": "When distorted, instruction becomes excess.",
+    "growthPrompt": "How can you practice instruction without losing softness?",
+    "lore": {
+      "short": "The Tutor holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Tutor is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_SAFEGUARD",
+    "name": "The Safeguard",
+    "family": "Luminary",
+    "tags": {
+      "sanctuary": 1,
+      "protection": 0.6,
+      "mercy": 0.4
+    },
+    "overview": "A refined force defined by sanctuary.",
+    "coreVirtue": "Sanctuary",
+    "shadowRisk": "When distorted, sanctuary becomes excess.",
+    "growthPrompt": "How can you practice sanctuary without losing softness?",
+    "lore": {
+      "short": "The Safeguard holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Safeguard is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_QUILL",
+    "name": "The Quill",
+    "family": "Luminary",
+    "tags": {
+      "articulation": 1,
+      "knowledge": 0.6,
+      "clarity": 0.4
+    },
+    "overview": "A refined force defined by articulation.",
+    "coreVirtue": "Articulation",
+    "shadowRisk": "When distorted, articulation becomes excess.",
+    "growthPrompt": "How can you practice articulation without losing softness?",
+    "lore": {
+      "short": "The Quill holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Quill is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_WAYFINDER",
+    "name": "The Wayfinder",
+    "family": "Luminary",
+    "tags": {
+      "pathfinding": 1,
+      "direction": 0.6,
+      "vision": 0.4
+    },
+    "overview": "A refined force defined by pathfinding.",
+    "coreVirtue": "Pathfinding",
+    "shadowRisk": "When distorted, pathfinding becomes excess.",
+    "growthPrompt": "How can you practice pathfinding without losing softness?",
+    "lore": {
+      "short": "The Wayfinder holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Wayfinder is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_FOUNDER",
+    "name": "The Founder",
+    "family": "Luminary",
+    "tags": {
+      "foundation": 1,
+      "structure": 0.6,
+      "stewardship": 0.4
+    },
+    "overview": "A refined force defined by foundation.",
+    "coreVirtue": "Foundation",
+    "shadowRisk": "When distorted, foundation becomes excess.",
+    "growthPrompt": "How can you practice foundation without losing softness?",
+    "lore": {
+      "short": "The Founder holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Founder is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_MAGISTRATE",
+    "name": "The Magistrate",
+    "family": "Luminary",
+    "tags": {
+      "order": 1,
+      "principle": 0.6,
+      "judgment": 0.4
+    },
+    "overview": "A refined force defined by order.",
+    "coreVirtue": "Order",
+    "shadowRisk": "When distorted, order becomes excess.",
+    "growthPrompt": "How can you practice order without losing softness?",
+    "lore": {
+      "short": "The Magistrate holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Magistrate is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_HARBORMASTER",
+    "name": "The Harbormaster",
+    "family": "Luminary",
+    "tags": {
+      "stability": 1,
+      "balance": 0.6,
+      "service": 0.4
+    },
+    "overview": "A refined force defined by stability.",
+    "coreVirtue": "Stability",
+    "shadowRisk": "When distorted, stability becomes excess.",
+    "growthPrompt": "How can you practice stability without losing softness?",
+    "lore": {
+      "short": "The Harbormaster holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Harbormaster is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_VIGIL",
+    "name": "The Vigil",
+    "family": "Luminary",
+    "tags": {
+      "alertness": 1,
+      "vigilance": 0.6,
+      "protection": 0.4
+    },
+    "overview": "A refined force defined by alertness.",
+    "coreVirtue": "Alertness",
+    "shadowRisk": "When distorted, alertness becomes excess.",
+    "growthPrompt": "How can you practice alertness without losing softness?",
+    "lore": {
+      "short": "The Vigil holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Vigil is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_LANTERN",
+    "name": "The Lantern",
+    "family": "Luminary",
+    "tags": {
+      "illumination": 1,
+      "clarity": 0.6,
+      "hope": 0.4
+    },
+    "overview": "A refined force defined by illumination.",
+    "coreVirtue": "Illumination",
+    "shadowRisk": "When distorted, illumination becomes excess.",
+    "growthPrompt": "How can you practice illumination without losing softness?",
+    "lore": {
+      "short": "The Lantern holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Lantern is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_RESOLUTE",
+    "name": "The Resolute",
+    "family": "Luminary",
+    "tags": {
+      "resolve": 1,
+      "fortitude": 0.6,
+      "stewardship": 0.4
+    },
+    "overview": "A refined force defined by resolve.",
+    "coreVirtue": "Resolve",
+    "shadowRisk": "When distorted, resolve becomes excess.",
+    "growthPrompt": "How can you practice resolve without losing softness?",
+    "lore": {
+      "short": "The Resolute holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Resolute is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_BENEFACTOR",
+    "name": "The Benefactor",
+    "family": "Luminary",
+    "tags": {
+      "generosity": 1,
+      "mercy": 0.6,
+      "service": 0.4
+    },
+    "overview": "A refined force defined by generosity.",
+    "coreVirtue": "Generosity",
+    "shadowRisk": "When distorted, generosity becomes excess.",
+    "growthPrompt": "How can you practice generosity without losing softness?",
+    "lore": {
+      "short": "The Benefactor holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Benefactor is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_COUNCILOR",
+    "name": "The Councilor",
+    "family": "Luminary",
+    "tags": {
+      "deliberation": 1,
+      "wisdom": 0.6,
+      "temperance": 0.4
+    },
+    "overview": "A refined force defined by deliberation.",
+    "coreVirtue": "Deliberation",
+    "shadowRisk": "When distorted, deliberation becomes excess.",
+    "growthPrompt": "How can you practice deliberation without losing softness?",
+    "lore": {
+      "short": "The Councilor holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Councilor is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_COMMANDER",
+    "name": "The Commander",
+    "family": "Luminary",
+    "tags": {
+      "command": 1,
+      "strategy": 0.6,
+      "courage": 0.4
+    },
+    "overview": "A refined force defined by command.",
+    "coreVirtue": "Command",
+    "shadowRisk": "When distorted, command becomes excess.",
+    "growthPrompt": "How can you practice command without losing softness?",
+    "lore": {
+      "short": "The Commander holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Commander is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_EMPATH",
+    "name": "The Empath",
+    "family": "Luminary",
+    "tags": {
+      "empathy": 1,
+      "mercy": 0.6,
+      "presence": 0.4
+    },
+    "overview": "A refined force defined by empathy.",
+    "coreVirtue": "Empathy",
+    "shadowRisk": "When distorted, empathy becomes excess.",
+    "growthPrompt": "How can you practice empathy without losing softness?",
+    "lore": {
+      "short": "The Empath holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Empath is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_WITNESS",
+    "name": "The Witness",
+    "family": "Luminary",
+    "tags": {
+      "witness": 1,
+      "testimony": 0.6,
+      "truth": 0.4
+    },
+    "overview": "A refined force defined by witness.",
+    "coreVirtue": "Witness",
+    "shadowRisk": "When distorted, witness becomes excess.",
+    "growthPrompt": "How can you practice witness without losing softness?",
+    "lore": {
+      "short": "The Witness holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Witness is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_RECTOR",
+    "name": "The Rector",
+    "family": "Luminary",
+    "tags": {
+      "guidance": 1,
+      "teaching": 0.6,
+      "principle": 0.4
+    },
+    "overview": "A refined force defined by guidance.",
+    "coreVirtue": "Guidance",
+    "shadowRisk": "When distorted, guidance becomes excess.",
+    "growthPrompt": "How can you practice guidance without losing softness?",
+    "lore": {
+      "short": "The Rector holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Rector is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_CRAFTER",
+    "name": "The Crafter",
+    "family": "Luminary",
+    "tags": {
+      "ingenuity": 1,
+      "craft": 0.6,
+      "curiosity": 0.4
+    },
+    "overview": "A refined force defined by ingenuity.",
+    "coreVirtue": "Ingenuity",
+    "shadowRisk": "When distorted, ingenuity becomes excess.",
+    "growthPrompt": "How can you practice ingenuity without losing softness?",
+    "lore": {
+      "short": "The Crafter holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Crafter is tested not by power, but by how gracefully they carry responsibility."
+    }
+  },
+  {
+    "id": "LUM_SENTENCE",
+    "name": "The Sentence",
+    "family": "Luminary",
+    "tags": {
+      "verdict": 1,
+      "judgment": 0.6,
+      "clarity": 0.4
+    },
+    "overview": "A refined force defined by verdict.",
+    "coreVirtue": "Verdict",
+    "shadowRisk": "When distorted, verdict becomes excess.",
+    "growthPrompt": "How can you practice verdict without losing softness?",
+    "lore": {
+      "short": "The Sentence holds a quiet principle like a sealed letter.",
+      "long": "In the Eirden canon, The Sentence is tested not by power, but by how gracefully they carry responsibility."
+    }
+  }
+]

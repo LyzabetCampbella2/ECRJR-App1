@@ -1,0 +1,192 @@
+{
+  "version": "lumiShadow_lore_v1",
+  "updatedAt": "2025-12-18",
+  "items": {
+    "lumi_warden": {
+      "id": "lumi_warden",
+      "kind": "luminary",
+      "name": "The Warden",
+      "essence": "Integrity that holds the line without cruelty.",
+      "mantra": "I protect what matters — and I refuse to become the threat.",
+      "shortLore": "The Warden stabilizes reality through restraint. They are the quiet sentinel who makes safety possible.",
+      "gifts": ["Ethical backbone", "Protective leadership", "Boundary clarity", "Crisis steadiness"],
+      "risks": ["Rigidity", "Over-responsibility", "Emotional suppression", "Harsh self-demand"],
+      "counterweights": {
+        "bestLuminaries": ["lumi_herald", "lumi_sage"],
+        "bestShadowsToWatch": ["shadow_tyrant", "shadow_judge"]
+      },
+      "lore": [
+        "Wardens do not chase power. They inherit it the moment others begin to rely on them.",
+        "Their strongest magic is what they refuse: shortcuts, cruelty, and the seduction of dominance."
+      ]
+    },
+    "lumi_herald": {
+      "id": "lumi_herald",
+      "kind": "luminary",
+      "name": "The Herald",
+      "essence": "Influence with accountability — a voice that moves without deceiving.",
+      "mantra": "My words carry weight. I use them cleanly.",
+      "shortLore": "The Herald translates vision into motion. They shape culture through clarity, tone, and timing.",
+      "gifts": ["Charismatic clarity", "Diplomacy", "Social intuition", "Narrative leadership"],
+      "risks": ["Over-performing", "People-pleasing", "Message addiction", "Identity fused with applause"],
+      "counterweights": {
+        "bestLuminaries": ["lumi_warden", "lumi_artisan"],
+        "bestShadowsToWatch": ["shadow_siren", "shadow_tyrant"]
+      },
+      "lore": [
+        "Heralds understand that language is not decoration — it is architecture.",
+        "Their integrity is tested when charm becomes easier than truth."
+      ]
+    },
+    "lumi_sage": {
+      "id": "lumi_sage",
+      "kind": "luminary",
+      "name": "The Sage",
+      "essence": "Pattern-recognition disciplined into wisdom.",
+      "mantra": "I will not trade truth for speed.",
+      "shortLore": "The Sage watches long enough to see what others miss — then speaks with precision.",
+      "gifts": ["Strategic insight", "Evidence-based thinking", "Long-range clarity", "System mapping"],
+      "risks": ["Detachment", "Analysis paralysis", "Cold perfectionism", "Withholding vulnerability"],
+      "counterweights": {
+        "bestLuminaries": ["lumi_herald", "lumi_oracle"],
+        "bestShadowsToWatch": ["shadow_judge", "shadow_wraith"]
+      },
+      "lore": [
+        "Sages do not fear complexity — they fear careless certainty.",
+        "Their shadow begins when observation turns into verdict."
+      ]
+    },
+    "lumi_artisan": {
+      "id": "lumi_artisan",
+      "kind": "luminary",
+      "name": "The Artisan",
+      "essence": "Creation as truth — mastery that builds meaning.",
+      "mantra": "I make with care. I release with courage.",
+      "shortLore": "The Artisan shapes what did not exist. Their craft becomes a language older than speech.",
+      "gifts": ["Craft mastery", "Innovative construction", "Aesthetic intelligence", "Legacy-building"],
+      "risks": ["Perfectionism", "Creative control spirals", "Burnout cycles", "Self-worth tied to output"],
+      "counterweights": {
+        "bestLuminaries": ["lumi_warden", "lumi_oracle"],
+        "bestShadowsToWatch": ["shadow_tyrant", "shadow_judge"]
+      },
+      "lore": [
+        "Artisans do not merely imagine — they translate imagination into structure.",
+        "Their test is surrender: letting creations breathe without becoming cages."
+      ]
+    },
+    "lumi_oracle": {
+      "id": "lumi_oracle",
+      "kind": "luminary",
+      "name": "The Oracle",
+      "essence": "Foresight without paranoia — intuition grounded into action.",
+      "mantra": "I sense the turning — and I stay present anyway.",
+      "shortLore": "The Oracle feels shifts before language exists for them. They move early, not loudly.",
+      "gifts": ["Early warning intuition", "Nonlinear problem-solving", "Risk literacy", "Pattern anticipation"],
+      "risks": ["Isolation", "Over-signaling danger", "Restlessness", "Difficulty being understood"],
+      "counterweights": {
+        "bestLuminaries": ["lumi_sage", "lumi_herald"],
+        "bestShadowsToWatch": ["shadow_wraith", "shadow_siren"]
+      },
+      "lore": [
+        "Oracles live slightly ahead of time — which can feel lonely to those who live only in the now.",
+        "Their power is strongest when intuition meets evidence and courage."
+      ]
+    },
+
+    "shadow_marauder": {
+      "id": "shadow_marauder",
+      "kind": "shadow",
+      "name": "The Marauder",
+      "essence": "Protection distorted into domination.",
+      "mantra": "If I control it, nothing can hurt me.",
+      "shortLore": "The Marauder believes safety justifies force. Boundaries become weapons.",
+      "gifts": ["Decisiveness under threat", "High protective drive", "Strong enforcement energy"],
+      "risks": ["Coercion", "Control addiction", "Intimidation", "Punitive loyalty tests"],
+      "triggers": ["Feeling disrespected", "Chaos and uncertainty", "Perceived betrayal"],
+      "counterweights": {
+        "stabilizingLuminaries": ["lumi_warden", "lumi_sage", "lumi_herald"],
+        "shadowToWatch": ["shadow_tyrant"]
+      },
+      "lore": [
+        "The Marauder is the part of you that would rather be feared than vulnerable.",
+        "It rises when protection forgets compassion."
+      ]
+    },
+    "shadow_siren": {
+      "id": "shadow_siren",
+      "kind": "shadow",
+      "name": "The Siren",
+      "essence": "Influence distorted into manipulation.",
+      "mantra": "If I can make them feel it, I can make them do it.",
+      "shortLore": "The Siren bends truth toward desire. Consent becomes fogged by charm.",
+      "gifts": ["Social precision", "Emotional reading", "High persuasion ability"],
+      "risks": ["Emotional coercion", "Truth avoidance", "Dependency on attention", "Identity as performance"],
+      "triggers": ["Rejection", "Loss of status", "Fear of being unseen"],
+      "counterweights": {
+        "stabilizingLuminaries": ["lumi_herald", "lumi_warden"],
+        "shadowToWatch": ["shadow_judge"]
+      },
+      "lore": [
+        "The Siren is not always malicious — sometimes it is survival wearing perfume.",
+        "It dissolves when you can tolerate honesty without losing belonging."
+      ]
+    },
+    "shadow_judge": {
+      "id": "shadow_judge",
+      "kind": "shadow",
+      "name": "The Judge",
+      "essence": "Wisdom distorted into superiority and condemnation.",
+      "mantra": "If I’m harsh first, nothing can surprise me.",
+      "shortLore": "The Judge weaponizes insight. Nuance dies under certainty.",
+      "gifts": ["Sharp discernment", "Strong standards", "High pattern detection"],
+      "risks": ["Self-cruelty", "Moral rigidity", "Contempt", "Relationship erosion"],
+      "triggers": ["Shame", "Ambiguity", "Fear of being wrong"],
+      "counterweights": {
+        "stabilizingLuminaries": ["lumi_sage", "lumi_artisan", "lumi_herald"],
+        "shadowToWatch": ["shadow_wraith"]
+      },
+      "lore": [
+        "The Judge believes perfection prevents pain — but perfection breeds isolation.",
+        "It softens when discernment is paired with mercy."
+      ]
+    },
+    "shadow_tyrant": {
+      "id": "shadow_tyrant",
+      "kind": "shadow",
+      "name": "The Tyrant",
+      "essence": "Creation distorted into control and ownership.",
+      "mantra": "If I design everything, nothing can fail me.",
+      "shortLore": "The Tyrant builds systems that imprison their creators. Evolution becomes disobedience.",
+      "gifts": ["High execution power", "Structure building", "Relentless output"],
+      "risks": ["Micromanagement", "Fear-driven dominance", "Crushing others’ autonomy", "Burning relationships for outcomes"],
+      "triggers": ["Feeling powerless", "Messy collaboration", "Public imperfection"],
+      "counterweights": {
+        "stabilizingLuminaries": ["lumi_artisan", "lumi_warden", "lumi_sage"],
+        "shadowToWatch": ["shadow_marauder"]
+      },
+      "lore": [
+        "The Tyrant is the part of you that confuses responsibility with ownership.",
+        "It ends when you allow others to co-author reality."
+      ]
+    },
+    "shadow_wraith": {
+      "id": "shadow_wraith",
+      "kind": "shadow",
+      "name": "The Wraith",
+      "essence": "Foresight distorted into paranoia and withdrawal.",
+      "mantra": "If I disappear, nothing can reach me.",
+      "shortLore": "The Wraith sees every ending and trusts none. Safety becomes isolation.",
+      "gifts": ["Threat detection", "Strategic caution", "High sensitivity to risk"],
+      "risks": ["Chronic distrust", "Avoidance loops", "Loneliness", "Self-sabotage by retreat"],
+      "triggers": ["Uncertainty", "Broken trust", "Overstimulation"],
+      "counterweights": {
+        "stabilizingLuminaries": ["lumi_oracle", "lumi_herald", "lumi_warden"],
+        "shadowToWatch": ["shadow_judge"]
+      },
+      "lore": [
+        "The Wraith is the part of you that believes hope is a liability.",
+        "It fades when you re-enter the world in small, repeatable proofs."
+      ]
+    }
+  }
+}

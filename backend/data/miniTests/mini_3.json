@@ -1,0 +1,107 @@
+{
+  "id": "mini_3",
+  "title": "Mini Test 3 — The Mask You Wear",
+  "intro": "Choose the answer that matches your behavior under pressure.",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Under deadlines, you become…",
+      "options": [
+        { "value": "a", "label": "Hyper-focused and mentally sharp" },
+        { "value": "b", "label": "Strict, decisive, and commanding" },
+        { "value": "c", "label": "Chaotic but brilliant and fast" },
+        { "value": "d", "label": "Silent, guarded, and solitary" }
+      ]
+    },
+    {
+      "id": "q2",
+      "prompt": "When someone questions your competence, you…",
+      "options": [
+        { "value": "a", "label": "Explain the logic and evidence" },
+        { "value": "b", "label": "Show results and shut it down" },
+        { "value": "c", "label": "Prove it through creativity or performance" },
+        { "value": "d", "label": "Disengage and remember it forever" }
+      ]
+    },
+    {
+      "id": "q3",
+      "prompt": "Your leadership style is…",
+      "options": [
+        { "value": "a", "label": "Vision through insight" },
+        { "value": "b", "label": "Command through structure" },
+        { "value": "c", "label": "Influence through inspiration" },
+        { "value": "d", "label": "Protection through standards" }
+      ]
+    },
+    {
+      "id": "q4",
+      "prompt": "Your most common self-sabotage is…",
+      "options": [
+        { "value": "a", "label": "Overthinking until you stall" },
+        { "value": "b", "label": "Taking over and crushing collaboration" },
+        { "value": "c", "label": "Starting strong then losing consistency" },
+        { "value": "d", "label": "Not letting people in" }
+      ]
+    },
+    {
+      "id": "q5",
+      "prompt": "In relationships, you value…",
+      "options": [
+        { "value": "a", "label": "Intellectual honesty" },
+        { "value": "b", "label": "Loyalty and action" },
+        { "value": "c", "label": "Emotional depth" },
+        { "value": "d", "label": "Respect and boundaries" }
+      ]
+    },
+    {
+      "id": "q6",
+      "prompt": "If you’re hurt, you’re likely to…",
+      "options": [
+        { "value": "a", "label": "Detach and rationalize it" },
+        { "value": "b", "label": "Get controlling or harsh" },
+        { "value": "c", "label": "Get dramatic or self-destructive" },
+        { "value": "d", "label": "Disappear and become unreachable" }
+      ]
+    },
+    {
+      "id": "q7",
+      "prompt": "Your greatest strength is…",
+      "options": [
+        { "value": "a", "label": "Clarity" },
+        { "value": "b", "label": "Force" },
+        { "value": "c", "label": "Magic" },
+        { "value": "d", "label": "Defense" }
+      ]
+    },
+    {
+      "id": "q8",
+      "prompt": "You feel most alive when…",
+      "options": [
+        { "value": "a", "label": "You understand something profound" },
+        { "value": "b", "label": "You accomplish something difficult" },
+        { "value": "c", "label": "You create something beautiful" },
+        { "value": "d", "label": "You protect what you love" }
+      ]
+    },
+    {
+      "id": "q9",
+      "prompt": "Your mind is usually…",
+      "options": [
+        { "value": "a", "label": "Patterned and analytical" },
+        { "value": "b", "label": "Strategic and goal-driven" },
+        { "value": "c", "label": "Imaginative and emotional" },
+        { "value": "d", "label": "Guarded and vigilant" }
+      ]
+    },
+    {
+      "id": "q10",
+      "prompt": "Your shadow side appears as…",
+      "options": [
+        { "value": "a", "label": "Coldness / superiority" },
+        { "value": "b", "label": "Domination / impatience" },
+        { "value": "c", "label": "Escapism / volatility" },
+        { "value": "d", "label": "Isolation / distrust" }
+      ]
+    }
+  ]
+}

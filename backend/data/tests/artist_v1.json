@@ -1,0 +1,577 @@
+{
+  "testId": "artist_v1",
+  "version": "1.0.0",
+  "title": "ECRJR Artist Test v1",
+  "durationDays": 7,
+  "rules": {
+    "questionsPerCategory": 15,
+    "maxUploadQuestions": 10,
+    "implementedUploadQuestions": 7,
+    "dailyAssignments": 3
+  },
+  "scales": {
+    "likert5": {
+      "type": "likert",
+      "min": 1,
+      "max": 5,
+      "labels": {
+        "1": "Strongly disagree",
+        "2": "Disagree",
+        "3": "Neutral",
+        "4": "Agree",
+        "5": "Strongly agree"
+      }
+    }
+  },
+  "disciplineKeys": [
+    "psychology",
+    "anthropology",
+    "sociology",
+    "pedagogy",
+    "philosophy",
+    "neuro_creativity",
+    "semiotics",
+    "affective_science",
+    "developmental_psychology",
+    "cognitive_science"
+  ],
+  "categories": [
+    {
+      "categoryId": "identity_intuition",
+      "title": "Artistic Identity & Intuition",
+      "disciplinesPrimary": ["psychology", "neuro_creativity", "philosophy"],
+      "questions": [
+        {
+          "questionId": "AI1",
+          "type": "likert",
+          "prompt": "I create art primarily to express internal states.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology", "affective_science"],
+          "signals": ["intrinsic_expression", "emotional_externalization"]
+        },
+        {
+          "questionId": "AI2",
+          "type": "likert",
+          "prompt": "I feel driven to make art even without external validation.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology", "sociology"],
+          "signals": ["intrinsic_drive", "low_validation_dependence"]
+        },
+        {
+          "questionId": "AI3",
+          "type": "likert",
+          "prompt": "My art reflects my emotional world.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology", "affective_science"],
+          "signals": ["emotional_mapping", "identity_projection"]
+        },
+        {
+          "questionId": "AI4",
+          "type": "likert",
+          "prompt": "I feel unsettled when I go too long without creating.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology"],
+          "signals": ["creative_need", "withdrawal_without_creation"]
+        },
+        {
+          "questionId": "AI5",
+          "type": "likert",
+          "prompt": "I intuitively know when a piece is “finished.”",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["neuro_creativity", "cognitive_science"],
+          "signals": ["intuitive_stopping_rule", "completion_sense"]
+        },
+        {
+          "questionId": "AI6",
+          "type": "likert",
+          "prompt": "I create best when following instinct over rules.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["neuro_creativity", "pedagogy"],
+          "signals": ["intuition_dominant", "low_rule_reliance"]
+        },
+        {
+          "questionId": "AI7",
+          "type": "likert",
+          "prompt": "Art feels like a language I think in.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["philosophy", "cognitive_science"],
+          "signals": ["art_as_cognition", "nonverbal_thought"]
+        },
+        {
+          "questionId": "AI8",
+          "type": "likert",
+          "prompt": "I often see images before words.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["cognitive_science", "neuro_creativity"],
+          "signals": ["visual_preverbal", "imagery_first"]
+        },
+        {
+          "questionId": "AI9",
+          "type": "likert",
+          "prompt": "My art changes with my life phases.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["developmental_psychology"],
+          "signals": ["identity_evolution", "phase_sensitive_style"]
+        },
+        {
+          "questionId": "AI10",
+          "type": "likert",
+          "prompt": "I feel a personal bond with my work.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology"],
+          "signals": ["identity_fusion", "attachment_to_work"]
+        },
+        {
+          "questionId": "AI11",
+          "type": "likert",
+          "prompt": "I use art to process experiences.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology"],
+          "signals": ["meaning_processing", "experience_transmutation"]
+        },
+        {
+          "questionId": "AI12",
+          "type": "likert",
+          "prompt": "My work feels autobiographical.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology", "philosophy"],
+          "signals": ["autobiographical_encoding", "self_narrative"]
+        },
+        {
+          "questionId": "AI13",
+          "type": "likert",
+          "prompt": "I notice recurring themes in my art.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["cognitive_science"],
+          "signals": ["theme_recognition", "pattern_awareness"]
+        },
+        {
+          "questionId": "AI14",
+          "type": "likert",
+          "prompt": "I trust my creative instincts.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology", "neuro_creativity"],
+          "signals": ["instinct_trust", "low_overcontrol"]
+        },
+        {
+          "questionId": "AI15",
+          "type": "likert",
+          "prompt": "Art feels essential to who I am.",
+          "scale": "likert5",
+          "reverseScored": false,
+          "disciplines": ["psychology", "philosophy"],
+          "signals": ["identity_core", "existential_alignment"]
+        }
+      ]
+    },
+
+    {
+      "categoryId": "process_discipline",
+      "title": "Process & Discipline",
+      "disciplinesPrimary": ["pedagogy", "cognitive_science", "sociology"],
+      "questions": [
+        { "questionId": "PD1", "type": "likert", "prompt": "I create on a consistent schedule.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["routine_creation"] },
+        { "questionId": "PD2", "type": "likert", "prompt": "I can finish work even when uninspired.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["persistence", "low_inspiration_dependence"] },
+        { "questionId": "PD3", "type": "likert", "prompt": "I plan projects before starting.", "scale": "likert5", "reverseScored": false, "disciplines": ["cognitive_science"], "signals": ["planning_bias"] },
+        { "questionId": "PD4", "type": "likert", "prompt": "I revise my work intentionally.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["iterative_practice"] },
+        { "questionId": "PD5", "type": "likert", "prompt": "I track my creative progress.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["metacognitive_tracking"] },
+        { "questionId": "PD6", "type": "likert", "prompt": "I balance play with structure.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy", "neuro_creativity"], "signals": ["structured_play"] },
+        { "questionId": "PD7", "type": "likert", "prompt": "I set creative goals.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["goal_orientation"] },
+        { "questionId": "PD8", "type": "likert", "prompt": "I work through creative resistance.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["resistance_tolerance"] },
+        { "questionId": "PD9", "type": "likert", "prompt": "I can create under time constraints.", "scale": "likert5", "reverseScored": false, "disciplines": ["cognitive_science"], "signals": ["timebox_function"] },
+        { "questionId": "PD10", "type": "likert", "prompt": "I prefer routines when making art.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["routine_preference"] },
+        { "questionId": "PD11", "type": "likert", "prompt": "I reflect on finished pieces.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["reflective_practice"] },
+        { "questionId": "PD12", "type": "likert", "prompt": "I experiment during the process.", "scale": "likert5", "reverseScored": false, "disciplines": ["neuro_creativity"], "signals": ["exploration_bias"] },
+        { "questionId": "PD13", "type": "likert", "prompt": "I manage creative burnout effectively.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["burnout_management"] },
+        { "questionId": "PD14", "type": "likert", "prompt": "I can work through frustration.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["frustration_tolerance"] },
+        { "questionId": "PD15", "type": "likert", "prompt": "I intentionally develop my skills.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["deliberate_practice"] }
+      ]
+    },
+
+    {
+      "categoryId": "medium_technique",
+      "title": "Medium & Technique Alignment",
+      "disciplinesPrimary": ["pedagogy", "anthropology", "cognitive_science"],
+      "questions": [
+        { "questionId": "MT1", "type": "likert", "prompt": "I feel most fluent in one primary medium.", "scale": "likert5", "reverseScored": false, "disciplines": ["cognitive_science"], "signals": ["primary_medium_fluency"] },
+        { "questionId": "MT2", "type": "likert", "prompt": "I understand my tools deeply.", "scale": "likert5", "reverseScored": false, "disciplines": ["anthropology"], "signals": ["tool_intimacy"] },
+        { "questionId": "MT3", "type": "likert", "prompt": "I intentionally choose materials.", "scale": "likert5", "reverseScored": false, "disciplines": ["cognitive_science"], "signals": ["material_intentionality"] },
+        { "questionId": "MT4", "type": "likert", "prompt": "I enjoy mastering technical skills.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["mastery_drive"] },
+        { "questionId": "MT5", "type": "likert", "prompt": "I experiment with unfamiliar mediums.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy", "neuro_creativity"], "signals": ["novelty_seeking"] },
+
+        { "questionId": "MT6U", "type": "upload", "prompt": "Upload 1: Example of your preferred medium.", "upload": { "accept": ["image/*"], "maxFiles": 1 }, "disciplines": ["anthropology", "pedagogy"], "signals": ["evidence_primary_medium"] },
+
+        { "questionId": "MT7", "type": "likert", "prompt": "I adapt technique to concept.", "scale": "likert5", "reverseScored": false, "disciplines": ["semiotics", "cognitive_science"], "signals": ["technique_concept_fit"] },
+        { "questionId": "MT8", "type": "likert", "prompt": "I notice technical growth over time.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["growth_awareness"] },
+        { "questionId": "MT9", "type": "likert", "prompt": "I refine details carefully.", "scale": "likert5", "reverseScored": false, "disciplines": ["cognitive_science"], "signals": ["detail_orientation"] },
+        { "questionId": "MT10", "type": "likert", "prompt": "I value craftsmanship.", "scale": "likert5", "reverseScored": false, "disciplines": ["anthropology"], "signals": ["craft_value"] },
+
+        { "questionId": "MT11U", "type": "upload", "prompt": "Upload 2: A technically challenging piece.", "upload": { "accept": ["image/*"], "maxFiles": 1 }, "disciplines": ["pedagogy"], "signals": ["evidence_technical_challenge"] },
+
+        { "questionId": "MT12", "type": "likert", "prompt": "I understand my strengths technically.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["strength_awareness"] },
+        { "questionId": "MT13", "type": "likert", "prompt": "I know where my skills need growth.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["gap_awareness"] },
+        { "questionId": "MT14", "type": "likert", "prompt": "I intentionally study technique.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["technique_study"] },
+
+        { "questionId": "MT15U", "type": "upload", "prompt": "Upload 3: A work showing recent improvement.", "upload": { "accept": ["image/*"], "maxFiles": 1 }, "disciplines": ["pedagogy"], "signals": ["evidence_recent_growth"] }
+      ]
+    },
+
+    {
+      "categoryId": "concept_symbolism",
+      "title": "Concept, Symbolism & Meaning",
+      "disciplinesPrimary": ["anthropology", "philosophy", "semiotics"],
+      "questions": [
+        { "questionId": "CS1", "type": "likert", "prompt": "My work is concept-driven.", "scale": "likert5", "reverseScored": false, "disciplines": ["philosophy"], "signals": ["concept_priority"] },
+        { "questionId": "CS2", "type": "likert", "prompt": "I embed meaning intentionally.", "scale": "likert5", "reverseScored": false, "disciplines": ["semiotics"], "signals": ["intentional_encoding"] },
+        { "questionId": "CS3", "type": "likert", "prompt": "I use symbols in my art.", "scale": "likert5", "reverseScored": false, "disciplines": ["anthropology"], "signals": ["symbol_use"] },
+        { "questionId": "CS4", "type": "likert", "prompt": "I enjoy layered interpretation.", "scale": "likert5", "reverseScored": false, "disciplines": ["semiotics", "philosophy"], "signals": ["interpretation_depth"] },
+        { "questionId": "CS5", "type": "likert", "prompt": "I think deeply about themes.", "scale": "likert5", "reverseScored": false, "disciplines": ["philosophy"], "signals": ["theme_depth"] },
+        { "questionId": "CS6", "type": "likert", "prompt": "I research concepts before creating.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["research_orientation"] },
+
+        { "questionId": "CS7U", "type": "upload", "prompt": "Upload 4: A symbolic or conceptual piece.", "upload": { "accept": ["image/*"], "maxFiles": 1 }, "disciplines": ["anthropology", "semiotics"], "signals": ["evidence_symbolic_work"] },
+
+        { "questionId": "CS8", "type": "likert", "prompt": "I enjoy abstract thinking.", "scale": "likert5", "reverseScored": false, "disciplines": ["cognitive_science"], "signals": ["abstraction_preference"] },
+        { "questionId": "CS9", "type": "likert", "prompt": "My art raises questions.", "scale": "likert5", "reverseScored": false, "disciplines": ["philosophy"], "signals": ["inquiry_orientation"] },
+        { "questionId": "CS10", "type": "likert", "prompt": "I use metaphor visually.", "scale": "likert5", "reverseScored": false, "disciplines": ["semiotics"], "signals": ["metaphor_encoding"] },
+
+        { "questionId": "CS11U", "type": "upload", "prompt": "Upload 5: A piece with narrative meaning.", "upload": { "accept": ["image/*"], "maxFiles": 1 }, "disciplines": ["anthropology", "semiotics"], "signals": ["evidence_narrative_meaning"] },
+
+        { "questionId": "CS12", "type": "likert", "prompt": "I want viewers to feel something specific.", "scale": "likert5", "reverseScored": false, "disciplines": ["affective_science", "sociology"], "signals": ["audience_affect_intent"] },
+        { "questionId": "CS13", "type": "likert", "prompt": "I explore identity through art.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["identity_exploration"] },
+
+        { "questionId": "CS14U", "type": "upload", "prompt": "Upload 6: Work representing a personal theme.", "upload": { "accept": ["image/*"], "maxFiles": 1 }, "disciplines": ["psychology", "semiotics"], "signals": ["evidence_personal_theme"] },
+
+        { "questionId": "CS15U", "type": "upload", "prompt": "Upload 7 (optional): Experimental conceptual work.", "upload": { "accept": ["image/*"], "maxFiles": 1, "optional": true }, "disciplines": ["neuro_creativity", "semiotics"], "signals": ["evidence_experimentation"] }
+      ]
+    },
+
+    {
+      "categoryId": "emotional_expression",
+      "title": "Emotional Range & Expression",
+      "disciplinesPrimary": ["psychology", "affective_science", "sociology"],
+      "questions": [
+        { "questionId": "EE1", "type": "likert", "prompt": "I express emotion clearly through art.", "scale": "likert5", "reverseScored": false, "disciplines": ["affective_science"], "signals": ["emotional_clarity"] },
+        { "questionId": "EE2", "type": "likert", "prompt": "I use color emotionally.", "scale": "likert5", "reverseScored": false, "disciplines": ["affective_science"], "signals": ["color_affect_use"] },
+        { "questionId": "EE3", "type": "likert", "prompt": "I’m comfortable expressing vulnerability.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology", "sociology"], "signals": ["vulnerability_tolerance"] },
+        { "questionId": "EE4", "type": "likert", "prompt": "My work reflects mood shifts.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["mood_variability"] },
+        { "questionId": "EE5", "type": "likert", "prompt": "I create during emotional intensity.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["emotion_triggered_creation"] },
+        { "questionId": "EE6", "type": "likert", "prompt": "I process grief or joy through art.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["emotion_processing"] },
+        { "questionId": "EE7", "type": "likert", "prompt": "I externalize feelings visually.", "scale": "likert5", "reverseScored": false, "disciplines": ["affective_science"], "signals": ["externalization"] },
+        { "questionId": "EE8", "type": "likert", "prompt": "My art feels cathartic.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology"], "signals": ["catharsis"] },
+        { "questionId": "EE9", "type": "likert", "prompt": "I channel emotion intentionally.", "scale": "likert5", "reverseScored": false, "disciplines": ["affective_science"], "signals": ["intentional_affect"] },
+        { "questionId": "EE10", "type": "likert", "prompt": "I notice emotional patterns in my work.", "scale": "likert5", "reverseScored": false, "disciplines": ["cognitive_science"], "signals": ["pattern_detection_emotion"] },
+        { "questionId": "EE11", "type": "likert", "prompt": "I let emotion guide choices.", "scale": "likert5", "reverseScored": false, "disciplines": ["neuro_creativity"], "signals": ["emotion_led_decisions"] },
+        { "questionId": "EE12", "type": "likert", "prompt": "I’m not afraid of dark themes.", "scale": "likert5", "reverseScored": false, "disciplines": ["psychology", "sociology"], "signals": ["dark_theme_tolerance"] },
+        { "questionId": "EE13", "type": "likert", "prompt": "I explore hope visually.", "scale": "likert5", "reverseScored": false, "disciplines": ["affective_science"], "signals": ["hope_expression"] },
+        { "questionId": "EE14", "type": "likert", "prompt": "I use contrast emotionally.", "scale": "likert5", "reverseScored": false, "disciplines": ["affective_science"], "signals": ["contrast_affect"] },
+        { "questionId": "EE15", "type": "likert", "prompt": "My art reflects internal truth.", "scale": "likert5", "reverseScored": false, "disciplines": ["philosophy", "psychology"], "signals": ["truth_orientation"] }
+      ]
+    },
+
+    {
+      "categoryId": "growth_path",
+      "title": "Growth Orientation & Artistic Path",
+      "disciplinesPrimary": ["pedagogy", "sociology", "developmental_psychology"],
+      "questions": [
+        { "questionId": "GP1", "type": "likert", "prompt": "I see myself evolving as an artist.", "scale": "likert5", "reverseScored": false, "disciplines": ["developmental_psychology"], "signals": ["growth_identity"] },
+        { "questionId": "GP2", "type": "likert", "prompt": "I study other artists intentionally.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["model_learning"] },
+        { "questionId": "GP3", "type": "likert", "prompt": "I seek critique.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy", "sociology"], "signals": ["feedback_seeking"] },
+        { "questionId": "GP4", "type": "likert", "prompt": "I reflect on my artistic direction.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["direction_reflection"] },
+        { "questionId": "GP5", "type": "likert", "prompt": "I set long-term creative goals.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["longterm_goals"] },
+        { "questionId": "GP6", "type": "likert", "prompt": "I’m open to artistic transformation.", "scale": "likert5", "reverseScored": false, "disciplines": ["developmental_psychology"], "signals": ["transformation_openness"] },
+        { "questionId": "GP7", "type": "likert", "prompt": "I track milestones.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["milestone_tracking"] },
+        { "questionId": "GP8", "type": "likert", "prompt": "I enjoy skill acquisition.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["skill_joy"] },
+        { "questionId": "GP9", "type": "likert", "prompt": "I pursue mastery.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["mastery_orientation"] },
+        { "questionId": "GP10", "type": "likert", "prompt": "I can articulate my artistic path.", "scale": "likert5", "reverseScored": false, "disciplines": ["sociology"], "signals": ["path_narrative"] },
+        { "questionId": "GP11", "type": "likert", "prompt": "I invest time in growth.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["growth_investment"] },
+        { "questionId": "GP12", "type": "likert", "prompt": "I accept creative uncertainty.", "scale": "likert5", "reverseScored": false, "disciplines": ["developmental_psychology"], "signals": ["uncertainty_tolerance"] },
+        { "questionId": "GP13", "type": "likert", "prompt": "I embrace change.", "scale": "likert5", "reverseScored": false, "disciplines": ["developmental_psychology"], "signals": ["change_acceptance"] },
+        { "questionId": "GP14", "type": "likert", "prompt": "I learn from failure.", "scale": "likert5", "reverseScored": false, "disciplines": ["pedagogy"], "signals": ["failure_learning"] },
+        { "questionId": "GP15", "type": "likert", "prompt": "I feel aligned with my artistic trajectory.", "scale": "likert5", "reverseScored": false, "disciplines": ["philosophy", "developmental_psychology"], "signals": ["trajectory_alignment"] }
+      ]
+    }
+  ],
+  "schedule": {
+    "days": [
+      {
+        "day": 1,
+        "theme": "Observation & Intuition",
+        "assignments": [
+          { "assignmentId": "D1A1", "title": "Blind contour", "prompt": "5-minute blind contour drawing.", "timeMinutes": 10, "disciplines": ["cognitive_science", "neuro_creativity"], "signals": ["perception_to_mark"] },
+          { "assignmentId": "D1A2", "title": "Mood color study", "prompt": "Color-only mood study (no subject).", "timeMinutes": 20, "disciplines": ["affective_science"], "signals": ["affect_to_color"] },
+          { "assignmentId": "D1A3", "title": "One object, three emotions", "prompt": "One object, three emotional interpretations.", "timeMinutes": 30, "disciplines": ["psychology"], "signals": ["emotional_reframing"] }
+        ]
+      },
+      {
+        "day": 2,
+        "theme": "Medium Play",
+        "assignments": [
+          { "assignmentId": "D2A1", "title": "Unfamiliar tool", "prompt": "Create using an unfamiliar tool.", "timeMinutes": 30, "disciplines": ["pedagogy"], "signals": ["novelty_learning"] },
+          { "assignmentId": "D2A2", "title": "Two mediums", "prompt": "Same subject, two different mediums.", "timeMinutes": 45, "disciplines": ["cognitive_science", "pedagogy"], "signals": ["transfer_learning"] },
+          { "assignmentId": "D2A3", "title": "Speed piece", "prompt": "Speed piece (10 minutes max).", "timeMinutes": 10, "disciplines": ["cognitive_science"], "signals": ["timebox_creation"] }
+        ]
+      },
+      {
+        "day": 3,
+        "theme": "Symbolism",
+        "assignments": [
+          { "assignmentId": "D3A1", "title": "Single symbol", "prompt": "Create a piece using one symbol.", "timeMinutes": 30, "disciplines": ["anthropology", "semiotics"], "signals": ["symbol_selection"] },
+          { "assignmentId": "D3A2", "title": "Abstract memory", "prompt": "Abstract a personal memory.", "timeMinutes": 45, "disciplines": ["psychology", "semiotics"], "signals": ["memory_transmutation"] },
+          { "assignmentId": "D3A3", "title": "One-image idea", "prompt": "Reduce a complex idea to one image.", "timeMinutes": 30, "disciplines": ["philosophy", "semiotics"], "signals": ["compression_of_meaning"] }
+        ]
+      },
+      {
+        "day": 4,
+        "theme": "Emotion",
+        "assignments": [
+          { "assignmentId": "D4A1", "title": "Emotion piece", "prompt": "Create from one strong emotion.", "timeMinutes": 30, "disciplines": ["psychology"], "signals": ["affect_generation"] },
+          { "assignmentId": "D4A2", "title": "Limited palette", "prompt": "Limited palette emotional piece.", "timeMinutes": 30, "disciplines": ["affective_science"], "signals": ["affect_constraints"] },
+          { "assignmentId": "D4A3", "title": "No recognizable forms", "prompt": "Express emotion without recognizable forms.", "timeMinutes": 30, "disciplines": ["neuro_creativity"], "signals": ["nonliteral_expression"] }
+        ]
+      },
+      {
+        "day": 5,
+        "theme": "Constraint",
+        "assignments": [
+          { "assignmentId": "D5A1", "title": "One color", "prompt": "One color only.", "timeMinutes": 20, "disciplines": ["cognitive_science"], "signals": ["constraint_adaptation"] },
+          { "assignmentId": "D5A2", "title": "One continuous line", "prompt": "One continuous line.", "timeMinutes": 15, "disciplines": ["cognitive_science"], "signals": ["motor_planning"] },
+          { "assignmentId": "D5A3", "title": "No undo", "prompt": "No erasing / undoing.", "timeMinutes": 30, "disciplines": ["psychology"], "signals": ["error_tolerance"] }
+        ]
+      },
+      {
+        "day": 6,
+        "theme": "Reflection & Refinement",
+        "assignments": [
+          { "assignmentId": "D6A1", "title": "Rework old piece", "prompt": "Rework an old piece.", "timeMinutes": 45, "disciplines": ["pedagogy"], "signals": ["revision_capacity"] },
+          { "assignmentId": "D6A2", "title": "Detail study", "prompt": "Detail study (focus on one area).", "timeMinutes": 30, "disciplines": ["pedagogy"], "signals": ["focused_practice"] },
+          { "assignmentId": "D6A3", "title": "Minimalist style", "prompt": "Minimalist version of your style.", "timeMinutes": 30, "disciplines": ["philosophy"], "signals": ["essence_extraction"] }
+        ]
+      },
+      {
+        "day": 7,
+        "theme": "Integration",
+        "assignments": [
+          { "assignmentId": "D7A1", "title": "Intuition + structure", "prompt": "Combine intuition + structure.", "timeMinutes": 45, "disciplines": ["neuro_creativity", "pedagogy"], "signals": ["integration_mode"] },
+          { "assignmentId": "D7A2", "title": "Nonliteral self-portrait", "prompt": "Create a “self-portrait” without showing yourself.", "timeMinutes": 45, "disciplines": ["psychology", "semiotics"], "signals": ["identity_symbolization"] },
+          { "assignmentId": "D7A3", "title": "Artistic core", "prompt": "Final piece representing your artistic core.", "timeMinutes": 60, "disciplines": ["philosophy", "developmental_psychology"], "signals": ["core_alignment"] }
+        ]
+      }
+    ]
+  }
+}
+[
+  {
+    "slotId": "AI1",
+    "variants": [
+      "I create art primarily to express my inner emotional states.",
+      "My art begins as an internal feeling that needs form.",
+      "Creating art helps me externalize what I feel internally.",
+      "My creative work starts from emotion rather than technique.",
+      "Art is how I give shape to my inner life.",
+      "I use art as a way to translate internal experience.",
+      "My emotional state strongly influences what I create.",
+      "Art is my primary outlet for internal expression."
+    ]
+  },
+  {
+    "slotId": "AI2",
+    "variants": [
+      "I would still create art even if no one ever saw it.",
+      "I feel compelled to create even without recognition.",
+      "External validation is not required for me to make art.",
+      "I continue creating regardless of audience response.",
+      "My drive to create exists independently of feedback.",
+      "I make art even when there is no external reward.",
+      "I would keep creating even without sharing my work.",
+      "The act of creating matters more than being seen."
+    ]
+  },
+  {
+    "slotId": "AI3",
+    "variants": [
+      "My artwork reflects my emotional landscape.",
+      "What I feel internally often appears in my art.",
+      "My emotional experiences shape my creative output.",
+      "My art mirrors my internal emotional state.",
+      "I embed my emotions into my creative work.",
+      "My inner world is visible in what I create.",
+      "Emotion is a core driver of my artistic output.",
+      "My art carries traces of how I feel."
+    ]
+  },
+  {
+    "slotId": "AI4",
+    "variants": [
+      "I feel unsettled when I go too long without creating.",
+      "Not creating for extended periods affects my well-being.",
+      "I feel off-balance when I am unable to make art.",
+      "A lack of creative output impacts my emotional state.",
+      "I notice discomfort when I suppress creative expression.",
+      "Creating regularly feels necessary for my equilibrium.",
+      "I experience restlessness when I cannot create.",
+      "Creative inactivity affects my internal balance."
+    ]
+  },
+  {
+    "slotId": "AI5",
+    "variants": [
+      "I instinctively know when a piece is complete.",
+      "I rely on intuition to decide when to stop working.",
+      "I can sense when a work no longer needs changes.",
+      "Completion feels intuitive rather than analytical.",
+      "I trust my instincts to judge when a piece is finished.",
+      "I feel a natural stopping point while creating.",
+      "I recognize completion without needing external input.",
+      "I know internally when further work would detract."
+    ]
+  },
+  {
+    "slotId": "AI6",
+    "variants": [
+      "I create best when I follow instinct rather than rules.",
+      "Intuition guides my creative decisions more than structure.",
+      "I prefer instinctive creation over rigid guidelines.",
+      "Rules feel secondary to intuition when I create.",
+      "I work most fluidly when I trust my instincts.",
+      "My best work comes from intuitive decision-making.",
+      "I rely more on feeling than formal rules.",
+      "Creative flow matters more than procedural correctness."
+    ]
+  },
+  {
+    "slotId": "AI7",
+    "variants": [
+      "Art feels like a language I think in.",
+      "I process thoughts visually rather than verbally.",
+      "Creative imagery functions as a thinking tool for me.",
+      "I often think in images rather than words.",
+      "Visual creation helps me organize my thoughts.",
+      "Art serves as a cognitive language for me.",
+      "My thinking feels naturally visual.",
+      "I use art to reason through ideas."
+    ]
+  },
+  {
+    "slotId": "AI8",
+    "variants": [
+      "I often see images in my mind before words.",
+      "Visual ideas come to me before verbal ones.",
+      "My imagination is primarily image-based.",
+      "I conceptualize visually before verbalizing.",
+      "Mental images precede language for me.",
+      "I think in pictures more than words.",
+      "Ideas appear as visuals before explanation.",
+      "My creativity starts with imagery."
+    ]
+  },
+  {
+    "slotId": "AI9",
+    "variants": [
+      "My artistic style shifts as my life changes.",
+      "Different life phases influence my creative output.",
+      "My art evolves alongside personal growth.",
+      "Life transitions affect how I create.",
+      "My work reflects where I am in life.",
+      "Personal change leads to stylistic change.",
+      "My creative voice develops over time.",
+      "My art mirrors my personal evolution."
+    ]
+  },
+  {
+    "slotId": "AI10",
+    "variants": [
+      "I feel personally connected to my artwork.",
+      "My work feels emotionally tied to me.",
+      "I experience attachment to my creative output.",
+      "My art feels like an extension of myself.",
+      "There is a personal bond between me and my work.",
+      "I feel invested in what I create.",
+      "My work carries personal significance.",
+      "My art feels deeply mine."
+    ]
+  },
+
+  {
+    "slotId": "PD2",
+    "variants": [
+      "I can complete work even when I feel uninspired.",
+      "I am able to finish projects despite low motivation.",
+      "I continue creating even when the initial spark fades.",
+      "I can work through periods of low inspiration.",
+      "Motivation fluctuations do not stop me from finishing.",
+      "I persist even when creative energy is low.",
+      "I can push through creative resistance.",
+      "I complete work regardless of inspiration level."
+    ]
+  },
+
+  {
+    "slotId": "MT1",
+    "variants": [
+      "I feel fluent in one primary artistic medium.",
+      "One medium feels most natural to me.",
+      "I have a dominant medium I return to.",
+      "I feel most expressive using a specific medium.",
+      "One medium feels like home to me.",
+      "I am most confident working in one medium.",
+      "I have a clear primary medium.",
+      "My strongest work comes from one medium."
+    ]
+  },
+
+  {
+    "slotId": "CS1",
+    "variants": [
+      "My work is guided by underlying concepts.",
+      "Ideas drive my creative process.",
+      "Concept comes before execution in my work.",
+      "I prioritize meaning over aesthetics.",
+      "I begin with an idea rather than technique.",
+      "My art starts from a conceptual foundation.",
+      "Themes guide my creative decisions.",
+      "Conceptual intent shapes my work."
+    ]
+  },
+
+  {
+    "slotId": "EE3",
+    "variants": [
+      "I am comfortable revealing vulnerability through art.",
+      "I allow emotional openness in my creative work.",
+      "I do not hide vulnerability in my art.",
+      "I am willing to expose personal feelings creatively.",
+      "My work reflects emotional openness.",
+      "I use art to express vulnerability.",
+      "I am not afraid to be emotionally visible.",
+      "Emotional exposure feels acceptable in my art."
+    ]
+  },
+
+  {
+    "slotId": "GP1",
+    "variants": [
+      "I see my artistic identity as evolving over time.",
+      "I view my creative self as developing.",
+      "I expect my art to change as I grow.",
+      "My artistic path feels developmental.",
+      "I consider myself a work in progress artistically.",
+      "Growth is central to my creative identity.",
+      "I anticipate transformation in my work.",
+      "My art reflects ongoing personal development."
+    ]
+  }
+]

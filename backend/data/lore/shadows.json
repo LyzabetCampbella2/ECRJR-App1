@@ -1,0 +1,38 @@
+[
+  {
+    "id": "shadow_oracle",
+    "name": "The Oracle",
+    "title": "Knife of Knowing",
+    "overview": "A distortion of insight: truth becomes a weapon, distance becomes superiority.",
+    "warnings": ["Weaponized intelligence", "Cynicism", "Emotional numbness"],
+    "tells": ["You correct instead of connect", "You feel above it", "You go silent and judge"],
+    "antidotes": ["Curiosity", "Vulnerability", "Warmth + honesty together"]
+  },
+  {
+    "id": "shadow_tyrant",
+    "name": "The Tyrant",
+    "title": "Crown of Control",
+    "overview": "A distortion of leadership: protection becomes domination, structure becomes oppression.",
+    "warnings": ["Harshness", "Control addiction", "Punitive energy"],
+    "tells": ["You tighten rules", "You demand compliance", "You fear losing authority"],
+    "antidotes": ["Shared power", "Consent-based leadership", "Patience + boundaries"]
+  },
+  {
+    "id": "shadow_siren",
+    "name": "The Siren",
+    "title": "Mirror of Hunger",
+    "overview": "A distortion of creativity: resonance becomes craving, expression becomes volatility.",
+    "warnings": ["Escapism", "Emotional manipulation", "Drama loops"],
+    "tells": ["You chase intensity", "You abandon consistency", "You seek validation first"],
+    "antidotes": ["Grounding", "Small daily craft", "Honest needs without performance"]
+  },
+  {
+    "id": "shadow_recluse",
+    "name": "The Recluse",
+    "title": "Door of Silence",
+    "overview": "A distortion of boundaries: safety becomes isolation, standards become walls.",
+    "warnings": ["Cutting off", "Suspicion", "Lonely pride"],
+    "tells": ["You disappear", "You keep score quietly", "You assume harm"],
+    "antidotes": ["Safe connection", "Clear asks", "Repair instead of exile"]
+  }
+]

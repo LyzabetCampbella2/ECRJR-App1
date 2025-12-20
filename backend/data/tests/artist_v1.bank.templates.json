@@ -1,0 +1,41 @@
+{
+  "AI2": {
+    "templates": [
+      "I would still create art {intrinsic}.",
+      "I feel compelled to create {intrinsic}."
+    ],
+    "fills": {
+      "intrinsic": [
+        "even if no one ever saw it",
+        "without praise or feedback",
+        "without external recognition",
+        "even if it stayed private",
+        "without sharing it publicly"
+      ]
+    }
+  },
+  "PD2": {
+    "templates": [
+      "I can finish work {resistance}.",
+      "I can keep going creatively {resistance}."
+    ],
+    "fills": {
+      "resistance": [
+        "when motivation is low",
+        "when the spark fades",
+        "when I feel stuck",
+        "during creative resistance",
+        "when I’m not inspired"
+      ]
+    }
+  },
+  "CS4": {
+    "templates": [
+      "I enjoy {depth} interpretation.",
+      "I like work that supports {depth} meaning."
+    ],
+    "fills": {
+      "depth": ["layered", "multi-layered", "multiple valid", "deep", "ambiguous"]
+    }
+  }
+}

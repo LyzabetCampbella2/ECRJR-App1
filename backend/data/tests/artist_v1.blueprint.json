@@ -1,0 +1,20 @@
+{
+  "testId": "artist_v1",
+  "categories": [
+    {
+      "categoryId": "identity_intuition",
+      "questions": [
+        { "questionId": "AI1", "type": "likert" },
+        { "questionId": "AI2", "type": "likert" },
+        { "questionId": "AI3", "type": "likert" }
+      ]
+    },
+    {
+      "categoryId": "process_discipline",
+      "questions": [
+        { "questionId": "PD1", "type": "likert" },
+        { "questionId": "PD2", "type": "likert" }
+      ]
+    }
+  ]
+}

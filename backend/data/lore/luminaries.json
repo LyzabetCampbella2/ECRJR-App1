@@ -1,0 +1,42 @@
+[
+  {
+    "id": "lumi_sage",
+    "name": "The Sage",
+    "title": "Lantern of Pattern",
+    "overview": "You illuminate what others miss. Your gift is clarity—seeing structure in chaos and truth beneath noise.",
+    "gifts": ["Insight", "Precision", "Discernment", "Strategic thinking"],
+    "wounds": ["Fear of being wrong", "Emotional detachment", "Analysis paralysis"],
+    "when_stressed": ["Overthinking", "Coldness", "Retreat into logic"],
+    "integration_path": ["Name the feeling", "Act on 70% certainty", "Share imperfect truth"]
+  },
+  {
+    "id": "lumi_builder",
+    "name": "The Builder",
+    "title": "Hammer of Becoming",
+    "overview": "You make things real. Your gift is execution—turning vision into structures that hold under pressure.",
+    "gifts": ["Reliability", "Momentum", "Systems", "Discipline"],
+    "wounds": ["Fear of powerlessness", "Over-control", "Rigid standards"],
+    "when_stressed": ["Domination", "Impatience", "Micromanaging"],
+    "integration_path": ["Delegate one piece", "Choose flexibility once", "Lead with care, not force"]
+  },
+  {
+    "id": "lumi_muse",
+    "name": "The Muse",
+    "title": "Spark of Resonance",
+    "overview": "You awaken hearts. Your gift is creative electricity—beauty, meaning, and emotional truth.",
+    "gifts": ["Creativity", "Empathy", "Inspiration", "Atmosphere"],
+    "wounds": ["Fear of being unseen", "Volatility", "Inconsistency"],
+    "when_stressed": ["Escapism", "Drama spirals", "Avoidance"],
+    "integration_path": ["Create daily (small)", "Ground the body", "Turn emotion into craft"]
+  },
+  {
+    "id": "lumi_warden",
+    "name": "The Warden",
+    "title": "Shield of the Threshold",
+    "overview": "You protect what matters. Your gift is boundaries—discernment, loyalty, and sacred restraint.",
+    "gifts": ["Protection", "Integrity", "Standards", "Loyalty"],
+    "wounds": ["Fear of violation", "Guardedness", "Isolation"],
+    "when_stressed": ["Withdrawing", "Suspicion", "Cutting people off"],
+    "integration_path": ["Let one person in", "State boundaries gently", "Choose trust in small steps"]
+  }
+]

@@ -1,0 +1,893 @@
+[
+  {
+    "id": "SHA_TYRANT",
+    "name": "The Tyrant",
+    "family": "Shadow",
+    "tags": {
+      "domination": 1,
+      "control": 0.7,
+      "pride": 0.5,
+      "tribalism": 0.4,
+      "defiance": 0.3
+    },
+    "overview": "A force that seeks certainty through control.",
+    "coreVirtue": "Power (distorted)",
+    "shadowRisk": "Collapse when control fails.",
+    "growthPrompt": "What are you afraid would happen if you let go?",
+    "lore": {
+      "short": "The Tyrant rules to silence fear.",
+      "long": "Tyrants are born from terror of disorder. Their tragedy is believing control equals safety."
+    }
+  },
+  {
+    "id": "SHA_MARTYR",
+    "name": "The Martyr",
+    "family": "Shadow",
+    "tags": {
+      "self_sacrifice": 1,
+      "resentment": 0.6,
+      "suppression": 0.4
+    },
+    "overview": "One who erases themselves to be needed.",
+    "coreVirtue": "Endurance (misapplied)",
+    "shadowRisk": "Quiet bitterness and emotional debt.",
+    "growthPrompt": "What do you gain by being indispensable?",
+    "lore": {
+      "short": "The Martyr bleeds so others may stay comfortable.",
+      "long": "Martyrs call suffering noble until resentment poisons everything they touch."
+    }
+  },
+  {
+    "id": "SHA_VOID",
+    "name": "The Voidwalker",
+    "family": "Shadow",
+    "tags": {
+      "detachment": 1,
+      "avoidance": 0.7,
+      "isolation": 0.5,
+      "escapism": 0.5
+    },
+    "overview": "An escape into absence when pain feels inevitable.",
+    "coreVirtue": "Distance",
+    "shadowRisk": "Emotional disappearance.",
+    "growthPrompt": "What are you refusing to feel?",
+    "lore": {
+      "short": "The Voidwalker survives by vanishing.",
+      "long": "Detachment protects — until it becomes erasure. Voidwalkers must relearn presence."
+    }
+  },
+  {
+    "id": "SHA_PERFECTION_CAGE",
+    "name": "The Perfection Cage",
+    "family": "Shadow",
+    "tags": {
+      "perfectionism": 1,
+      "rigidity": 0.6,
+      "anxiety": 0.4,
+      "idealism": 0.5
+    },
+    "overview": "A prison built from impossible standards.",
+    "coreVirtue": "Excellence (corrupted)",
+    "shadowRisk": "Paralysis and self-hatred.",
+    "growthPrompt": "Who taught you that mistakes are unsafe?",
+    "lore": {
+      "short": "The cage is invisible — until you try to move.",
+      "long": "Perfectionism is fear dressed as discipline. Freedom begins with imperfection."
+    }
+  },
+  {
+    "id": "SHA_MANIPULATOR",
+    "name": "The Manipulator",
+    "family": "Shadow",
+    "tags": {
+      "manipulation": 1,
+      "deception": 0.6,
+      "vanity": 0.4
+    },
+    "overview": "A strategist who avoids vulnerability through control.",
+    "coreVirtue": "Insight (weaponized)",
+    "shadowRisk": "Isolation and mistrust.",
+    "growthPrompt": "What would honesty cost you?",
+    "lore": {
+      "short": "The Manipulator never plays fair — even with themselves.",
+      "long": "Manipulators fear rejection more than loneliness. Truth is their greatest risk."
+    }
+  },
+  {
+    "id": "SHA_USURPER",
+    "name": "The Usurper",
+    "family": "Shadow",
+    "tags": {
+      "entitlement": 1,
+      "envy": 0.6,
+      "pride": 0.4
+    },
+    "overview": "A shadow-pattern defined by entitlement.",
+    "coreVirtue": "entitlement (distorted)",
+    "shadowRisk": "When intensified, entitlement consumes choice.",
+    "growthPrompt": "What truth would soften entitlement without shattering you?",
+    "lore": {
+      "short": "The Usurper arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Usurper is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_PREDATOR",
+    "name": "The Predator",
+    "family": "Shadow",
+    "tags": {
+      "exploitation": 1,
+      "domination": 0.6,
+      "deception": 0.4
+    },
+    "overview": "A shadow-pattern defined by exploitation.",
+    "coreVirtue": "exploitation (distorted)",
+    "shadowRisk": "When intensified, exploitation consumes choice.",
+    "growthPrompt": "What truth would soften exploitation without shattering you?",
+    "lore": {
+      "short": "The Predator arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Predator is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_FAWN",
+    "name": "The Fawn",
+    "family": "Shadow",
+    "tags": {
+      "appeasement": 1,
+      "fear": 0.6,
+      "suppression": 0.4
+    },
+    "overview": "A shadow-pattern defined by appeasement.",
+    "coreVirtue": "appeasement (distorted)",
+    "shadowRisk": "When intensified, appeasement consumes choice.",
+    "growthPrompt": "What truth would soften appeasement without shattering you?",
+    "lore": {
+      "short": "The Fawn arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Fawn is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_PARANOID",
+    "name": "The Paranoid",
+    "family": "Shadow",
+    "tags": {
+      "paranoia": 1,
+      "vigilance": 0.6,
+      "anxiety": 0.4
+    },
+    "overview": "A shadow-pattern defined by paranoia.",
+    "coreVirtue": "paranoia (distorted)",
+    "shadowRisk": "When intensified, paranoia consumes choice.",
+    "growthPrompt": "What truth would soften paranoia without shattering you?",
+    "lore": {
+      "short": "The Paranoid arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Paranoid is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_RUMINATOR",
+    "name": "The Ruminator",
+    "family": "Shadow",
+    "tags": {
+      "rumination": 1,
+      "shame": 0.6,
+      "anxiety": 0.4
+    },
+    "overview": "A shadow-pattern defined by rumination.",
+    "coreVirtue": "rumination (distorted)",
+    "shadowRisk": "When intensified, rumination consumes choice.",
+    "growthPrompt": "What truth would soften rumination without shattering you?",
+    "lore": {
+      "short": "The Ruminator arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Ruminator is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_SCORCH",
+    "name": "The Scorched",
+    "family": "Shadow",
+    "tags": {
+      "burnout": 1,
+      "avoidance": 0.6,
+      "collapse": 0.4
+    },
+    "overview": "A shadow-pattern defined by burnout.",
+    "coreVirtue": "burnout (distorted)",
+    "shadowRisk": "When intensified, burnout consumes choice.",
+    "growthPrompt": "What truth would soften burnout without shattering you?",
+    "lore": {
+      "short": "The Scorched arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Scorched is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_GHAST",
+    "name": "The Ghast",
+    "family": "Shadow",
+    "tags": {
+      "despair": 1,
+      "isolation": 0.6,
+      "shame": 0.4
+    },
+    "overview": "A shadow-pattern defined by despair.",
+    "coreVirtue": "despair (distorted)",
+    "shadowRisk": "When intensified, despair consumes choice.",
+    "growthPrompt": "What truth would soften despair without shattering you?",
+    "lore": {
+      "short": "The Ghast arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Ghast is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_GLUTTON",
+    "name": "The Glutton",
+    "family": "Shadow",
+    "tags": {
+      "excess": 1,
+      "hunger": 0.6,
+      "avoidance": 0.4
+    },
+    "overview": "A shadow-pattern defined by excess.",
+    "coreVirtue": "excess (distorted)",
+    "shadowRisk": "When intensified, excess consumes choice.",
+    "growthPrompt": "What truth would soften excess without shattering you?",
+    "lore": {
+      "short": "The Glutton arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Glutton is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_HOARDER",
+    "name": "The Hoarder",
+    "family": "Shadow",
+    "tags": {
+      "greed": 1,
+      "control": 0.6,
+      "fear": 0.4
+    },
+    "overview": "A shadow-pattern defined by greed.",
+    "coreVirtue": "greed (distorted)",
+    "shadowRisk": "When intensified, greed consumes choice.",
+    "growthPrompt": "What truth would soften greed without shattering you?",
+    "lore": {
+      "short": "The Hoarder arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Hoarder is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_SABOTEUR",
+    "name": "The Saboteur",
+    "family": "Shadow",
+    "tags": {
+      "self_sabotage": 1,
+      "shame": 0.6,
+      "avoidance": 0.4
+    },
+    "overview": "A shadow-pattern defined by self_sabotage.",
+    "coreVirtue": "self_sabotage (distorted)",
+    "shadowRisk": "When intensified, self_sabotage consumes choice.",
+    "growthPrompt": "What truth would soften self_sabotage without shattering you?",
+    "lore": {
+      "short": "The Saboteur arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Saboteur is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_NEEDLE",
+    "name": "The Needle",
+    "family": "Shadow",
+    "tags": {
+      "criticism": 1,
+      "rigidity": 0.6,
+      "pride": 0.4,
+      "contempt": 0.5,
+      "judgmental": 0.4
+    },
+    "overview": "A shadow-pattern defined by criticism.",
+    "coreVirtue": "criticism (distorted)",
+    "shadowRisk": "When intensified, criticism consumes choice.",
+    "growthPrompt": "What truth would soften criticism without shattering you?",
+    "lore": {
+      "short": "The Needle arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Needle is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_VEIL",
+    "name": "The Veil",
+    "family": "Shadow",
+    "tags": {
+      "secrecy": 1,
+      "deception": 0.6,
+      "detachment": 0.4
+    },
+    "overview": "A shadow-pattern defined by secrecy.",
+    "coreVirtue": "secrecy (distorted)",
+    "shadowRisk": "When intensified, secrecy consumes choice.",
+    "growthPrompt": "What truth would soften secrecy without shattering you?",
+    "lore": {
+      "short": "The Veil arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Veil is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_TEMPEST",
+    "name": "The Tempest",
+    "family": "Shadow",
+    "tags": {
+      "wrath": 1,
+      "domination": 0.6,
+      "pride": 0.4,
+      "recklessness": 0.5
+    },
+    "overview": "A shadow-pattern defined by wrath.",
+    "coreVirtue": "wrath (distorted)",
+    "shadowRisk": "When intensified, wrath consumes choice.",
+    "growthPrompt": "What truth would soften wrath without shattering you?",
+    "lore": {
+      "short": "The Tempest arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Tempest is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_SIREN",
+    "name": "The Siren",
+    "family": "Shadow",
+    "tags": {
+      "seduction": 1,
+      "vanity": 0.6,
+      "manipulation": 0.4
+    },
+    "overview": "A shadow-pattern defined by seduction.",
+    "coreVirtue": "seduction (distorted)",
+    "shadowRisk": "When intensified, seduction consumes choice.",
+    "growthPrompt": "What truth would soften seduction without shattering you?",
+    "lore": {
+      "short": "The Siren arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Siren is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_WRAITH",
+    "name": "The Wraith",
+    "family": "Shadow",
+    "tags": {
+      "numbness": 1,
+      "detachment": 0.6,
+      "despair": 0.4
+    },
+    "overview": "A shadow-pattern defined by numbness.",
+    "coreVirtue": "numbness (distorted)",
+    "shadowRisk": "When intensified, numbness consumes choice.",
+    "growthPrompt": "What truth would soften numbness without shattering you?",
+    "lore": {
+      "short": "The Wraith arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Wraith is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_JUDGELOCK",
+    "name": "The Judgelock",
+    "family": "Shadow",
+    "tags": {
+      "condemnation": 1,
+      "criticism": 0.6,
+      "rigidity": 0.4
+    },
+    "overview": "A shadow-pattern defined by condemnation.",
+    "coreVirtue": "condemnation (distorted)",
+    "shadowRisk": "When intensified, condemnation consumes choice.",
+    "growthPrompt": "What truth would soften condemnation without shattering you?",
+    "lore": {
+      "short": "The Judgelock arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Judgelock is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_PUPPETEER",
+    "name": "The Puppeteer",
+    "family": "Shadow",
+    "tags": {
+      "coercion": 1,
+      "manipulation": 0.6,
+      "control": 0.4
+    },
+    "overview": "A shadow-pattern defined by coercion.",
+    "coreVirtue": "coercion (distorted)",
+    "shadowRisk": "When intensified, coercion consumes choice.",
+    "growthPrompt": "What truth would soften coercion without shattering you?",
+    "lore": {
+      "short": "The Puppeteer arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Puppeteer is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_MISER",
+    "name": "The Miser",
+    "family": "Shadow",
+    "tags": {
+      "scarcity": 1,
+      "greed": 0.6,
+      "fear": 0.4
+    },
+    "overview": "A shadow-pattern defined by scarcity.",
+    "coreVirtue": "scarcity (distorted)",
+    "shadowRisk": "When intensified, scarcity consumes choice.",
+    "growthPrompt": "What truth would soften scarcity without shattering you?",
+    "lore": {
+      "short": "The Miser arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Miser is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_IMPOSTOR",
+    "name": "The Impostor",
+    "family": "Shadow",
+    "tags": {
+      "fraud": 1,
+      "shame": 0.6,
+      "paranoia": 0.4
+    },
+    "overview": "A shadow-pattern defined by fraud.",
+    "coreVirtue": "fraud (distorted)",
+    "shadowRisk": "When intensified, fraud consumes choice.",
+    "growthPrompt": "What truth would soften fraud without shattering you?",
+    "lore": {
+      "short": "The Impostor arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Impostor is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_ORACLESCAR",
+    "name": "The Oracle-Scar",
+    "family": "Shadow",
+    "tags": {
+      "fatalism": 1,
+      "despair": 0.6,
+      "rumination": 0.4
+    },
+    "overview": "A shadow-pattern defined by fatalism.",
+    "coreVirtue": "fatalism (distorted)",
+    "shadowRisk": "When intensified, fatalism consumes choice.",
+    "growthPrompt": "What truth would soften fatalism without shattering you?",
+    "lore": {
+      "short": "The Oracle-Scar arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Oracle-Scar is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_HOLLOWCROWN",
+    "name": "The Hollow Crown",
+    "family": "Shadow",
+    "tags": {
+      "insecurity": 1,
+      "vanity": 0.6,
+      "control": 0.4
+    },
+    "overview": "A shadow-pattern defined by insecurity.",
+    "coreVirtue": "insecurity (distorted)",
+    "shadowRisk": "When intensified, insecurity consumes choice.",
+    "growthPrompt": "What truth would soften insecurity without shattering you?",
+    "lore": {
+      "short": "The Hollow Crown arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Hollow Crown is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_BLOODDEBT",
+    "name": "The Blood-Debt",
+    "family": "Shadow",
+    "tags": {
+      "vengeance": 1,
+      "wrath": 0.6,
+      "rumination": 0.4
+    },
+    "overview": "A shadow-pattern defined by vengeance.",
+    "coreVirtue": "vengeance (distorted)",
+    "shadowRisk": "When intensified, vengeance consumes choice.",
+    "growthPrompt": "What truth would soften vengeance without shattering you?",
+    "lore": {
+      "short": "The Blood-Debt arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Blood-Debt is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_GLASSHEART",
+    "name": "The Glassheart",
+    "family": "Shadow",
+    "tags": {
+      "fragility": 1,
+      "fear": 0.6,
+      "avoidance": 0.4
+    },
+    "overview": "A shadow-pattern defined by fragility.",
+    "coreVirtue": "fragility (distorted)",
+    "shadowRisk": "When intensified, fragility consumes choice.",
+    "growthPrompt": "What truth would soften fragility without shattering you?",
+    "lore": {
+      "short": "The Glassheart arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Glassheart is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_THORN",
+    "name": "The Thorn",
+    "family": "Shadow",
+    "tags": {
+      "spite": 1,
+      "criticism": 0.6,
+      "wrath": 0.4
+    },
+    "overview": "A shadow-pattern defined by spite.",
+    "coreVirtue": "spite (distorted)",
+    "shadowRisk": "When intensified, spite consumes choice.",
+    "growthPrompt": "What truth would soften spite without shattering you?",
+    "lore": {
+      "short": "The Thorn arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Thorn is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_SILT",
+    "name": "The Silt",
+    "family": "Shadow",
+    "tags": {
+      "stagnation": 1,
+      "avoidance": 0.6,
+      "despair": 0.4
+    },
+    "overview": "A shadow-pattern defined by stagnation.",
+    "coreVirtue": "stagnation (distorted)",
+    "shadowRisk": "When intensified, stagnation consumes choice.",
+    "growthPrompt": "What truth would soften stagnation without shattering you?",
+    "lore": {
+      "short": "The Silt arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Silt is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_SPECTATOR",
+    "name": "The Spectator",
+    "family": "Shadow",
+    "tags": {
+      "passivity": 1,
+      "detachment": 0.6,
+      "avoidance": 0.4,
+      "restlessness": 0.5
+    },
+    "overview": "A shadow-pattern defined by passivity.",
+    "coreVirtue": "passivity (distorted)",
+    "shadowRisk": "When intensified, passivity consumes choice.",
+    "growthPrompt": "What truth would soften passivity without shattering you?",
+    "lore": {
+      "short": "The Spectator arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Spectator is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_WARD",
+    "name": "The Ward",
+    "family": "Shadow",
+    "tags": {
+      "dependency": 1,
+      "appeasement": 0.6,
+      "fear": 0.4,
+      "sentimentality": 0.5
+    },
+    "overview": "A shadow-pattern defined by dependency.",
+    "coreVirtue": "dependency (distorted)",
+    "shadowRisk": "When intensified, dependency consumes choice.",
+    "growthPrompt": "What truth would soften dependency without shattering you?",
+    "lore": {
+      "short": "The Ward arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Ward is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_TANGLE",
+    "name": "The Tangle",
+    "family": "Shadow",
+    "tags": {
+      "confusion": 1,
+      "rumination": 0.6,
+      "anxiety": 0.4
+    },
+    "overview": "A shadow-pattern defined by confusion.",
+    "coreVirtue": "confusion (distorted)",
+    "shadowRisk": "When intensified, confusion consumes choice.",
+    "growthPrompt": "What truth would soften confusion without shattering you?",
+    "lore": {
+      "short": "The Tangle arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Tangle is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_GUILTCHAIN",
+    "name": "The Guilt-Chain",
+    "family": "Shadow",
+    "tags": {
+      "guilt": 1,
+      "self_sacrifice": 0.6,
+      "shame": 0.4
+    },
+    "overview": "A shadow-pattern defined by guilt.",
+    "coreVirtue": "guilt (distorted)",
+    "shadowRisk": "When intensified, guilt consumes choice.",
+    "growthPrompt": "What truth would soften guilt without shattering you?",
+    "lore": {
+      "short": "The Guilt-Chain arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Guilt-Chain is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_BLADEGRIN",
+    "name": "The Bladegrin",
+    "family": "Shadow",
+    "tags": {
+      "cruelty": 1,
+      "wrath": 0.6,
+      "pride": 0.4
+    },
+    "overview": "A shadow-pattern defined by cruelty.",
+    "coreVirtue": "cruelty (distorted)",
+    "shadowRisk": "When intensified, cruelty consumes choice.",
+    "growthPrompt": "What truth would soften cruelty without shattering you?",
+    "lore": {
+      "short": "The Bladegrin arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Bladegrin is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_MIRROR",
+    "name": "The Mirror",
+    "family": "Shadow",
+    "tags": {
+      "comparison": 1,
+      "envy": 0.6,
+      "vanity": 0.4
+    },
+    "overview": "A shadow-pattern defined by comparison.",
+    "coreVirtue": "comparison (distorted)",
+    "shadowRisk": "When intensified, comparison consumes choice.",
+    "growthPrompt": "What truth would soften comparison without shattering you?",
+    "lore": {
+      "short": "The Mirror arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Mirror is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_BROKENVOW",
+    "name": "The Broken Vow",
+    "family": "Shadow",
+    "tags": {
+      "betrayal": 1,
+      "secrecy": 0.6,
+      "resentment": 0.4
+    },
+    "overview": "A shadow-pattern defined by betrayal.",
+    "coreVirtue": "betrayal (distorted)",
+    "shadowRisk": "When intensified, betrayal consumes choice.",
+    "growthPrompt": "What truth would soften betrayal without shattering you?",
+    "lore": {
+      "short": "The Broken Vow arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Broken Vow is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_GRIP",
+    "name": "The Grip",
+    "family": "Shadow",
+    "tags": {
+      "clinging": 1,
+      "control": 0.6,
+      "fear": 0.4
+    },
+    "overview": "A shadow-pattern defined by clinging.",
+    "coreVirtue": "clinging (distorted)",
+    "shadowRisk": "When intensified, clinging consumes choice.",
+    "growthPrompt": "What truth would soften clinging without shattering you?",
+    "lore": {
+      "short": "The Grip arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Grip is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_COLDREAD",
+    "name": "The Coldread",
+    "family": "Shadow",
+    "tags": {
+      "calculation": 1,
+      "manipulation": 0.6,
+      "detachment": 0.4
+    },
+    "overview": "A shadow-pattern defined by calculation.",
+    "coreVirtue": "calculation (distorted)",
+    "shadowRisk": "When intensified, calculation consumes choice.",
+    "growthPrompt": "What truth would soften calculation without shattering you?",
+    "lore": {
+      "short": "The Coldread arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Coldread is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_STAIN",
+    "name": "The Stain",
+    "family": "Shadow",
+    "tags": {
+      "shame": 1,
+      "rumination": 0.6,
+      "despair": 0.4
+    },
+    "overview": "A shadow-pattern defined by shame.",
+    "coreVirtue": "shame (distorted)",
+    "shadowRisk": "When intensified, shame consumes choice.",
+    "growthPrompt": "What truth would soften shame without shattering you?",
+    "lore": {
+      "short": "The Stain arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Stain is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_LATCH",
+    "name": "The Latch",
+    "family": "Shadow",
+    "tags": {
+      "avoidance": 1,
+      "secrecy": 0.6,
+      "fear": 0.4
+    },
+    "overview": "A shadow-pattern defined by avoidance.",
+    "coreVirtue": "avoidance (distorted)",
+    "shadowRisk": "When intensified, avoidance consumes choice.",
+    "growthPrompt": "What truth would soften avoidance without shattering you?",
+    "lore": {
+      "short": "The Latch arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Latch is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_DEBTOR",
+    "name": "The Debtor",
+    "family": "Shadow",
+    "tags": {
+      "obligation": 1,
+      "self_sacrifice": 0.6,
+      "resentment": 0.4
+    },
+    "overview": "A shadow-pattern defined by obligation.",
+    "coreVirtue": "obligation (distorted)",
+    "shadowRisk": "When intensified, obligation consumes choice.",
+    "growthPrompt": "What truth would soften obligation without shattering you?",
+    "lore": {
+      "short": "The Debtor arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Debtor is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_HUNGER",
+    "name": "The Hunger",
+    "family": "Shadow",
+    "tags": {
+      "insatiability": 1,
+      "excess": 0.6,
+      "greed": 0.4
+    },
+    "overview": "A shadow-pattern defined by insatiability.",
+    "coreVirtue": "insatiability (distorted)",
+    "shadowRisk": "When intensified, insatiability consumes choice.",
+    "growthPrompt": "What truth would soften insatiability without shattering you?",
+    "lore": {
+      "short": "The Hunger arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Hunger is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_ASHES",
+    "name": "The Ashes",
+    "family": "Shadow",
+    "tags": {
+      "collapse": 1,
+      "burnout": 0.6,
+      "despair": 0.4
+    },
+    "overview": "A shadow-pattern defined by collapse.",
+    "coreVirtue": "collapse (distorted)",
+    "shadowRisk": "When intensified, collapse consumes choice.",
+    "growthPrompt": "What truth would soften collapse without shattering you?",
+    "lore": {
+      "short": "The Ashes arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Ashes is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_RAZOR",
+    "name": "The Razor",
+    "family": "Shadow",
+    "tags": {
+      "harshness": 1,
+      "criticism": 0.6,
+      "wrath": 0.4
+    },
+    "overview": "A shadow-pattern defined by harshness.",
+    "coreVirtue": "harshness (distorted)",
+    "shadowRisk": "When intensified, harshness consumes choice.",
+    "growthPrompt": "What truth would soften harshness without shattering you?",
+    "lore": {
+      "short": "The Razor arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Razor is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_GILDED",
+    "name": "The Gilded",
+    "family": "Shadow",
+    "tags": {
+      "vanity": 1,
+      "comparison": 0.6,
+      "entitlement": 0.4
+    },
+    "overview": "A shadow-pattern defined by vanity.",
+    "coreVirtue": "vanity (distorted)",
+    "shadowRisk": "When intensified, vanity consumes choice.",
+    "growthPrompt": "What truth would soften vanity without shattering you?",
+    "lore": {
+      "short": "The Gilded arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Gilded is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_LOCKJAW",
+    "name": "The Lockjaw",
+    "family": "Shadow",
+    "tags": {
+      "silence": 1,
+      "secrecy": 0.6,
+      "suppression": 0.4
+    },
+    "overview": "A shadow-pattern defined by silence.",
+    "coreVirtue": "silence (distorted)",
+    "shadowRisk": "When intensified, silence consumes choice.",
+    "growthPrompt": "What truth would soften silence without shattering you?",
+    "lore": {
+      "short": "The Lockjaw arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Lockjaw is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_TREMOR",
+    "name": "The Tremor",
+    "family": "Shadow",
+    "tags": {
+      "panic": 1,
+      "anxiety": 0.6,
+      "paranoia": 0.4
+    },
+    "overview": "A shadow-pattern defined by panic.",
+    "coreVirtue": "panic (distorted)",
+    "shadowRisk": "When intensified, panic consumes choice.",
+    "growthPrompt": "What truth would soften panic without shattering you?",
+    "lore": {
+      "short": "The Tremor arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Tremor is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  },
+  {
+    "id": "SHA_TIDE",
+    "name": "The Undertow",
+    "family": "Shadow",
+    "tags": {
+      "pull": 1,
+      "control": 0.6,
+      "avoidance": 0.4
+    },
+    "overview": "A shadow-pattern defined by pull.",
+    "coreVirtue": "pull (distorted)",
+    "shadowRisk": "When intensified, pull consumes choice.",
+    "growthPrompt": "What truth would soften pull without shattering you?",
+    "lore": {
+      "short": "The Undertow arrives quietly, like ink spreading in water.",
+      "long": "In the Eirden canon, The Undertow is not “evil” — it is a survival strategy that outlived its moment."
+    }
+  }
+]

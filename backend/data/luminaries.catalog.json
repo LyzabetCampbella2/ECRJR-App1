@@ -1,0 +1,11 @@
+[
+  {
+    "id": "lumi_001",
+    "name": "The Verdant Architect",
+    "overview": "You build living systems: routines, relationships, and creations that keep growing.",
+    "traits": ["Systems thinker", "Patient builder", "Ethical designer"],
+    "gifts": ["Stability", "Long-range vision"],
+    "shadowWarning": "Be careful of over-control disguised as care.",
+    "ritual": "Choose one system and prune it down to one sacred habit."
+  }
+]

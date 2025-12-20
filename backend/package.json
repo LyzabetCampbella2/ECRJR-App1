@@ -1,6 +1,7 @@
 {
   "name": "eirden-backend",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "main": "src/server.js",
   "scripts": {
@@ -11,7 +12,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^4.19.2",
-    "mongoose": "^8.9.0"
+    "mongoose": "^8.9.0",
+    "multer": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"

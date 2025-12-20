@@ -1,0 +1,216 @@
+{
+  "lumishadow_mini_1": {
+    "title": "Virtue Axis",
+    "instructions": "Answer instinctively. Choose what feels most true, not what sounds best.",
+    "questions": [
+      {
+        "id": "VA1",
+        "prompt": "When something breaks in a group, your first instinct is to…",
+        "options": [
+          { "key": "A", "text": "Restore harmony and protect the vulnerable.", "lum": { "mercy": 2, "protection": 1 }, "sha": { "appeasement": 1 } },
+          { "key": "B", "text": "Find the truth of what happened, even if it hurts.", "lum": { "clarity": 2, "judgment": 1 }, "sha": { "detachment": 1 } },
+          { "key": "C", "text": "Take control and impose a fix immediately.", "lum": { "strategy": 1, "discipline": 1 }, "sha": { "domination": 2, "control": 1 } },
+          { "key": "D", "text": "Walk away. If it’s fragile, it deserves to fall.", "lum": { "stewardship": 1 }, "sha": { "detachment": 2, "avoidance": 1 } }
+        ]
+      },
+      {
+        "id": "VA2",
+        "prompt": "What do you fear becoming?",
+        "options": [
+          { "key": "A", "text": "Cruel.", "lum": { "mercy": 2 }, "sha": { "wrath": 1, "pride": 1 } },
+          { "key": "B", "text": "Weak.", "lum": { "courage": 1, "discipline": 1 }, "sha": { "insecurity": 2 } },
+          { "key": "C", "text": "Irrelevant.", "lum": { "clarity": 1, "wisdom": 1 }, "sha": { "vanity": 2 } },
+          { "key": "D", "text": "Controlled by anyone.", "lum": { "stewardship": 2 }, "sha": { "paranoia": 1, "control": 1 } }
+        ]
+      },
+      {
+        "id": "VA3",
+        "prompt": "The most unforgivable thing is…",
+        "options": [
+          { "key": "A", "text": "Betrayal.", "lum": { "oath": 2, "loyalty": 1 }, "sha": { "vengeance": 1, "resentment": 1 } },
+          { "key": "B", "text": "Cowardice.", "lum": { "courage": 2, "valor": 1 }, "sha": { "contempt": 1, "pride": 1 } },
+          { "key": "C", "text": "Hypocrisy.", "lum": { "clarity": 2, "judgment": 1 }, "sha": { "rigidity": 1 } },
+          { "key": "D", "text": "Waste of potential.", "lum": { "craft": 1, "discipline": 1 }, "sha": { "perfectionism": 2 } }
+        ]
+      },
+      {
+        "id": "VA4",
+        "prompt": "If someone challenges your values publicly, you…",
+        "options": [
+          { "key": "A", "text": "Stay calm and ask questions.", "lum": { "temperance": 2, "clarity": 1 }, "sha": { "avoidance": 1 } },
+          { "key": "B", "text": "Make a decisive statement and end it.", "lum": { "stewardship": 1, "judgment": 1 }, "sha": { "pride": 1, "domination": 1 } },
+          { "key": "C", "text": "Turn it into a lesson for everyone.", "lum": { "teaching": 2, "wisdom": 1 }, "sha": { "vanity": 1 } },
+          { "key": "D", "text": "Feel it for days and plan your next move.", "lum": { "strategy": 2 }, "sha": { "rumination": 2 } }
+        ]
+      },
+      {
+        "id": "VA5",
+        "prompt": "Your ideal life is defined by…",
+        "options": [
+          { "key": "A", "text": "Service and protection.", "lum": { "protection": 2, "service": 1 }, "sha": { "self_sacrifice": 1 } },
+          { "key": "B", "text": "Mastery and excellence.", "lum": { "craft": 2, "discipline": 1 }, "sha": { "perfectionism": 1 } },
+          { "key": "C", "text": "Freedom and self-rule.", "lum": { "stewardship": 1, "temperance": 1 }, "sha": { "isolation": 1, "detachment": 1 } },
+          { "key": "D", "text": "Influence and legacy.", "lum": { "clarity": 1, "wisdom": 1 }, "sha": { "vanity": 2 } }
+        ]
+      }
+    ]
+  },
+
+  "lumishadow_mini_2": {
+    "title": "Power & Control",
+    "instructions": "How you lead, how you push, how you protect your position.",
+    "questions": [
+      {
+        "id": "PC1",
+        "prompt": "When you lead, you prefer to…",
+        "options": [
+          { "key": "A", "text": "Inspire and set a vision.", "lum": { "clarity": 2, "guidance": 1 }, "sha": { "vanity": 1 } },
+          { "key": "B", "text": "Create systems and standards.", "lum": { "structure": 2, "discipline": 1 }, "sha": { "rigidity": 1 } },
+          { "key": "C", "text": "Win loyalty one person at a time.", "lum": { "oath": 1, "loyalty": 1 }, "sha": { "manipulation": 1 } },
+          { "key": "D", "text": "Hold authority and enforce it.", "lum": { "stewardship": 1, "judgment": 1 }, "sha": { "domination": 2, "control": 1 } }
+        ]
+      },
+      {
+        "id": "PC2",
+        "prompt": "In conflict, your danger zone is…",
+        "options": [
+          { "key": "A", "text": "Becoming sharp and merciless.", "lum": { "clarity": 1, "judgment": 1 }, "sha": { "wrath": 2 } },
+          { "key": "B", "text": "Over-explaining to stay liked.", "lum": { "temperance": 1, "mercy": 1 }, "sha": { "appeasement": 2 } },
+          { "key": "C", "text": "Refusing to bend at all.", "lum": { "discipline": 1, "structure": 1 }, "sha": { "rigidity": 2 } },
+          { "key": "D", "text": "Turning it into a power game.", "lum": { "strategy": 1 }, "sha": { "domination": 2, "pride": 1 } }
+        ]
+      },
+      {
+        "id": "PC3",
+        "prompt": "What makes someone 'worthy' in your eyes?",
+        "options": [
+          { "key": "A", "text": "Integrity under pressure.", "lum": { "oath": 2, "stewardship": 1 }, "sha": { "judgmental": 1 } },
+          { "key": "B", "text": "Competence and results.", "lum": { "craft": 2 }, "sha": { "contempt": 1, "pride": 1 } },
+          { "key": "C", "text": "Courage and initiative.", "lum": { "courage": 2, "valor": 1 }, "sha": { "recklessness": 1 } },
+          { "key": "D", "text": "Loyalty to the mission.", "lum": { "loyalty": 1, "protection": 1 }, "sha": { "tribalism": 1 } }
+        ]
+      },
+      {
+        "id": "PC4",
+        "prompt": "Your relationship to rules is…",
+        "options": [
+          { "key": "A", "text": "Rules protect people.", "lum": { "protection": 2, "stewardship": 1 }, "sha": { "control": 1 } },
+          { "key": "B", "text": "Rules protect excellence.", "lum": { "structure": 2, "discipline": 1 }, "sha": { "rigidity": 1 } },
+          { "key": "C", "text": "Rules are tools—useful until they aren’t.", "lum": { "strategy": 2 }, "sha": { "manipulation": 1 } },
+          { "key": "D", "text": "Rules are cages.", "lum": { "temperance": 1, "clarity": 1 }, "sha": { "defiance": 1 } }
+        ]
+      }
+    ]
+  },
+
+  "lumishadow_mini_3": {
+    "title": "Bond & Betrayal",
+    "instructions": "Attachment patterns: what you give, what you demand, what you punish.",
+    "questions": [
+      {
+        "id": "BB1",
+        "prompt": "If someone you love hurts you, you…",
+        "options": [
+          { "key": "A", "text": "Talk quickly to repair the bond.", "lum": { "mercy": 1, "oath": 1 }, "sha": { "fear": 1 } },
+          { "key": "B", "text": "Withdraw to regain control.", "lum": { "temperance": 1 }, "sha": { "detachment": 2, "control": 1 } },
+          { "key": "C", "text": "Test them to see if they’ll choose you.", "lum": { "loyalty": 1 }, "sha": { "manipulation": 2 } },
+          { "key": "D", "text": "Forgive—then remember forever.", "lum": { "wisdom": 1 }, "sha": { "rumination": 2, "resentment": 1 } }
+        ]
+      },
+      {
+        "id": "BB2",
+        "prompt": "You feel safest when…",
+        "options": [
+          { "key": "A", "text": "Everyone knows their role.", "lum": { "structure": 2 }, "sha": { "control": 1 } },
+          { "key": "B", "text": "You can handle anything alone.", "lum": { "stewardship": 1, "discipline": 1 }, "sha": { "isolation": 1 } },
+          { "key": "C", "text": "You’re essential to someone.", "lum": { "service": 1, "protection": 1 }, "sha": { "dependency": 2 } },
+          { "key": "D", "text": "You’re admired.", "lum": { "clarity": 1 }, "sha": { "vanity": 2 } }
+        ]
+      },
+      {
+        "id": "BB3",
+        "prompt": "Your shadow in relationships is most like…",
+        "options": [
+          { "key": "A", "text": "I over-give and resent it.", "lum": { "mercy": 1 }, "sha": { "self_sacrifice": 2, "resentment": 1 } },
+          { "key": "B", "text": "I control the emotional temperature.", "lum": { "temperance": 1 }, "sha": { "control": 2 } },
+          { "key": "C", "text": "I punish distance with distance.", "lum": { "wisdom": 1 }, "sha": { "detachment": 2 } },
+          { "key": "D", "text": "I get competitive for affection.", "lum": { "valor": 1 }, "sha": { "envy": 2, "pride": 1 } }
+        ]
+      }
+    ]
+  },
+
+  "lumishadow_mini_4": {
+    "title": "Vision & Craft",
+    "instructions": "How you create, how you refine, what you refuse to compromise.",
+    "questions": [
+      {
+        "id": "VC1",
+        "prompt": "When you start a creative project, you most need…",
+        "options": [
+          { "key": "A", "text": "A strong concept and theme.", "lum": { "clarity": 2, "vision": 1 }, "sha": { "idealism": 1 } },
+          { "key": "B", "text": "A plan and structure.", "lum": { "structure": 2 }, "sha": { "rigidity": 1 } },
+          { "key": "C", "text": "Pressure and a deadline.", "lum": { "discipline": 2 }, "sha": { "anxiety": 1 } },
+          { "key": "D", "text": "Freedom to improvise.", "lum": { "temperance": 1 }, "sha": { "avoidance": 1 } }
+        ]
+      },
+      {
+        "id": "VC2",
+        "prompt": "Your creative downfall is…",
+        "options": [
+          { "key": "A", "text": "Perfectionism that delays finishing.", "lum": { "craft": 1 }, "sha": { "perfectionism": 2 } },
+          { "key": "B", "text": "Starting too many things.", "lum": { "curiosity": 1 }, "sha": { "restlessness": 2 } },
+          { "key": "C", "text": "Needing praise to continue.", "lum": { "guidance": 1 }, "sha": { "vanity": 2 } },
+          { "key": "D", "text": "Going silent when it gets hard.", "lum": { "discipline": 1 }, "sha": { "avoidance": 2 } }
+        ]
+      },
+      {
+        "id": "VC3",
+        "prompt": "The craft you respect most is…",
+        "options": [
+          { "key": "A", "text": "Precision and mastery.", "lum": { "craft": 2, "discipline": 1 }, "sha": { "contempt": 1 } },
+          { "key": "B", "text": "Emotional truth.", "lum": { "mercy": 1, "clarity": 1 }, "sha": { "sentimentality": 1 } },
+          { "key": "C", "text": "Impact and influence.", "lum": { "stewardship": 1, "guidance": 1 }, "sha": { "vanity": 1, "pride": 1 } },
+          { "key": "D", "text": "Beauty and atmosphere.", "lum": { "vision": 1 }, "sha": { "escapism": 1 } }
+        ]
+      }
+    ]
+  },
+
+  "lumishadow_mini_5": {
+    "title": "Pressure Response",
+    "instructions": "When stakes rise: what you become, and how you come back.",
+    "questions": [
+      {
+        "id": "PR1",
+        "prompt": "Under heavy pressure, you tend to…",
+        "options": [
+          { "key": "A", "text": "Get colder and more efficient.", "lum": { "strategy": 1, "clarity": 1 }, "sha": { "detachment": 2 } },
+          { "key": "B", "text": "Get intense and controlling.", "lum": { "judgment": 1 }, "sha": { "control": 2, "domination": 1 } },
+          { "key": "C", "text": "Get anxious and overwork.", "lum": { "discipline": 1 }, "sha": { "anxiety": 2 } },
+          { "key": "D", "text": "Disappear and recover alone.", "lum": { "temperance": 1 }, "sha": { "avoidance": 2, "isolation": 1 } }
+        ]
+      },
+      {
+        "id": "PR2",
+        "prompt": "When you fail, the hardest part is…",
+        "options": [
+          { "key": "A", "text": "Feeling exposed.", "lum": { "courage": 1 }, "sha": { "shame": 2 } },
+          { "key": "B", "text": "Feeling powerless.", "lum": { "stewardship": 1 }, "sha": { "wrath": 2 } },
+          { "key": "C", "text": "Letting people down.", "lum": { "oath": 2 }, "sha": { "guilt": 1 } },
+          { "key": "D", "text": "Losing status.", "lum": { "guidance": 1 }, "sha": { "vanity": 2 } }
+        ]
+      },
+      {
+        "id": "PR3",
+        "prompt": "Your fastest way back to center is…",
+        "options": [
+          { "key": "A", "text": "Silence + solitude.", "lum": { "temperance": 2 }, "sha": { "isolation": 1 } },
+          { "key": "B", "text": "Structure + routine.", "lum": { "structure": 1, "discipline": 1 }, "sha": { "rigidity": 1 } },
+          { "key": "C", "text": "Connection + confession.", "lum": { "mercy": 2 }, "sha": { "dependency": 1 } },
+          { "key": "D", "text": "A new plan + next objective.", "lum": { "strategy": 2 }, "sha": { "restlessness": 1 } }
+        ]
+      }
+    ]
+  }
+}
