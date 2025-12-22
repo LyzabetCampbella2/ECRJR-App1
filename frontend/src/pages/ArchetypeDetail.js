@@ -1,98 +1,91 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import "../App.css";
+import { apiGet } from "../api";
 
 export default function ArchetypeDetail() {
   const { id } = useParams();
-  const [loading, setLoading] = useState(true);
+  const [doc, setDoc] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [entry, setEntry] = useState(null);
 
   useEffect(() => {
     let alive = true;
+    setLoading(true);
+    setErr("");
 
-    (async () => {
-      try {
-        setLoading(true);
-        setErr("");
-
-        const res = await fetch(`/data/archetypesCatalog.json?t=${Date.now()}`, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status} loading catalog`);
-        const json = await res.json();
-        if (!Array.isArray(json)) throw new Error("Catalog JSON is not an array");
-
-        const found = json.find((x) => x?.id === id) || null;
-        if (alive) setEntry(found);
-      } catch (e) {
-        if (alive) setErr(String(e?.message || e));
-      } finally {
-        if (alive) setLoading(false);
-      }
-    })();
+    apiGet(`/api/archetypes/${id}`)
+      .then((data) => { if (alive) setDoc(data); })
+      .catch((e) => { if (alive) setErr(e?.message || "Failed to load archetype"); })
+      .finally(() => { if (alive) setLoading(false); });
 
     return () => { alive = false; };
   }, [id]);
 
-  if (loading) {
-    return (
-      <div className="container">
-        <div className="card"><p className="p">Loading…</p></div>
-      </div>
-    );
-  }
-
-  if (err) {
-    return (
-      <div className="container">
-        <div className="card">
-          <h1 className="h1">Error</h1>
-          <p className="p">{err}</p>
-          <div style={{ marginTop: 12 }}>
-            <Link className="btn" to="/archetypes">Back</Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!entry) {
-    return (
-      <div className="container">
-        <div className="card">
-          <h1 className="h1">Not found</h1>
-          <p className="p">No archetype with id: {id}</p>
-          <div style={{ marginTop: 12 }}>
-            <Link className="btn btn--primary" to="/archetypes">Back to Index</Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  const lore = entry.lore || {};
-  const tags = entry.tags || [];
-  const fam = entry.family || "Unassigned";
-  const tier = entry.tier || "Common";
-
   return (
-    <div className="container">
-      <div className="card">
-        <h1 className="h1">{entry.name || entry.id}</h1>
-        <p className="p">{entry.id} • {fam} • {tier}</p>
+    <div className="page">
+      <div className="container">
+        <div className="card">
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
+            <div>
+              <h1 style={{ marginTop: 0 }}>{doc?.name || id}</h1>
+              <div className="small muted">
+                {doc?.code ? `${doc.code} • ` : ""}{doc?.id || id}
+              </div>
+              <div className="small muted">
+                {(doc?.sphere?.name || doc?.sphere?.id || "")}
+                {" • "}
+                {(doc?.family?.name || doc?.family?.id || "")}
+              </div>
+            </div>
 
-        {lore.oneLiner ? <p style={{ marginTop: 14, fontWeight: 800 }}>{lore.oneLiner}</p> : null}
-        {lore.overview ? <p className="p" style={{ marginTop: 10 }}>{lore.overview}</p> : null}
-
-        {tags.length ? (
-          <div style={{ marginTop: 14, display: "flex", gap: 10, flexWrap: "wrap" }}>
-            {tags.slice(0, 12).map((t) => (
-              <span key={t} className="btn" style={{ cursor: "default" }}>{t}</span>
-            ))}
+            <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+              <Link className="btn btnGhost" to="/archetype">Back</Link>
+              <Link className="btn btnPrimary" to={`/lore/${id}`}>Full Profile</Link>
+            </div>
           </div>
-        ) : null}
 
-        <div style={{ marginTop: 16, display: "flex", gap: 12, flexWrap: "wrap" }}>
-          <Link className="btn" to="/archetypes">Back</Link>
-          <Link className="btn btn--primary" to="/tests">Take Major Test</Link>
+          <hr className="hr" />
+
+          {loading ? <p className="small">Loading…</p> : null}
+          {err ? (
+            <div className="card" style={{ borderColor: "crimson" }}>
+              <b>Couldn’t load archetype.</b>
+              <div className="small">{err}</div>
+            </div>
+          ) : null}
+
+          {doc ? (
+            <div style={{ display: "grid", gap: 12 }}>
+              {doc.oneLine ? (
+                <div className="card" style={{ boxShadow: "none" }}>
+                  <b>Summary</b>
+                  <div className="small">{doc.oneLine}</div>
+                </div>
+              ) : null}
+
+              {doc.primaryFunction ? (
+                <div className="card" style={{ boxShadow: "none" }}>
+                  <b>Primary Function</b>
+                  <div className="small">{doc.primaryFunction}</div>
+                </div>
+              ) : null}
+
+              {doc.adaptiveRoleSummary ? (
+                <div className="card" style={{ boxShadow: "none" }}>
+                  <b>Adaptive Role</b>
+                  <div className="small">{doc.adaptiveRoleSummary}</div>
+                </div>
+              ) : null}
+
+              <div className="card" style={{ boxShadow: "none" }}>
+                <b>Vector (Debug)</b>
+                <pre className="small" style={{ whiteSpace: "pre-wrap" }}>
+                  {JSON.stringify(doc.vector || {}, null, 2)}
+                </pre>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

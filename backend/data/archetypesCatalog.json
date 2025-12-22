@@ -1,0 +1,352 @@
+[
+  {
+    "id": "arch_001",
+    "name": "The Archivist",
+    "category": "Mind",
+    "family": "Order & Memory",
+    "rarity": "common",
+    "summary": "Keeper of truth, memory, and structured meaning.",
+    "routes": {
+      "detail": "/archetypes/arch_001",
+      "profile": "/archetypes/arch_001/profile",
+      "lore": "/lore/arch_001"
+    },
+    "tags": ["truth", "systems", "documentation", "stewardship"]
+  },
+  {
+    "id": "arch_002",
+    "name": "The Alchemist",
+    "category": "Creation",
+    "family": "Transformation",
+    "rarity": "uncommon",
+    "summary": "Transforms raw experience into refined insight and craft.",
+    "routes": {
+      "detail": "/archetypes/arch_002",
+      "profile": "/archetypes/arch_002/profile",
+      "lore": "/lore/arch_002"
+    },
+    "tags": ["innovation", "experiments", "synthesis", "craft"]
+  },
+  {
+    "id": "arch_003",
+    "name": "The Sentinel",
+    "category": "Will",
+    "family": "Protection",
+    "rarity": "common",
+    "summary": "Protects boundaries, safety, and group integrity.",
+    "routes": {
+      "detail": "/archetypes/arch_003",
+      "profile": "/archetypes/arch_003/profile",
+      "lore": "/lore/arch_003"
+    },
+    "tags": ["boundaries", "duty", "accountability", "risk"]
+  },
+  {
+    "id": "arch_004",
+    "name": "The Oracle",
+    "category": "Mind",
+    "family": "Foresight",
+    "rarity": "rare",
+    "summary": "Sees patterns early and names the unseen.",
+    "routes": {
+      "detail": "/archetypes/arch_004",
+      "profile": "/archetypes/arch_004/profile",
+      "lore": "/lore/arch_004"
+    },
+    "tags": ["insight", "signals", "strategy", "intuition"]
+  },
+  {
+    "id": "arch_005",
+    "name": "The Cartographer",
+    "category": "Mind",
+    "family": "Navigation",
+    "rarity": "uncommon",
+    "summary": "Maps complexity into routes others can follow.",
+    "routes": {
+      "detail": "/archetypes/arch_005",
+      "profile": "/archetypes/arch_005/profile",
+      "lore": "/lore/arch_005"
+    },
+    "tags": ["roadmaps", "clarity", "planning", "orientation"]
+  },
+  {
+    "id": "arch_006",
+    "name": "The Magistrate",
+    "category": "Will",
+    "family": "Justice",
+    "rarity": "uncommon",
+    "summary": "Balances fairness, consequence, and legitimacy.",
+    "routes": {
+      "detail": "/archetypes/arch_006",
+      "profile": "/archetypes/arch_006/profile",
+      "lore": "/lore/arch_006"
+    },
+    "tags": ["ethics", "standards", "restoration", "fairness"]
+  },
+  {
+    "id": "arch_007",
+    "name": "The Scholar",
+    "category": "Mind",
+    "family": "Learning",
+    "rarity": "common",
+    "summary": "Learns deeply, then teaches with precision and care.",
+    "routes": {
+      "detail": "/archetypes/arch_007",
+      "profile": "/archetypes/arch_007/profile",
+      "lore": "/lore/arch_007"
+    },
+    "tags": ["research", "depth", "clarity", "teaching"]
+  },
+  {
+    "id": "arch_008",
+    "name": "The Bard",
+    "category": "Heart",
+    "family": "Story",
+    "rarity": "common",
+    "summary": "Turns experience into story that heals and mobilizes.",
+    "routes": {
+      "detail": "/archetypes/arch_008",
+      "profile": "/archetypes/arch_008/profile",
+      "lore": "/lore/arch_008"
+    },
+    "tags": ["narrative", "expression", "culture", "voice"]
+  },
+  {
+    "id": "arch_009",
+    "name": "The Apothecary",
+    "category": "Heart",
+    "family": "Care",
+    "rarity": "uncommon",
+    "summary": "Blends practical care with precision and calm.",
+    "routes": {
+      "detail": "/archetypes/arch_009",
+      "profile": "/archetypes/arch_009/profile",
+      "lore": "/lore/arch_009"
+    },
+    "tags": ["service", "routines", "healing", "support"]
+  },
+  {
+    "id": "arch_010",
+    "name": "The Diplomat",
+    "category": "Heart",
+    "family": "Alliance",
+    "rarity": "common",
+    "summary": "Creates agreements where others only see factions.",
+    "routes": {
+      "detail": "/archetypes/arch_010",
+      "profile": "/archetypes/arch_010/profile",
+      "lore": "/lore/arch_010"
+    },
+    "tags": ["conflict", "negotiation", "peace", "connection"]
+  },
+  {
+    "id": "arch_011",
+    "name": "The Lanternbearer",
+    "category": "Heart",
+    "family": "Hope",
+    "rarity": "uncommon",
+    "summary": "Brings steadiness and hope through uncertain terrain.",
+    "routes": {
+      "detail": "/archetypes/arch_011",
+      "profile": "/archetypes/arch_011/profile",
+      "lore": "/lore/arch_011"
+    },
+    "tags": ["resilience", "morale", "steadiness", "guidance"]
+  },
+  {
+    "id": "arch_012",
+    "name": "The Curator",
+    "category": "Creation",
+    "family": "Curation",
+    "rarity": "uncommon",
+    "summary": "Selects what matters and displays it with meaning.",
+    "routes": {
+      "detail": "/archetypes/arch_012",
+      "profile": "/archetypes/arch_012/profile",
+      "lore": "/lore/arch_012"
+    },
+    "tags": ["taste", "editorial", "meaning", "presentation"]
+  },
+  {
+    "id": "arch_013",
+    "name": "The Architect",
+    "category": "Will",
+    "family": "Structure",
+    "rarity": "rare",
+    "summary": "Builds structures that hold people and projects safely.",
+    "routes": {
+      "detail": "/archetypes/arch_013",
+      "profile": "/archetypes/arch_013/profile",
+      "lore": "/lore/arch_013"
+    },
+    "tags": ["systems", "scalability", "design", "planning"]
+  },
+  {
+    "id": "arch_014",
+    "name": "The Gardener",
+    "category": "Heart",
+    "family": "Growth",
+    "rarity": "common",
+    "summary": "Grows people, projects, and culture patiently.",
+    "routes": {
+      "detail": "/archetypes/arch_014",
+      "profile": "/archetypes/arch_014/profile",
+      "lore": "/lore/arch_014"
+    },
+    "tags": ["patience", "coaching", "culture", "nurture"]
+  },
+  {
+    "id": "arch_015",
+    "name": "The Clockmaker",
+    "category": "Will",
+    "family": "Rhythm",
+    "rarity": "uncommon",
+    "summary": "Restores timing, cadence, and reliable output.",
+    "routes": {
+      "detail": "/archetypes/arch_015",
+      "profile": "/archetypes/arch_015/profile",
+      "lore": "/lore/arch_015"
+    },
+    "tags": ["routine", "cadence", "discipline", "consistency"]
+  },
+  {
+    "id": "arch_016",
+    "name": "The Steward",
+    "category": "Will",
+    "family": "Resources",
+    "rarity": "common",
+    "summary": "Manages resources with ethics and long memory.",
+    "routes": {
+      "detail": "/archetypes/arch_016",
+      "profile": "/archetypes/arch_016/profile",
+      "lore": "/lore/arch_016"
+    },
+    "tags": ["sustainability", "trust", "planning", "allocation"]
+  },
+  {
+    "id": "arch_017",
+    "name": "The Veilwalker",
+    "category": "Shadow",
+    "family": "Liminality",
+    "rarity": "rare",
+    "summary": "Crosses boundaries between visible and hidden worlds.",
+    "routes": {
+      "detail": "/archetypes/arch_017",
+      "profile": "/archetypes/arch_017/profile",
+      "lore": "/lore/arch_017"
+    },
+    "tags": ["depth", "transformation", "shadow-work", "truth"]
+  },
+  {
+    "id": "arch_018",
+    "name": "The Commander",
+    "category": "Will",
+    "family": "Execution",
+    "rarity": "uncommon",
+    "summary": "Turns chaos into coordinated action.",
+    "routes": {
+      "detail": "/archetypes/arch_018",
+      "profile": "/archetypes/arch_018/profile",
+      "lore": "/lore/arch_018"
+    },
+    "tags": ["leadership", "decisive", "mobilize", "results"]
+  },
+  {
+    "id": "arch_019",
+    "name": "The Pilgrim",
+    "category": "Spirit",
+    "family": "Devotion",
+    "rarity": "uncommon",
+    "summary": "Seeks meaning through practice, vow, and journey.",
+    "routes": {
+      "detail": "/archetypes/arch_019",
+      "profile": "/archetypes/arch_019/profile",
+      "lore": "/lore/arch_019"
+    },
+    "tags": ["meaning", "endurance", "values", "commitment"]
+  },
+  {
+    "id": "arch_020",
+    "name": "The Scribe",
+    "category": "Creation",
+    "family": "Language",
+    "rarity": "common",
+    "summary": "Captures living truth in words that last.",
+    "routes": {
+      "detail": "/archetypes/arch_020",
+      "profile": "/archetypes/arch_020/profile",
+      "lore": "/lore/arch_020"
+    },
+    "tags": ["writing", "documentation", "clarity", "record"]
+  },
+  {
+    "id": "arch_021",
+    "name": "The Muse",
+    "category": "Creation",
+    "family": "Inspiration",
+    "rarity": "rare",
+    "summary": "Ignites creativity and devotion to beauty.",
+    "routes": {
+      "detail": "/archetypes/arch_021",
+      "profile": "/archetypes/arch_021/profile",
+      "lore": "/lore/arch_021"
+    },
+    "tags": ["beauty", "inspiration", "aesthetics", "spark"]
+  },
+  {
+    "id": "arch_022",
+    "name": "The Initiate",
+    "category": "Will",
+    "family": "Apprenticeship",
+    "rarity": "common",
+    "summary": "Begins again—learns fast and grows through humility.",
+    "routes": {
+      "detail": "/archetypes/arch_022",
+      "profile": "/archetypes/arch_022/profile",
+      "lore": "/lore/arch_022"
+    },
+    "tags": ["learning", "growth", "humility", "practice"]
+  },
+  {
+    "id": "arch_023",
+    "name": "The Witness",
+    "category": "Mind",
+    "family": "Clarity",
+    "rarity": "uncommon",
+    "summary": "Sees clearly and tells the truth without spectacle.",
+    "routes": {
+      "detail": "/archetypes/arch_023",
+      "profile": "/archetypes/arch_023/profile",
+      "lore": "/lore/arch_023"
+    },
+    "tags": ["truth", "discernment", "testimony", "reality"]
+  },
+  {
+    "id": "arch_024",
+    "name": "The Patron",
+    "category": "Will",
+    "family": "Sponsorship",
+    "rarity": "rare",
+    "summary": "Funds, protects, and elevates what should exist.",
+    "routes": {
+      "detail": "/archetypes/arch_024",
+      "profile": "/archetypes/arch_024/profile",
+      "lore": "/lore/arch_024"
+    },
+    "tags": ["support", "resources", "legacy", "uplift"]
+  },
+  {
+    "id": "arch_025",
+    "name": "The Warden",
+    "category": "Will",
+    "family": "Boundaries",
+    "rarity": "rare",
+    "summary": "Protects the sacred boundary between what is allowed and harmful.",
+    "routes": {
+      "detail": "/archetypes/arch_025",
+      "profile": "/archetypes/arch_025/profile",
+      "lore": "/lore/arch_025"
+    },
+    "tags": ["ethics", "safety", "standards", "governance"]
+  }
+]

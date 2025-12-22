@@ -1,0 +1,594 @@
+{
+  "testId": "archetype_main",
+  "title": "Archetype Test",
+  "version": 2,
+  "format": "scale_0_4",
+  "dims": [
+    "verificationNeed",
+    "ambiguityTolerance",
+    "decisionLatency",
+    "systemsThinking",
+    "authorityPosture",
+    "noveltyDrive",
+    "careOrientation",
+    "structurePreference"
+  ],
+  "questions": [
+    {
+      "id": "q_001",
+      "text": "I prefer to verify claims with evidence before I accept them.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_002",
+      "text": "I feel uneasy when decisions are made without data.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_003",
+      "text": "I double-check details even when others are satisfied.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_004",
+      "text": "I trust processes that are measurable and auditable.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_005",
+      "text": "I prefer to verify claims with evidence before I accept them.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_006",
+      "text": "I feel uneasy when decisions are made without data. (reverse)",
+      "dim": "verificationNeed",
+      "reverse": true
+    },
+    {
+      "id": "q_007",
+      "text": "I double-check details even when others are satisfied.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_008",
+      "text": "I trust processes that are measurable and auditable.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_009",
+      "text": "I prefer to verify claims with evidence before I accept them.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_010",
+      "text": "I feel uneasy when decisions are made without data.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_011",
+      "text": "I double-check details even when others are satisfied.",
+      "dim": "verificationNeed",
+      "reverse": false
+    },
+    {
+      "id": "q_012",
+      "text": "I trust processes that are measurable and auditable. (reverse)",
+      "dim": "verificationNeed",
+      "reverse": true
+    },
+    {
+      "id": "q_013",
+      "text": "I’m comfortable moving forward with incomplete information.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_014",
+      "text": "Uncertainty energizes me more than it scares me.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_015",
+      "text": "I can hold multiple interpretations without needing one answer.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_016",
+      "text": "I adapt quickly when the plan changes mid-stream.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_017",
+      "text": "I’m comfortable moving forward with incomplete information.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_018",
+      "text": "Uncertainty energizes me more than it scares me. (reverse)",
+      "dim": "ambiguityTolerance",
+      "reverse": true
+    },
+    {
+      "id": "q_019",
+      "text": "I can hold multiple interpretations without needing one answer.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_020",
+      "text": "I adapt quickly when the plan changes mid-stream.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_021",
+      "text": "I’m comfortable moving forward with incomplete information.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_022",
+      "text": "Uncertainty energizes me more than it scares me.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_023",
+      "text": "I can hold multiple interpretations without needing one answer.",
+      "dim": "ambiguityTolerance",
+      "reverse": false
+    },
+    {
+      "id": "q_024",
+      "text": "I adapt quickly when the plan changes mid-stream. (reverse)",
+      "dim": "ambiguityTolerance",
+      "reverse": true
+    },
+    {
+      "id": "q_025",
+      "text": "I decide quickly once I understand the goal.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_026",
+      "text": "I can choose a direction even when outcomes are unclear.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_027",
+      "text": "I prefer fast iteration over long deliberation.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_028",
+      "text": "I don’t need perfect certainty to act.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_029",
+      "text": "I decide quickly once I understand the goal.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_030",
+      "text": "I can choose a direction even when outcomes are unclear. (reverse)",
+      "dim": "decisionLatency",
+      "reverse": true
+    },
+    {
+      "id": "q_031",
+      "text": "I prefer fast iteration over long deliberation.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_032",
+      "text": "I don’t need perfect certainty to act.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_033",
+      "text": "I decide quickly once I understand the goal.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_034",
+      "text": "I can choose a direction even when outcomes are unclear.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_035",
+      "text": "I prefer fast iteration over long deliberation.",
+      "dim": "decisionLatency",
+      "reverse": false
+    },
+    {
+      "id": "q_036",
+      "text": "I don’t need perfect certainty to act. (reverse)",
+      "dim": "decisionLatency",
+      "reverse": true
+    },
+    {
+      "id": "q_037",
+      "text": "I naturally look for root causes, not just symptoms.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_038",
+      "text": "I notice feedback loops and unintended consequences.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_039",
+      "text": "I prefer solutions that improve the whole system.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_040",
+      "text": "I map relationships between parts before changing anything.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_041",
+      "text": "I naturally look for root causes, not just symptoms.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_042",
+      "text": "I notice feedback loops and unintended consequences. (reverse)",
+      "dim": "systemsThinking",
+      "reverse": true
+    },
+    {
+      "id": "q_043",
+      "text": "I prefer solutions that improve the whole system.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_044",
+      "text": "I map relationships between parts before changing anything.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_045",
+      "text": "I naturally look for root causes, not just symptoms.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_046",
+      "text": "I notice feedback loops and unintended consequences.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_047",
+      "text": "I prefer solutions that improve the whole system.",
+      "dim": "systemsThinking",
+      "reverse": false
+    },
+    {
+      "id": "q_048",
+      "text": "I map relationships between parts before changing anything. (reverse)",
+      "dim": "systemsThinking",
+      "reverse": true
+    },
+    {
+      "id": "q_049",
+      "text": "I’m comfortable taking charge when needed.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_050",
+      "text": "I prefer clear roles and accountability.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_051",
+      "text": "I can hold firm boundaries even if others resist.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_052",
+      "text": "I feel responsible for outcomes when I’m leading.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_053",
+      "text": "I’m comfortable taking charge when needed.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_054",
+      "text": "I prefer clear roles and accountability. (reverse)",
+      "dim": "authorityPosture",
+      "reverse": true
+    },
+    {
+      "id": "q_055",
+      "text": "I can hold firm boundaries even if others resist.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_056",
+      "text": "I feel responsible for outcomes when I’m leading.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_057",
+      "text": "I’m comfortable taking charge when needed.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_058",
+      "text": "I prefer clear roles and accountability.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_059",
+      "text": "I can hold firm boundaries even if others resist.",
+      "dim": "authorityPosture",
+      "reverse": false
+    },
+    {
+      "id": "q_060",
+      "text": "I feel responsible for outcomes when I’m leading. (reverse)",
+      "dim": "authorityPosture",
+      "reverse": true
+    },
+    {
+      "id": "q_061",
+      "text": "I’m drawn to new ideas even if they disrupt routine.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_062",
+      "text": "I enjoy experimenting to discover better approaches.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_063",
+      "text": "I often reframe problems in unexpected ways.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_064",
+      "text": "I get bored when everything stays the same.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_065",
+      "text": "I’m drawn to new ideas even if they disrupt routine.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_066",
+      "text": "I enjoy experimenting to discover better approaches. (reverse)",
+      "dim": "noveltyDrive",
+      "reverse": true
+    },
+    {
+      "id": "q_067",
+      "text": "I often reframe problems in unexpected ways.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_068",
+      "text": "I get bored when everything stays the same.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_069",
+      "text": "I’m drawn to new ideas even if they disrupt routine.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_070",
+      "text": "I enjoy experimenting to discover better approaches.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_071",
+      "text": "I often reframe problems in unexpected ways.",
+      "dim": "noveltyDrive",
+      "reverse": false
+    },
+    {
+      "id": "q_072",
+      "text": "I get bored when everything stays the same. (reverse)",
+      "dim": "noveltyDrive",
+      "reverse": true
+    },
+    {
+      "id": "q_073",
+      "text": "I prioritize emotional safety in groups.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_074",
+      "text": "I naturally check how people are feeling.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_075",
+      "text": "I’m protective of vulnerable people or spaces.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_076",
+      "text": "I value harmony and repair after conflict.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_077",
+      "text": "I prioritize emotional safety in groups.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_078",
+      "text": "I naturally check how people are feeling. (reverse)",
+      "dim": "careOrientation",
+      "reverse": true
+    },
+    {
+      "id": "q_079",
+      "text": "I’m protective of vulnerable people or spaces.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_080",
+      "text": "I value harmony and repair after conflict.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_081",
+      "text": "I prioritize emotional safety in groups.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_082",
+      "text": "I naturally check how people are feeling.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_083",
+      "text": "I’m protective of vulnerable people or spaces.",
+      "dim": "careOrientation",
+      "reverse": false
+    },
+    {
+      "id": "q_084",
+      "text": "I value harmony and repair after conflict. (reverse)",
+      "dim": "careOrientation",
+      "reverse": true
+    },
+    {
+      "id": "q_085",
+      "text": "I work best with clear structure and routines.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_086",
+      "text": "I prefer defined steps over improvisation.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_087",
+      "text": "I like plans, frameworks, and consistent standards.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_088",
+      "text": "I get stressed when expectations are vague.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_089",
+      "text": "I work best with clear structure and routines.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_090",
+      "text": "I prefer defined steps over improvisation. (reverse)",
+      "dim": "structurePreference",
+      "reverse": true
+    },
+    {
+      "id": "q_091",
+      "text": "I like plans, frameworks, and consistent standards.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_092",
+      "text": "I get stressed when expectations are vague.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_093",
+      "text": "I work best with clear structure and routines.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_094",
+      "text": "I prefer defined steps over improvisation.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_095",
+      "text": "I like plans, frameworks, and consistent standards.",
+      "dim": "structurePreference",
+      "reverse": false
+    },
+    {
+      "id": "q_096",
+      "text": "I get stressed when expectations are vague. (reverse)",
+      "dim": "structurePreference",
+      "reverse": true
+    }
+  ]
+}

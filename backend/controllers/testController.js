@@ -1,308 +1,490 @@
 // backend/controllers/testController.js
-const mongoose = require("mongoose");
-const Result = require("../models/Result");
-const TestProgress = require("../models/TestProgress");
-
-// Optional progress logger (safe if missing)
-let progressLog = null;
-try {
-  progressLog = require("../utils/testProgressLog");
-} catch {
-  progressLog = null;
-}
-
-// Robust orchestrator import
-let advanceOrchestrator;
-try {
-  const mod = require("../utils/advanceOrchestrator");
-  advanceOrchestrator =
-    typeof mod === "function" ? mod : mod.advanceOrchestrator || mod.default;
-} catch (e) {
-  console.error("❌ Could not load advanceOrchestrator:", e.message);
-  advanceOrchestrator = null;
-}
-
-function isValidObjectId(id) {
-  return mongoose.Types.ObjectId.isValid(id);
-}
-
-function normalizeResult(doc) {
-  if (!doc) return null;
-  return {
-    id: String(doc._id || ""),
-    userId: String(doc.userId || ""),
-    testId: String(doc.testId || ""),
-    resultType: doc.resultType || "primary",
-    title: doc.title || "",
-    overview: doc.overview || "",
-    traits: Array.isArray(doc.traits) ? doc.traits : [],
-    scores: doc.scores && typeof doc.scores === "object" ? doc.scores : {},
-    nextUnlocked: doc.nextUnlocked || "",
-    createdAt: doc.createdAt || null,
-    updatedAt: doc.updatedAt || null,
-  };
-}
-
-function normalizeProgress(p) {
-  if (!p) return null;
-  return {
-    userId: String(p.userId),
-    activeTestId: p.activeTestId || "",
-    expectedTestId: p.expectedTestId || "",
-    completedTests: Array.isArray(p.completedTests) ? p.completedTests : [],
-    completedCount: typeof p.completedCount === "number" ? p.completedCount : 0,
-    lastResultId: p.lastResultId ? String(p.lastResultId) : null,
-    startedAt: p.startedAt || null,
-    lastSubmittedAt: p.lastSubmittedAt || null,
-    createdAt: p.createdAt || null,
-    updatedAt: p.updatedAt || null,
-  };
-}
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import crypto from "crypto";
+import TestAttempt from "../models/TestAttempt.js";
 
 /**
- * POST /api/tests/start
- * Body: { userId, testId }
- *
- * Strict mode:
- * - Sets active + expected to testId
- * - Creates progress if missing
+ * Tests Controller (v5)
+ * ---------------------
+ * ✅ assignments upload-only for daily tests (day_X_assignments)
+ * ✅ attemptId always generated to satisfy your existing UNIQUE index
+ * ✅ supports:
+ *   - GET  /api/tests/ping
+ *   - GET  /api/tests/catalog
+ *   - GET  /api/tests/:testId
+ *   - POST /api/tests/start
+ *   - POST /api/tests/submit
+ *   - GET  /api/tests/results/:resultId   (resultId = attemptId)
+ *   - GET  /api/tests/results/latest?profileKey=...&testId=...
  */
-exports.startTest = async (req, res) => {
-  try {
-    const { userId, testId } = req.body || {};
 
-    if (!isValidObjectId(userId)) {
-      return res.status(400).json({ success: false, message: "Invalid userId" });
-    }
-    if (!testId || typeof testId !== "string") {
-      return res.status(400).json({ success: false, message: "testId is required" });
-    }
+function safeArr(x) {
+  return Array.isArray(x) ? x : [];
+}
+function safeObj(x) {
+  return x && typeof x === "object" ? x : {};
+}
+function s(x) {
+  return String(x ?? "").trim();
+}
+function num(x) {
+  const v = Number(x);
+  return Number.isFinite(v) ? v : 0;
+}
 
-    const progress = await TestProgress.findOneAndUpdate(
-      { userId },
-      {
-        $set: {
-          activeTestId: testId,
-          expectedTestId: testId,
-          startedAt: new Date(),
-        },
-      },
-      { new: true, upsert: true }
-    );
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-    if (progressLog?.log) {
-      progressLog.log({ userId, testId, event: "START_TEST", meta: { expectedTestId: testId } });
-    }
+const BANK_DIR = path.join(__dirname, "..", "data");
 
-    return res.json({
-      success: true,
-      message: "Test started",
-      progress: normalizeProgress(progress.toObject ? progress.toObject() : progress),
-    });
-  } catch (err) {
-    console.error("startTest error:", err);
-    return res.status(500).json({ success: false, message: "Server error starting test" });
-  }
+// Update these filenames when your real banks exist.
+// If a bank file is missing, getTestById falls back gracefully.
+const BANKS = {
+  major_7day: path.join(BANK_DIR, "majorTest.bank.v1.json"),
+  mini_lumi_shadow_01: path.join(BANK_DIR, "miniTests.lumiShadow.v1.json"),
+  // mini_lumi_shadow_02: path.join(BANK_DIR, "miniTests.lumiShadow02.v1.json"),
 };
 
-/**
- * POST /api/tests/submit
- * Body: { userId, testId, answers }
- *
- * Strict mode:
- * - Must match expectedTestId (if present)
- * - Runs orchestrator
- * - Applies Day 20 tier guardrails
- * - Saves result
- * - Updates TestProgress (expected next test)
- */
-exports.submitTest = async (req, res) => {
+function readJsonIfExists(p) {
   try {
-    const { userId, testId, answers } = req.body || {};
+    if (!p || !fs.existsSync(p)) return null;
+    return JSON.parse(fs.readFileSync(p, "utf8"));
+  } catch (e) {
+    console.warn("⚠️ Failed to read JSON:", p, e?.message || e);
+    return null;
+  }
+}
 
-    // Validate
-    if (!isValidObjectId(userId)) {
-      return res.status(400).json({ success: false, message: "Invalid userId" });
-    }
-    if (!testId || typeof testId !== "string") {
-      return res.status(400).json({ success: false, message: "testId is required" });
-    }
-    if (!answers || (typeof answers !== "object" && !Array.isArray(answers))) {
-      return res.status(400).json({ success: false, message: "answers is required" });
-    }
-    if (!advanceOrchestrator) {
-      return res.status(500).json({
-        success: false,
-        message: "advanceOrchestrator not available (check backend/utils/advanceOrchestrator.js)",
-      });
-    }
+function makeTestCard(t) {
+  return {
+    id: s(t.id),
+    title: s(t.title),
+    description: s(t.description),
+    kind: s(t.kind || "unknown"),
+    days: t.days ?? null,
+    totalQuestions: t.totalQuestions ?? null,
+    totalAssignments: t.totalAssignments ?? null,
+    routeHint: t.routeHint || null,
+  };
+}
 
-    // Load or create progress
-    let progress = await TestProgress.findOne({ userId });
-    if (!progress) {
-      progress = await TestProgress.create({
-        userId,
-        activeTestId: testId,
-        expectedTestId: testId,
-        startedAt: new Date(),
-      });
-    }
+// -----------------------------
+// GET /api/tests/ping
+// -----------------------------
+export async function pingTests(req, res) {
+  return res.json({
+    ok: true,
+    message: "tests router ok",
+    routes: [
+      "GET  /api/tests/ping",
+      "GET  /api/tests/catalog",
+      "GET  /api/tests/:testId",
+      "POST /api/tests/start",
+      "POST /api/tests/submit",
+      "GET  /api/tests/results/:resultId",
+      "GET  /api/tests/results/latest?profileKey=debug_profile&testId=major_7day",
+    ],
+  });
+}
 
-    // Strict enforcement: must match expectedTestId if set
-    if (progress.expectedTestId && progress.expectedTestId !== testId) {
-      if (progressLog?.log) {
-        progressLog.log({
-          userId,
-          testId,
-          event: "SUBMIT_BLOCKED",
-          meta: { expectedTestId: progress.expectedTestId, receivedTestId: testId },
-        });
-      }
-
-      return res.status(400).json({
-        success: false,
-        message: "Cannot submit this test right now",
-        expectedTestId: progress.expectedTestId,
-        receivedTestId: testId,
-      });
-    }
-
-    // Orchestrate
-    const orch = await advanceOrchestrator({ userId, testId, answers });
-    const computed = orch?.computed || orch?.result || orch || {};
-    const nextUnlockedRaw =
-      orch?.nextUnlocked || orch?.next || computed?.nextUnlocked || "";
-
-    // Safe fields
-    const title =
-      typeof computed?.title === "string" && computed.title.trim()
-        ? computed.title.trim()
-        : "Untitled Result";
-
-    const overview =
-      typeof computed?.overview === "string" && computed.overview.trim()
-        ? computed.overview.trim()
-        : "Result generated.";
-
-    const traits = Array.isArray(computed?.traits) ? computed.traits : [];
-    const scores =
-      computed?.scores && typeof computed.scores === "object" ? computed.scores : {};
-
-    let resultType =
-      computed?.resultType === "shadow" || computed?.resultType === "luminary"
-        ? computed.resultType
-        : "primary";
-
-    const nextUnlocked = typeof nextUnlockedRaw === "string" ? nextUnlockedRaw : "";
-
-    // ----------------------------
-    // Day 20 Tier Guardrails
-    // ----------------------------
-    let guardedResultType = resultType;
-
-    // Shadow requires Primary
-    if (guardedResultType === "shadow") {
-      const hasPrimary = await Result.exists({ userId, resultType: "primary" });
-      if (!hasPrimary) guardedResultType = "primary";
-    }
-
-    // Luminary requires Shadow
-    if (guardedResultType === "luminary") {
-      const hasShadow = await Result.exists({ userId, resultType: "shadow" });
-      if (!hasShadow) guardedResultType = "primary";
-    }
-
-    // Save result
-    const saved = await Result.create({
-      userId,
-      testId,
-      resultType: guardedResultType,
-      title,
-      overview,
-      traits,
-      scores,
-      nextUnlocked,
+// -----------------------------
+// GET /api/tests/catalog
+// -----------------------------
+export async function getTestCatalog(req, res) {
+  try {
+    const major = makeTestCard({
+      id: "major_7day",
+      title: "Major Test — 7 Day Suite",
+      description: "7-day arc: daily questions + upload-only art assignments. Influences final result.",
+      kind: "major",
+      days: 7,
+      totalQuestions: 105, // placeholder until bank is connected
+      totalAssignments: 21,
+      routeHint: "/api/major-test",
     });
 
-    // Update progress
-    const completedSet = new Set(progress.completedTests || []);
-    completedSet.add(testId);
+    const minis = [
+      makeTestCard({
+        id: "mini_lumi_shadow_01",
+        title: "Mini Test 1 — Luminary & Shadow (Core)",
+        description: "Establishes base luminary/shadow totals.",
+        kind: "mini",
+        totalQuestions: 15,
+        routeHint: "/api/mini-tests",
+      }),
+      makeTestCard({
+        id: "mini_lumi_shadow_02",
+        title: "Mini Test 2 — Luminary & Shadow (Impulse)",
+        description: "Adds impulse + stress coloration.",
+        kind: "mini",
+        totalQuestions: 15,
+        routeHint: "/api/mini-tests",
+      }),
+      makeTestCard({
+        id: "mini_lumi_shadow_03",
+        title: "Mini Test 3 — Luminary & Shadow (Values)",
+        description: "Values-based weighting.",
+        kind: "mini",
+        totalQuestions: 15,
+        routeHint: "/api/mini-tests",
+      }),
+      makeTestCard({
+        id: "mini_lumi_shadow_04",
+        title: "Mini Test 4 — Luminary & Shadow (Social)",
+        description: "Relational + social traits.",
+        kind: "mini",
+        totalQuestions: 15,
+        routeHint: "/api/mini-tests",
+      }),
+      makeTestCard({
+        id: "mini_lumi_shadow_05",
+        title: "Mini Test 5 — Luminary & Shadow (Shadow Pressure)",
+        description: "Pressure testing patterns.",
+        kind: "mini",
+        totalQuestions: 15,
+        routeHint: "/api/mini-tests",
+      }),
+    ];
 
-    progress.completedTests = Array.from(completedSet);
-    progress.completedCount = progress.completedTests.length;
+    const daily = [];
+    for (let day = 1; day <= 7; day++) {
+      daily.push(
+        makeTestCard({
+          id: `day_${day}_assignments`,
+          title: `Day ${day} — Upload Assignments`,
+          description: "Upload-only art prompts (3 uploads). Scorable.",
+          kind: "daily",
+          days: 1,
+          totalAssignments: 3,
+          routeHint: "/api/major-test",
+        })
+      );
+    }
 
-    progress.lastResultId = saved._id;
-    progress.lastSubmittedAt = new Date();
+    return res.json({ ok: true, tests: [major, ...minis, ...daily] });
+  } catch (err) {
+    console.error("getTestCatalog error:", err);
+    return res.status(500).json({ ok: false, message: err?.message || "Server error" });
+  }
+}
 
-    // Strict: one next test at a time
-    progress.activeTestId = nextUnlocked || "";
-    progress.expectedTestId = nextUnlocked || "";
+// -----------------------------
+// Helpers: daily upload-only assignments
+// -----------------------------
+function buildDailyUploadOnlyAssignments(testId) {
+  return [
+    {
+      id: `${testId}_a1`,
+      type: "upload",
+      prompt: "Upload 1: Progress photo (today’s first attempt).",
+      accept: ["image/*"],
+      score: { major: { M_ART_DAILY: 2 } },
+    },
+    {
+      id: `${testId}_a2`,
+      type: "upload",
+      prompt: "Upload 2: Study photo (color/value/gesture).",
+      accept: ["image/*"],
+      score: { major: { M_ART_DAILY: 2 } },
+    },
+    {
+      id: `${testId}_a3`,
+      type: "upload",
+      prompt: "Upload 3: Best-of-day photo.",
+      accept: ["image/*"],
+      score: { major: { M_ART_DAILY: 1 } },
+    },
+  ];
+}
 
-    await progress.save();
+// -----------------------------
+// GET /api/tests/:testId
+// -----------------------------
+export async function getTestById(req, res) {
+  try {
+    const testId = s(req.params.testId);
 
-    if (progressLog?.log) {
-      progressLog.log({
-        userId,
-        testId,
-        event: "SUBMIT_OK",
-        meta: {
-          intendedResultType: resultType,
-          finalResultType: guardedResultType,
-          nextUnlocked,
+    // Bank-backed test
+    const bankPath = BANKS[testId];
+    if (bankPath) {
+      const bank = readJsonIfExists(bankPath);
+      if (bank) {
+        return res.json({
+          ok: true,
+          test: {
+            id: testId,
+            title: bank.title || testId,
+            description: bank.description || "",
+            kind: bank.kind || "bank",
+            days: bank.days ?? null,
+            questions: safeArr(bank.questions),
+            assignments: safeArr(bank.assignments),
+          },
+        });
+      }
+    }
+
+    // Daily upload-only assignment tests
+    if (testId.startsWith("day_") && testId.endsWith("_assignments")) {
+      const dayNum = testId.replace("day_", "").replace("_assignments", "");
+      return res.json({
+        ok: true,
+        test: {
+          id: testId,
+          title: `Day ${dayNum} — Upload Assignments`,
+          description: "Upload-only art prompts (3 uploads). Scorable.",
+          kind: "daily",
+          questions: [],
+          assignments: buildDailyUploadOnlyAssignments(testId),
         },
       });
     }
 
+    // Fallback test
     return res.json({
-      success: true,
-      message: "Test submitted, result saved, progress updated",
-      nextUnlocked: saved.nextUnlocked || "",
-      result: normalizeResult(saved.toObject ? saved.toObject() : saved),
-      progress: normalizeProgress(progress.toObject ? progress.toObject() : progress),
-      guardrail: {
-        intendedResultType: resultType,
-        finalResultType: guardedResultType,
+      ok: true,
+      test: {
+        id: testId,
+        title: `Test: ${testId}`,
+        description: "Placeholder test until bank is connected.",
+        kind: "unknown",
+        questions: [
+          {
+            id: "Q1",
+            type: "multiple_choice",
+            prompt: "Placeholder question: pick one.",
+            options: [
+              { id: "A", text: "Option A", score: { major: { M_PLACEHOLDER: 1 } } },
+              { id: "B", text: "Option B", score: { major: { M_PLACEHOLDER: 2 } } },
+              { id: "C", text: "Option C", score: { major: { M_PLACEHOLDER: 3 } } },
+            ],
+          },
+        ],
+        assignments: [],
       },
+    });
+  } catch (err) {
+    console.error("getTestById error:", err);
+    return res.status(500).json({ ok: false, message: err?.message || "Server error" });
+  }
+}
+
+// -----------------------------
+// Scoring engine
+// -----------------------------
+function ensureDomains(totals) {
+  const out = safeObj(totals);
+  for (const d of ["major", "luminary", "shadow", "archetype"]) {
+    if (!out[d] || typeof out[d] !== "object") out[d] = {};
+  }
+  return out;
+}
+
+function addTotals(base, deltaScoreObj) {
+  const totals = ensureDomains(base);
+  const delta = safeObj(deltaScoreObj);
+
+  for (const domain of ["major", "luminary", "shadow", "archetype"]) {
+    const src = safeObj(delta[domain]);
+    for (const [k, v] of Object.entries(src)) {
+      totals[domain][k] = (totals[domain][k] || 0) + num(v);
+    }
+  }
+  return totals;
+}
+
+function mergeTotals(a, b) {
+  const out = ensureDomains({});
+  addTotals(out, a);
+  addTotals(out, b);
+  return out;
+}
+
+function hasAnyAnswer(val) {
+  const v = safeObj(val);
+  if (v.optionId != null && String(v.optionId).length) return true;
+  if (Array.isArray(v.optionIds) && v.optionIds.length) return true;
+  if (typeof v.text === "string" && v.text.trim().length) return true;
+  if (typeof v.value === "number" && Number.isFinite(v.value)) return true;
+  if (v.fileName) return true;
+  return false;
+}
+
+function scoreFromItemAndAnswer(item, ansVal) {
+  const totals = ensureDomains({});
+  if (!hasAnyAnswer(ansVal)) return totals;
+
+  // baseline on item (perfect for upload assignments)
+  if (item.score) addTotals(totals, item.score);
+
+  const type = s(item.type || "text");
+  const val = safeObj(ansVal);
+
+  if (type === "multiple_choice") {
+    const optId = s(val.optionId);
+    const opt = safeArr(item.options).find((o) => s(o.id) === optId);
+    if (opt?.score) addTotals(totals, opt.score);
+  }
+
+  if (type === "select_multiple") {
+    const ids = new Set(safeArr(val.optionIds).map((x) => s(x)));
+    for (const opt of safeArr(item.options)) {
+      if (ids.has(s(opt.id)) && opt?.score) addTotals(totals, opt.score);
+    }
+  }
+
+  if (type === "rating") {
+    const map = safeObj(item.ratingScoreMap);
+    const key = String(val.value ?? "");
+    if (map[key]) addTotals(totals, map[key]);
+  }
+
+  return totals;
+}
+
+function flattenItemsFromTestDef(testDef) {
+  const t = safeObj(testDef);
+  const merged = [...safeArr(t.questions), ...safeArr(t.assignments)].map((it, i) => ({
+    ...it,
+    id: s(it.id) || `item_${i + 1}`,
+    type: s(it.type || "text"),
+  }));
+  return merged;
+}
+
+// -----------------------------
+// POST /api/tests/start
+// -----------------------------
+export async function startTest(req, res) {
+  try {
+    const profileKey = s(req.body?.profileKey) || "debug_profile";
+    const testId = s(req.body?.testId);
+    if (!testId) return res.status(400).json({ ok: false, message: "Missing testId" });
+
+    // ✅ Always set attemptId (unique index safety)
+    const attemptId = crypto.randomUUID();
+
+    const doc = await TestAttempt.create({
+      attemptId,
+      profileKey,
+      testId,
+      status: "started",
+      answers: [],
+      totals: ensureDomains({}),
+      startedAt: new Date(),
+      submittedAt: null,
+    });
+
+    return res.json({ ok: true, attemptId: doc.attemptId });
+  } catch (err) {
+    console.error("startTest error:", err);
+    return res.status(500).json({ ok: false, message: err?.message || "Server error" });
+  }
+}
+
+// -----------------------------
+// POST /api/tests/submit
+// -----------------------------
+export async function submitTest(req, res) {
+  try {
+    const profileKey = s(req.body?.profileKey) || "debug_profile";
+    const testId = s(req.body?.testId);
+    const answersMap = safeObj(req.body?.answers);
+
+    if (!testId) return res.status(400).json({ ok: false, message: "Missing testId" });
+
+    // Load scoring definition for this test (bank or daily placeholder)
+    let testDef = null;
+
+    const bankPath = BANKS[testId];
+    if (bankPath) {
+      const bank = readJsonIfExists(bankPath);
+      if (bank) testDef = { questions: safeArr(bank.questions), assignments: safeArr(bank.assignments) };
+    }
+
+    if (!testDef && testId.startsWith("day_") && testId.endsWith("_assignments")) {
+      testDef = { questions: [], assignments: buildDailyUploadOnlyAssignments(testId) };
+    }
+
+    if (!testDef) {
+      testDef = { questions: [], assignments: [] };
+    }
+
+    const items = flattenItemsFromTestDef(testDef);
+
+    let totals = ensureDomains({});
+    const answersArray = [];
+
+    for (const it of items) {
+      const itemId = s(it.id);
+      if (!(itemId in answersMap)) continue;
+
+      const val = answersMap[itemId];
+      answersArray.push({ itemId, value: val });
+
+      const delta = scoreFromItemAndAnswer(it, val);
+      totals = mergeTotals(totals, delta);
+    }
+
+    // ✅ Always set attemptId (unique index safety)
+    const attemptId = crypto.randomUUID();
+
+    const doc = await TestAttempt.create({
+      attemptId,
+      profileKey,
+      testId,
+      status: "submitted",
+      answers: answersArray,
+      totals,
+      startedAt: new Date(),
+      submittedAt: new Date(),
+    });
+
+    return res.json({
+      ok: true,
+      attemptId: doc.attemptId,
+      resultId: doc.attemptId, // treat resultId as attemptId
+      totals: doc.totals,
     });
   } catch (err) {
     console.error("submitTest error:", err);
-
-    if (progressLog?.log) {
-      progressLog.log({
-        userId: req?.body?.userId,
-        testId: req?.body?.testId,
-        event: "SUBMIT_ERROR",
-        meta: { error: err?.message || String(err) },
-      });
-    }
-
-    return res.status(500).json({
-      success: false,
-      message: "Server error submitting test",
-      error: err?.message || String(err),
-    });
+    return res.status(500).json({ ok: false, message: err?.message || "Server error" });
   }
-};
+}
 
-/**
- * GET /api/tests/progress/:userId
- */
-exports.getProgress = async (req, res) => {
+// -----------------------------
+// GET /api/tests/results/:resultId
+// -----------------------------
+export async function getTestResult(req, res) {
   try {
-    const { userId } = req.params;
-
-    if (!isValidObjectId(userId)) {
-      return res.status(400).json({ success: false, message: "Invalid userId" });
-    }
-
-    const progress = await TestProgress.findOne({ userId }).lean();
-
-    return res.json({
-      success: true,
-      progress: progress ? normalizeProgress(progress) : null,
-    });
+    const resultId = s(req.params.resultId);
+    const doc = await TestAttempt.findOne({ attemptId: resultId }).lean();
+    if (!doc) return res.status(404).json({ ok: false, message: "Result not found" });
+    return res.json({ ok: true, result: doc });
   } catch (err) {
-    console.error("getProgress error:", err);
-    return res.status(500).json({ success: false, message: "Server error fetching progress" });
+    console.error("getTestResult error:", err);
+    return res.status(500).json({ ok: false, message: err?.message || "Server error" });
   }
-};
+}
+
+// -----------------------------
+// GET /api/tests/results/latest?profileKey=...&testId=...
+// -----------------------------
+export async function getLatestTestResult(req, res) {
+  try {
+    const profileKey = s(req.query.profileKey) || "debug_profile";
+    const testId = s(req.query.testId);
+    if (!testId) return res.status(400).json({ ok: false, message: "Missing testId query param" });
+
+    const doc = await TestAttempt.findOne({ profileKey, testId, status: "submitted" })
+      .sort({ submittedAt: -1, createdAt: -1 })
+      .lean();
+
+    return res.json({ ok: true, result: doc || null });
+  } catch (err) {
+    console.error("getLatestTestResult error:", err);
+    return res.status(500).json({ ok: false, message: err?.message || "Server error" });
+  }
+}

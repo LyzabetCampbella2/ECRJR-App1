@@ -1,0 +1,127 @@
+[
+  {
+    "id": "family_translators",
+    "name": "The Translators",
+    "sphereId": "cognitive"
+  },
+  {
+    "id": "family_analysts",
+    "name": "The Analysts",
+    "sphereId": "cognitive"
+  },
+  {
+    "id": "family_architects",
+    "name": "The Architects",
+    "sphereId": "cognitive"
+  },
+  {
+    "id": "family_archivists",
+    "name": "The Archivists",
+    "sphereId": "cognitive"
+  },
+  {
+    "id": "family_cartographers",
+    "name": "The Cartographers",
+    "sphereId": "cognitive"
+  },
+  {
+    "id": "family_harmonizers",
+    "name": "The Harmonizers",
+    "sphereId": "relational"
+  },
+  {
+    "id": "family_caretakers",
+    "name": "The Caretakers",
+    "sphereId": "relational"
+  },
+  {
+    "id": "family_diplomats",
+    "name": "The Diplomats",
+    "sphereId": "relational"
+  },
+  {
+    "id": "family_binders",
+    "name": "The Binders",
+    "sphereId": "relational"
+  },
+  {
+    "id": "family_mirrors",
+    "name": "The Mirrors",
+    "sphereId": "relational"
+  },
+  {
+    "id": "family_commanders",
+    "name": "The Commanders",
+    "sphereId": "agentic"
+  },
+  {
+    "id": "family_executors",
+    "name": "The Executors",
+    "sphereId": "agentic"
+  },
+  {
+    "id": "family_pathfinders",
+    "name": "The Pathfinders",
+    "sphereId": "agentic"
+  },
+  {
+    "id": "family_guardians",
+    "name": "The Guardians",
+    "sphereId": "agentic"
+  },
+  {
+    "id": "family_challengers",
+    "name": "The Challengers",
+    "sphereId": "agentic"
+  },
+  {
+    "id": "family_storyweavers",
+    "name": "The Storyweavers",
+    "sphereId": "creative"
+  },
+  {
+    "id": "family_originators",
+    "name": "The Originators",
+    "sphereId": "creative"
+  },
+  {
+    "id": "family_alchemists",
+    "name": "The Alchemists",
+    "sphereId": "creative"
+  },
+  {
+    "id": "family_oracles",
+    "name": "The Oracles",
+    "sphereId": "creative"
+  },
+  {
+    "id": "family_curators",
+    "name": "The Curators",
+    "sphereId": "creative"
+  },
+  {
+    "id": "family_synthesists",
+    "name": "The Synthesists",
+    "sphereId": "integrative"
+  },
+  {
+    "id": "family_stewards",
+    "name": "The Stewards",
+    "sphereId": "integrative"
+  },
+  {
+    "id": "family_mediators",
+    "name": "The Mediators",
+    "sphereId": "integrative"
+  },
+  {
+    "id": "family_signalers",
+    "name": "The Signalers",
+    "sphereId": "integrative"
+  },
+  {
+    "id": "family_weavers",
+    "name": "The Weavers",
+    "sphereId": "integrative"
+  }
+]

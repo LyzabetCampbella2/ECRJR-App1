@@ -1,0 +1,26 @@
+{
+  "id": "mini3_attachment",
+  "title": "Attachment & Trust",
+  "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]
+  },
+  "questions": [
+    { "id": "a1", "text": "I trust people more when they show consistent logic and honesty.", "tag": "lum_sage" },
+    { "id": "a2", "text": "I feel safest when roles and boundaries are clear.", "tag": "lum_warden" },
+    { "id": "a3", "text": "I remember what matters to people and track it over time.", "tag": "lum_chronicler" },
+    { "id": "a4", "text": "I can create a bridge between different personalities without losing myself.", "tag": "lum_emissary" },
+    { "id": "a5", "text": "I struggle to relax unless I’m in control of what happens next.", "tag": "sha_usurper" },
+    { "id": "a6", "text": "I feel loved when I’m needed, even if it drains me.", "tag": "sha_martyr" },
+    { "id": "a7", "text": "I keep distance because belonging often comes with disappointment.", "tag": "sha_heretic" },
+    { "id": "a8", "text": "I present my best version so people won’t see what I fear is unworthy.", "tag": "sha_gilded_mask" },
+    { "id": "a9", "text": "I build trust through doing—showing up, fixing, making, completing.", "tag": "lum_artificer" },
+    { "id": "a10", "text": "I feel deeply, and it affects how close I let people get.", "tag": "lum_poet" },
+    { "id": "a11", "text": "I often sense someone’s intentions before they say them.", "tag": "lum_oracle" },
+    { "id": "a12", "text": "I watch people’s patterns carefully to know whether they’re safe.", "tag": "lum_sentinel" },
+    { "id": "a13", "text": "I assume closeness will eventually lead to pain, so I stay prepared.", "tag": "sha_void_watcher" },
+    { "id": "a14", "text": "When I care, I hide it under calmness and control.", "tag": "sha_ice_queen" },
+    { "id": "a15", "text": "I become whoever others need so they won’t leave.", "tag": "sha_fawner" }
+  ]
+}

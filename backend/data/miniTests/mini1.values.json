@@ -1,0 +1,22 @@
+{
+  "id": "mini1_values",
+  "title": "Values & Motives",
+  "scale": { "min": 0, "max": 4, "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"] },
+  "questions": [
+    { "id": "v1", "text": "I’d rather be accurate than impressive.", "tag": "lum_sage" },
+    { "id": "v2", "text": "I feel responsible for protecting what matters, even if it costs me.", "tag": "lum_warden" },
+    { "id": "v3", "text": "I naturally keep track of details others overlook.", "tag": "lum_librarian" },
+    { "id": "v4", "text": "I can translate conflict into something people can actually talk about.", "tag": "lum_emissary" },
+    { "id": "v5", "text": "If I can’t control the outcome, I struggle to relax.", "tag": "sha_usurper" },
+    { "id": "v6", "text": "I give so much that I secretly feel unseen.", "tag": "sha_martyr" },
+    { "id": "v7", "text": "When I feel judged, I reject the whole system first.", "tag": "sha_heretic" },
+    { "id": "v8", "text": "I carefully curate how I’m perceived so I won’t be dismissed.", "tag": "sha_gilded_mask" },
+    { "id": "v9", "text": "I’d rather build something real than talk about building it.", "tag": "lum_artificer" },
+    { "id": "v10", "text": "I notice symbolism and hidden meaning in everyday life.", "tag": "lum_poet" },
+    { "id": "v11", "text": "I sense what’s coming before I can explain why.", "tag": "lum_oracle" },
+    { "id": "v12", "text": "I document things so the truth won’t get lost.", "tag": "lum_chronicler" },
+    { "id": "v13", "text": "I assume something will go wrong, so I stay prepared.", "tag": "sha_void_watcher" },
+    { "id": "v14", "text": "I prefer to keep my feelings private so they can’t be used against me.", "tag": "sha_ice_queen" },
+    { "id": "v15", "text": "I adapt to what others want until I forget what I want.", "tag": "sha_fawner" }
+  ]
+}

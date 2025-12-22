@@ -1,3 +1,86 @@
-{
-  "results": []
-}
+[
+  {
+    "runId": "mini_20251220_B94E8D",
+    "createdAt": "2025-12-20T18:41:42.102Z",
+    "userId": null,
+    "luminaries": [
+      {
+        "tag": "LUM_HEALER",
+        "name": "The Healer",
+        "score": 0.6666666666666666,
+        "family": "Luminary"
+      },
+      {
+        "tag": "LUM_SAFEGUARD",
+        "name": "The Safeguard",
+        "score": 0.4666666666666667,
+        "family": "Luminary"
+      },
+      {
+        "tag": "LUM_GARDENER",
+        "name": "The Gardener",
+        "score": 0.39999999999999997,
+        "family": "Luminary"
+      },
+      {
+        "tag": "LUM_BENEFACTOR",
+        "name": "The Benefactor",
+        "score": 0.39999999999999997,
+        "family": "Luminary"
+      },
+      {
+        "tag": "LUM_EMPATH",
+        "name": "The Empath",
+        "score": 0.39999999999999997,
+        "family": "Luminary"
+      }
+    ],
+    "shadows": [
+      {
+        "tag": "SHA_FAWN",
+        "name": "The Fawn",
+        "score": 1,
+        "family": "Shadow"
+      },
+      {
+        "tag": "SHA_WARD",
+        "name": "The Ward",
+        "score": 0.6,
+        "family": "Shadow"
+      },
+      {
+        "tag": "SHA_TYRANT",
+        "name": "The Tyrant",
+        "score": 0,
+        "family": "Shadow"
+      },
+      {
+        "tag": "SHA_MARTYR",
+        "name": "The Martyr",
+        "score": 0,
+        "family": "Shadow"
+      },
+      {
+        "tag": "SHA_VOID",
+        "name": "The Voidwalker",
+        "score": 0,
+        "family": "Shadow"
+      }
+    ],
+    "signals": {
+      "completedMiniTests": [
+        "lumishadow_mini_1"
+      ],
+      "confidence": 0.26666666666666666
+    },
+    "debug": {
+      "luminaryTags": {
+        "mercy": 0.6666666666666666,
+        "protection": 0.3333333333333333
+      },
+      "shadowTags": {
+        "appeasement": 1
+      }
+    }
+  }
+]

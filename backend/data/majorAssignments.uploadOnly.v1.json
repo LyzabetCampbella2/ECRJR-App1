@@ -1,0 +1,182 @@
+{
+  "id": "major_assignments_upload_only_v1",
+  "title": "Major Test — Upload Assignments (Upload-Only)",
+  "days": 7,
+  "assignmentsPerDay": 3,
+  "assignments": [
+    {
+      "id": "day1_upload_1",
+      "day": 1,
+      "type": "upload",
+      "prompt": "Day 1 — Upload 1: A photo of your 5-minute sketch (any subject).",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day1_upload_2",
+      "day": 1,
+      "type": "upload",
+      "prompt": "Day 1 — Upload 2: A color study image (one color family only).",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day1_upload_3",
+      "day": 1,
+      "type": "upload",
+      "prompt": "Day 1 — Upload 3: Your best attempt (photo).",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "day2_upload_1",
+      "day": 2,
+      "type": "upload",
+      "prompt": "Day 2 — Upload 1: Value study (light/mid/dark) — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day2_upload_2",
+      "day": 2,
+      "type": "upload",
+      "prompt": "Day 2 — Upload 2: Gesture sketch page — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day2_upload_3",
+      "day": 2,
+      "type": "upload",
+      "prompt": "Day 2 — Upload 3: One finished mini-piece — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "day3_upload_1",
+      "day": 3,
+      "type": "upload",
+      "prompt": "Day 3 — Upload 1: Composition thumbnails (3–6) — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day3_upload_2",
+      "day": 3,
+      "type": "upload",
+      "prompt": "Day 3 — Upload 2: Texture/material study — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day3_upload_3",
+      "day": 3,
+      "type": "upload",
+      "prompt": "Day 3 — Upload 3: Best-of-day piece — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "day4_upload_1",
+      "day": 4,
+      "type": "upload",
+      "prompt": "Day 4 — Upload 1: Perspective practice page — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day4_upload_2",
+      "day": 4,
+      "type": "upload",
+      "prompt": "Day 4 — Upload 2: Lighting study — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day4_upload_3",
+      "day": 4,
+      "type": "upload",
+      "prompt": "Day 4 — Upload 3: One finished study — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "day5_upload_1",
+      "day": 5,
+      "type": "upload",
+      "prompt": "Day 5 — Upload 1: Anatomy/structure study — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day5_upload_2",
+      "day": 5,
+      "type": "upload",
+      "prompt": "Day 5 — Upload 2: Style study (copy a reference) — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day5_upload_3",
+      "day": 5,
+      "type": "upload",
+      "prompt": "Day 5 — Upload 3: Best-of-day piece — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "day6_upload_1",
+      "day": 6,
+      "type": "upload",
+      "prompt": "Day 6 — Upload 1: Character/object design sheet — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day6_upload_2",
+      "day": 6,
+      "type": "upload",
+      "prompt": "Day 6 — Upload 2: Environment/setting sketch — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day6_upload_3",
+      "day": 6,
+      "type": "upload",
+      "prompt": "Day 6 — Upload 3: Best-of-day piece — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "day7_upload_1",
+      "day": 7,
+      "type": "upload",
+      "prompt": "Day 7 — Upload 1: Final mini-project draft — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day7_upload_2",
+      "day": 7,
+      "type": "upload",
+      "prompt": "Day 7 — Upload 2: Final mini-project refinement — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "day7_upload_3",
+      "day": 7,
+      "type": "upload",
+      "prompt": "Day 7 — Upload 3: Final best version — upload photo.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    }
+  ]
+}

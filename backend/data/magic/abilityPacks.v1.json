@@ -1,0 +1,128 @@
+{
+  "version": "ability_packs.v1",
+  "packs": [
+    {
+      "packId": "pack_mystic_01",
+      "name": "Mystic — Star & Veil",
+      "tags": ["mystic", "divination", "ritual", "veil"],
+      "abilities": [
+        { "id": "ab_star_sense", "name": "Star-Sense", "type": "passive", "cost": "focus", "cooldown": 0, "effect": "Detect hidden intent and falsehood in conversation.", "counter": "Noise, crowds, deliberate misdirection" },
+        { "id": "ab_veil_step", "name": "Veil-Step", "type": "active", "cost": "aether", "cooldown": 30, "effect": "Short displacement through shadowed space.", "counter": "Ward lines, bright light" },
+        { "id": "ab_ritual_circle", "name": "Ritual Circle", "type": "setup", "cost": "time", "cooldown": 120, "effect": "Creates a bounded zone that amplifies magic and reveals spirits.", "counter": "Salt scatter, circle break" },
+        { "id": "ab_mirror_ward", "name": "Mirror-Ward", "type": "defense", "cost": "sigils", "cooldown": 45, "effect": "Reflect one hostile spell back at half strength.", "counter": "Physical strikes, indirect effects" },
+        { "id": "ab_name_bind", "name": "Name-Bind", "type": "control", "cost": "vow", "cooldown": 90, "effect": "If a target’s true name is known, restrict one action.", "counter": "Alias-layers, name masks" },
+
+        { "id": "ab_astral_thread", "name": "Astral Thread", "type": "utility", "cost": "focus", "cooldown": 20, "effect": "Marks a person or place with a trace you can follow.", "counter": "Running water, smoke rites" },
+        { "id": "ab_veil_listen", "name": "Veil-Listen", "type": "utility", "cost": "breath", "cooldown": 25, "effect": "Hear whispers through walls if silence is maintained.", "counter": "Clamor, bells, iron" },
+        { "id": "ab_tide_of_omens", "name": "Tide of Omens", "type": "active", "cost": "aether", "cooldown": 180, "effect": "Reveals 3 likely outcomes of a choice—one is false.", "counter": "Chaos zones, trickster interference" },
+        { "id": "ab_lantern_glyph", "name": "Lantern Glyph", "type": "setup", "cost": "ink", "cooldown": 60, "effect": "A sigil that lights hidden paths and exposes wards.", "counter": "Mud, rain, anti-ink" },
+        { "id": "ab_sigil_seal", "name": "Sigil-Seal", "type": "control", "cost": "sigils", "cooldown": 75, "effect": "Locks a door/container against mundane entry.", "counter": "Key-blood, force, counter-sigil" },
+
+        { "id": "ab_soul_mantel", "name": "Soul Mantel", "type": "defense", "cost": "aether", "cooldown": 120, "effect": "Prevents possession and reduces fear effects.", "counter": "Dread rites, repeated exposure" },
+        { "id": "ab_dream_inlay", "name": "Dream Inlay", "type": "active", "cost": "sleep", "cooldown": 300, "effect": "Plant a symbolic clue into a sleeper’s dream.", "counter": "Dream wards, insomnia" },
+        { "id": "ab_ghost_accord", "name": "Ghost Accord", "type": "ritual", "cost": "offering", "cooldown": 600, "effect": "Negotiate with local spirits for guidance.", "counter": "Iron, disrespect" },
+        { "id": "ab_silver_eye", "name": "Silver Eye", "type": "active", "cost": "focus", "cooldown": 50, "effect": "See magical residue and recent spellwork.", "counter": "Time, cleansing rites" },
+        { "id": "ab_candle_hex", "name": "Candle Hex", "type": "offense", "cost": "wax", "cooldown": 70, "effect": "Slow curse that weakens resolve and clarity.", "counter": "Salt bath, confession, fire-break" },
+
+        { "id": "ab_veil_shroud", "name": "Veil Shroud", "type": "defense", "cost": "aether", "cooldown": 90, "effect": "Hide a small group from mundane sight briefly.", "counter": "Dogs, heat, loud motion" },
+        { "id": "ab_starfall_mark", "name": "Starfall Mark", "type": "setup", "cost": "aether", "cooldown": 180, "effect": "Mark a target so your next spell lands easier.", "counter": "Cleansing, distance" },
+        { "id": "ab_oracle_bargain", "name": "Oracle’s Bargain", "type": "ritual", "cost": "memory", "cooldown": 999, "effect": "Gain a major truth at the price of a cherished memory.", "counter": "None—only mitigation" },
+        { "id": "ab_veil_rewrite", "name": "Veil Rewrite", "type": "control", "cost": "sigils", "cooldown": 240, "effect": "Alter the meaning of one existing ward or sigil.", "counter": "Anchor runes, layered wards" },
+        { "id": "ab_starlit_sanctum", "name": "Starlit Sanctum", "type": "ultimate", "cost": "aether+time", "cooldown": 600, "effect": "Create a sacred space that buffs allies and denies hostile magic.", "counter": "Siege pressure, circle disruption" }
+      ]
+    },
+
+    {
+      "packId": "pack_commander_01",
+      "name": "Commander — Oath & Banner",
+      "tags": ["leader", "tactics", "oath", "banner"],
+      "abilities": [
+        { "id": "ab_banner_presence", "name": "Banner Presence", "type": "passive", "cost": "none", "cooldown": 0, "effect": "Allies near you resist fear and hesitation.", "counter": "Isolation, terror effects" },
+        { "id": "ab_command_voice", "name": "Command Voice", "type": "active", "cost": "breath", "cooldown": 20, "effect": "Force allies to act in sync (minor speed/precision).", "counter": "Silence, distance" },
+        { "id": "ab_oath_bind", "name": "Oath-Bind", "type": "control", "cost": "vow", "cooldown": 90, "effect": "Seal a pact; breaking it causes backlash.", "counter": "No consent, oath loopholes" },
+        { "id": "ab_formation_lock", "name": "Formation Lock", "type": "defense", "cost": "focus", "cooldown": 40, "effect": "Create a defensive stance; reduces incoming damage briefly.", "counter": "Flanks, area effects" },
+        { "id": "ab_rally_flash", "name": "Rally Flash", "type": "active", "cost": "resolve", "cooldown": 60, "effect": "Instant morale surge; clears confusion on allies.", "counter": "Exhaustion, repeated use" },
+
+        { "id": "ab_tactical_mark", "name": "Tactical Mark", "type": "setup", "cost": "focus", "cooldown": 25, "effect": "Mark an enemy; allies gain advantage against it.", "counter": "Line-of-sight break" },
+        { "id": "ab_banner_shield", "name": "Banner Shield", "type": "defense", "cost": "resolve", "cooldown": 45, "effect": "Project a barrier that blocks one heavy hit.", "counter": "Multiple rapid strikes" },
+        { "id": "ab_chain_of_orders", "name": "Chain of Orders", "type": "active", "cost": "breath", "cooldown": 75, "effect": "Issue 3 sequential commands with increasing effect.", "counter": "Interrupts, silence" },
+        { "id": "ab_oathfire", "name": "Oathfire", "type": "offense", "cost": "vow", "cooldown": 80, "effect": "A burning strike empowered by a sworn promise.", "counter": "Broken vow, dampening wards" },
+        { "id": "ab_linebreaker", "name": "Linebreaker", "type": "active", "cost": "stamina", "cooldown": 90, "effect": "Charge through defenses; disrupts formations.", "counter": "Bracing, terrain traps" },
+
+        { "id": "ab_siege_mind", "name": "Siege Mind", "type": "passive", "cost": "none", "cooldown": 0, "effect": "You see weak points in structures and plans.", "counter": "Chaos, misinformation" },
+        { "id": "ab_war_table", "name": "War-Table", "type": "ritual", "cost": "time", "cooldown": 300, "effect": "Plan ahead; choose one advantage for next encounter.", "counter": "Ambush, time pressure" },
+        { "id": "ab_banner_gate", "name": "Banner Gate", "type": "utility", "cost": "resolve", "cooldown": 240, "effect": "Create a short-lived safe route/escape corridor.", "counter": "Ward nets, pursuit pressure" },
+        { "id": "ab_field_medic_call", "name": "Field Medic Call", "type": "utility", "cost": "breath", "cooldown": 120, "effect": "Stabilize an ally; slows bleed/poison effects.", "counter": "Burst damage, toxins" },
+        { "id": "ab_discipline_aura", "name": "Discipline Aura", "type": "passive", "cost": "none", "cooldown": 0, "effect": "Nearby allies gain focus; reduces mistakes under stress.", "counter": "Panic magic, disruption" },
+
+        { "id": "ab_oathbrand", "name": "Oathbrand", "type": "setup", "cost": "ink", "cooldown": 180, "effect": "Brand a symbol that strengthens loyalty and clarity.", "counter": "Defacement, counter-sigil" },
+        { "id": "ab_stand_fast", "name": "Stand Fast", "type": "defense", "cost": "resolve", "cooldown": 150, "effect": "You cannot be moved; allies gain cover behind you.", "counter": "Area denial, entangle" },
+        { "id": "ab_iron_decree", "name": "Iron Decree", "type": "control", "cost": "authority", "cooldown": 300, "effect": "For a short time, hostile magic weakens within your command zone.", "counter": "Outrange, overwhelm" },
+        { "id": "ab_battle_anthem", "name": "Battle Anthem", "type": "active", "cost": "breath", "cooldown": 240, "effect": "A song-like cadence that buffs allies and punishes fear.", "counter": "Silence, confusion" },
+        { "id": "ab_banner_of_legacy", "name": "Banner of Legacy", "type": "ultimate", "cost": "resolve+vow", "cooldown": 600, "effect": "Summon a legendary standard that massively empowers allies and breaks curses.", "counter": "Focus fire, banner destruction" }
+      ]
+    },
+
+    {
+      "packId": "pack_trickster_01",
+      "name": "Trickster — Smoke & Mirror",
+      "tags": ["trickster", "illusion", "misdirection", "escape"],
+      "abilities": [
+        { "id": "ab_smoke_skin", "name": "Smoke-Skin", "type": "defense", "cost": "breath", "cooldown": 45, "effect": "Become hazy; first hit passes through partially.", "counter": "Wind, true-sight" },
+        { "id": "ab_mirror_dart", "name": "Mirror Dart", "type": "offense", "cost": "focus", "cooldown": 20, "effect": "A fast illusion-strike that distracts and stings.", "counter": "Armor, discipline" },
+        { "id": "ab_false_footsteps", "name": "False Footsteps", "type": "utility", "cost": "none", "cooldown": 30, "effect": "Create decoy tracks and sound trails.", "counter": "Scent, trained trackers" },
+        { "id": "ab_mask_swap", "name": "Mask-Swap", "type": "control", "cost": "focus", "cooldown": 90, "effect": "Swap appearances with a target briefly.", "counter": "Name wards, anchors" },
+        { "id": "ab_smoke_bloom", "name": "Smoke Bloom", "type": "setup", "cost": "powder", "cooldown": 60, "effect": "Fill an area with obscuring smoke that carries whispers.", "counter": "Wind, fire, sealed masks" },
+
+        { "id": "ab_mirror_clone", "name": "Mirror-Clone", "type": "active", "cost": "aether", "cooldown": 70, "effect": "Create a decoy copy that mimics your movement.", "counter": "Splash damage, true-sight" },
+        { "id": "ab_pocket_glint", "name": "Pocket Glint", "type": "utility", "cost": "none", "cooldown": 25, "effect": "Hide a small item in a reflective fold-space.", "counter": "Anti-magic search" },
+        { "id": "ab_laughing_hex", "name": "Laughing Hex", "type": "control", "cost": "breath", "cooldown": 80, "effect": "Inflicts uncontrollable laughter and delay.", "counter": "Pain focus, cleansing" },
+        { "id": "ab_smoke_step", "name": "Smoke-Step", "type": "active", "cost": "breath", "cooldown": 35, "effect": "Blink to the edge of nearby smoke.", "counter": "No smoke, wards" },
+        { "id": "ab_mirror_snare", "name": "Mirror Snare", "type": "setup", "cost": "sigil", "cooldown": 120, "effect": "Trap a foe in looping reflections briefly.", "counter": "Blindfold, shatter focus" },
+
+        { "id": "ab_con_artist", "name": "Con Artist", "type": "passive", "cost": "none", "cooldown": 0, "effect": "You read greed and fear quickly; gain leverage in dialogue.", "counter": "Honest actors, discipline" },
+        { "id": "ab_switcheroo", "name": "Switcheroo", "type": "active", "cost": "focus", "cooldown": 55, "effect": "Swap two objects or two positions within short range.", "counter": "Anchors, heavy mass" },
+        { "id": "ab_shatter_gaze", "name": "Shatter Gaze", "type": "offense", "cost": "aether", "cooldown": 90, "effect": "Break one ward or illusion construct.", "counter": "Layered wards, rebound" },
+        { "id": "ab_misdirect_mark", "name": "Misdirect Mark", "type": "setup", "cost": "ink", "cooldown": 60, "effect": "Mark a target; attacks tend to drift toward it.", "counter": "Cleansing, distance" },
+        { "id": "ab_smoke_contract", "name": "Smoke Contract", "type": "ritual", "cost": "secret", "cooldown": 600, "effect": "Seal a bargain that’s hard to remember incorrectly.", "counter": "Written proof, witnesses" },
+
+        { "id": "ab_glass_laugh", "name": "Glass Laugh", "type": "active", "cost": "breath", "cooldown": 150, "effect": "Enemies misjudge timing; interrupts coordinated action.", "counter": "Training, steady cadence" },
+        { "id": "ab_mirror_vanish", "name": "Mirror Vanish", "type": "defense", "cost": "aether", "cooldown": 180, "effect": "Disappear into reflective surfaces briefly.", "counter": "No reflections, salt lines" },
+        { "id": "ab_smoke_betrayal", "name": "Smoke Betrayal", "type": "control", "cost": "breath", "cooldown": 240, "effect": "Turn an enemy’s ally against them for a heartbeat.", "counter": "Strong bonds, wards" },
+        { "id": "ab_thousand_faces", "name": "Thousand Faces", "type": "utility", "cost": "aether", "cooldown": 300, "effect": "Cycle disguises rapidly to evade recognition.", "counter": "True-name call, scent" },
+        { "id": "ab_smoke_crown", "name": "Smoke Crown", "type": "ultimate", "cost": "breath+aether", "cooldown": 600, "effect": "Control the battlefield with dense illusion-smoke; enemies lose orientation.", "counter": "Wind, true-sight, wide retreat" }
+      ]
+    },
+
+    {
+      "packId": "pack_craftsman_01",
+      "name": "Craftsman — Forge & Rune",
+      "tags": ["craft", "runes", "tools", "enchanting"],
+      "abilities": [
+        { "id": "ab_rune_sight", "name": "Rune-Sight", "type": "passive", "cost": "none", "cooldown": 0, "effect": "See weak points in wards, bindings, and crafted items.", "counter": "Chaos craft, layered masks" },
+        { "id": "ab_quick_sigiling", "name": "Quick Sigiling", "type": "setup", "cost": "ink", "cooldown": 20, "effect": "Draw a small rune fast for minor effects.", "counter": "Smear, rain, interruption" },
+        { "id": "ab_forge_heat", "name": "Forge Heat", "type": "utility", "cost": "fuel", "cooldown": 60, "effect": "Heat metal safely without flame; enables rapid crafting.", "counter": "Cold wards, dampening" },
+        { "id": "ab_tool_blessing", "name": "Tool Blessing", "type": "buff", "cost": "focus", "cooldown": 45, "effect": "Tools work cleaner; fewer mistakes and breaks.", "counter": "Rust, sabotage" },
+        { "id": "ab_rune_lock", "name": "Rune-Lock", "type": "control", "cost": "sigil", "cooldown": 90, "effect": "Lock a door/container; alerts you if tampered.", "counter": "Counter-rune, brute force" },
+
+        { "id": "ab_iron_patch", "name": "Iron Patch", "type": "defense", "cost": "metal", "cooldown": 60, "effect": "Temporary armor plating on self/ally.", "counter": "Acid, corrosion" },
+        { "id": "ab_shock_pin", "name": "Shock Pin", "type": "offense", "cost": "charge", "cooldown": 35, "effect": "A rune-staple that jolts and slows.", "counter": "Grounding, insulation" },
+        { "id": "ab_ward_plate", "name": "Ward Plate", "type": "defense", "cost": "sigil", "cooldown": 120, "effect": "Attach a ward to gear; blocks one spell.", "counter": "Multi-hit spells, shatter" },
+        { "id": "ab_anchor_rivet", "name": "Anchor Rivet", "type": "setup", "cost": "metal", "cooldown": 80, "effect": "Prevents teleport/displacement in a small zone.", "counter": "Outrange, anchor break" },
+        { "id": "ab_repair_chant", "name": "Repair Chant", "type": "utility", "cost": "time", "cooldown": 180, "effect": "Restore damaged gear and stabilise cracks.", "counter": "Ongoing damage, cursed breaks" },
+
+        { "id": "ab_rune_chain", "name": "Rune-Chain", "type": "control", "cost": "sigil", "cooldown": 90, "effect": "Bind a target with glowing runes briefly.", "counter": "Shatter, mobility" },
+        { "id": "ab_forge_companion", "name": "Forge Companion", "type": "utility", "cost": "metal", "cooldown": 300, "effect": "Summon a small construct helper for tasks.", "counter": "EMP-like disruption, magnet traps" },
+        { "id": "ab_engrave_truth", "name": "Engrave Truth", "type": "ritual", "cost": "memory", "cooldown": 600, "effect": "Imprint a statement into metal; lies become obvious near it.", "counter": "Distance, layered deception" },
+        { "id": "ab_rune_burst", "name": "Rune Burst", "type": "offense", "cost": "sigil", "cooldown": 70, "effect": "Detonate a placed rune for area damage.", "counter": "Spotting, disarm" },
+        { "id": "ab_silent_workshop", "name": "Silent Workshop", "type": "defense", "cost": "sigil+time", "cooldown": 300, "effect": "Create a quiet zone where crafting is safer and hidden.", "counter": "Circle disruption, siege" },
+
+        { "id": "ab_counter_etch", "name": "Counter-Etch", "type": "control", "cost": "ink", "cooldown": 60, "effect": "Rewrite part of an enemy rune/ward to weaken it.", "counter": "Anchor runes, complexity" },
+        { "id": "ab_heat_quench", "name": "Heat-Quench", "type": "utility", "cost": "water", "cooldown": 90, "effect": "Purge curses from metal by thermal shock.", "counter": "Deep curses, living bindings" },
+        { "id": "ab_masterwork_focus", "name": "Masterwork Focus", "type": "buff", "cost": "focus", "cooldown": 180, "effect": "For a time, every craft action is enhanced.", "counter": "Fatigue, interruptions" },
+        { "id": "ab_rune_bridge", "name": "Rune Bridge", "type": "utility", "cost": "sigil", "cooldown": 240, "effect": "Create temporary stepping platforms/bridge panels.", "counter": "Wind, weight, shatter" },
+        { "id": "ab_warded_armory", "name": "Warded Armory", "type": "ultimate", "cost": "sigil+time", "cooldown": 600, "effect": "Summon a cache of warded tools/arms; allies can equip instantly.", "counter": "Dispel storm, cache destruction" }
+      ]
+    }
+  ]
+}

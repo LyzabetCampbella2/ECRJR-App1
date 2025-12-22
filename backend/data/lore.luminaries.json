@@ -1,0 +1,110 @@
+{
+  "lum_sage": {
+    "name": "The Sage",
+    "overview": "The mind that studies the lantern, not the flame. You seek truth with disciplined wonder, preferring principles over noise.",
+    "traits": ["Analytical", "Patient", "Precise", "Curious"],
+    "strengths": ["Clear thinking under pressure", "Pattern recognition", "Ethical reasoning"],
+    "risks": ["Analysis paralysis", "Emotional detachment", "Perfectionism as avoidance"],
+    "growth": ["Let insight meet action. Choose a thesis, then live it."],
+    "prompts": ["What truth am I avoiding because it would require change?", "Where can I be ‘good enough’ and still be honest?"]
+  },
+  "lum_warden": {
+    "name": "The Warden",
+    "overview": "A guardian of boundaries and vows. You protect what must endure: people, standards, sacred obligations.",
+    "traits": ["Steady", "Protective", "Principled", "Reserved"],
+    "strengths": ["Reliability", "Security-building", "Long-term commitment"],
+    "risks": ["Rigidity", "Over-control", "Difficulty receiving help"],
+    "growth": ["Strength includes softness. Allow trust to be reciprocal."],
+    "prompts": ["What boundary is holy—and what boundary is fear?", "Who deserves to see the unarmored version of me?"]
+  },
+  "lum_librarian": {
+    "name": "The Librarian",
+    "overview": "The keeper of names, lineage, and meaning. You gather knowledge like relics and arrange it into usable order.",
+    "traits": ["Organized", "Observant", "Methodical", "Thoughtful"],
+    "strengths": ["Systems thinking", "Memory and synthesis", "Teaching"],
+    "risks": ["Gatekeeping", "Over-categorizing people", "Staying in preparation mode"],
+    "growth": ["Share the archive. Knowledge hoarded becomes stagnation."],
+    "prompts": ["What have I learned that I’m not applying?", "What would I teach if I couldn’t hide behind ‘more research’?"]
+  },
+  "lum_emissary": {
+    "name": "The Emissary",
+    "overview": "You translate worlds. You can stand between factions and bring language to what’s been unsaid.",
+    "traits": ["Diplomatic", "Empathic", "Socially aware", "Strategic"],
+    "strengths": ["Negotiation", "De-escalation", "Building alliances"],
+    "risks": ["People-pleasing", "Losing your stance", "Avoiding conflict until it erupts"],
+    "growth": ["Peace isn’t silence; it’s truth with skill."],
+    "prompts": ["Where am I smoothing over something that needs clarity?", "What truth can I say kindly today?"]
+  },
+  "lum_artificer": {
+    "name": "The Artificer",
+    "overview": "You make ideas real. You prefer prototypes to promises, craft to performance.",
+    "traits": ["Inventive", "Pragmatic", "Persistent", "Self-directed"],
+    "strengths": ["Execution", "Creative problem-solving", "Resourcefulness"],
+    "risks": ["Isolation", "Overworking", "Scorning ‘soft’ needs"],
+    "growth": ["Build with others. Collaboration is also a tool."],
+    "prompts": ["What am I building that secretly builds me back?", "Where can I ask for help without shame?"]
+  },
+  "lum_poet": {
+    "name": "The Poet",
+    "overview": "You feel the world in symbols. You notice the sacred inside ordinary moments.",
+    "traits": ["Sensitive", "Imaginative", "Honest", "Intuitive"],
+    "strengths": ["Meaning-making", "Emotional precision", "Inspiration"],
+    "risks": ["Melancholy spirals", "Romanticizing pain", "Avoiding practicality"],
+    "growth": ["Make beauty usable. Give your art a schedule."],
+    "prompts": ["What emotion keeps visiting me, and what does it want?", "What daily ritual would protect my creativity?"]
+  },
+  "lum_oracle": {
+    "name": "The Oracle",
+    "overview": "You sense pattern before proof. You anticipate what’s coming and name it early.",
+    "traits": ["Visionary", "Perceptive", "Bold", "Quietly intense"],
+    "strengths": ["Foresight", "Strategy", "Seeing through illusion"],
+    "risks": ["Arrogance", "Catastrophizing", "Withdrawing when misunderstood"],
+    "growth": ["Translate the vision. Bring others with you."],
+    "prompts": ["What do I know that I’m afraid to say out loud?", "What’s the smallest next step that honors my insight?"]
+  },
+  "lum_chronicler": {
+    "name": "The Chronicler",
+    "overview": "You document what matters so it cannot be erased. You turn lived experience into record and lesson.",
+    "traits": ["Reflective", "Loyal", "Careful", "Truth-seeking"],
+    "strengths": ["Story coherence", "Learning from history", "Accountability"],
+    "risks": ["Living in the past", "Over-identifying with wounds", "Fear of revision"],
+    "growth": ["You’re allowed to rewrite the chapter."],
+    "prompts": ["What story am I tired of telling?", "What would closure look like in practice?"]
+  },
+  "lum_sentinel": {
+    "name": "The Sentinel",
+    "overview": "You notice what others miss. You detect risk, hypocrisy, and weak structure before it collapses.",
+    "traits": ["Alert", "Direct", "Discerning", "Protective"],
+    "strengths": ["Integrity checks", "Crisis response", "Security instincts"],
+    "risks": ["Suspicion", "Hypervigilance", "Harshness as defense"],
+    "growth": ["Discernment without disdain. Protect without poisoning yourself."],
+    "prompts": ["What am I bracing for that isn’t happening now?", "Where can I lower my guard 5% today?"]
+  },
+  "lum_benedictor": {
+    "name": "The Benedictor",
+    "overview": "You bless what is worthy and nurture what is becoming. You make people braver by believing in them.",
+    "traits": ["Encouraging", "Warm", "Steady", "Hopeful"],
+    "strengths": ["Mentorship", "Emotional support", "Community building"],
+    "risks": ["Overgiving", "Saving people", "Ignoring your own needs"],
+    "growth": ["Give, but not at the cost of your life-force."],
+    "prompts": ["Who am I carrying that must learn to walk?", "What would self-respect look like today?"]
+  },
+  "lum_abbess": {
+    "name": "The Abbess",
+    "overview": "You cultivate sanctuaries—habits, rooms, teams, rituals—where growth becomes inevitable.",
+    "traits": ["Grounded", "Orderly", "Purposeful", "Attentive"],
+    "strengths": ["Stability", "Ritual design", "Sustained progress"],
+    "risks": ["Control via structure", "Harsh inner critic", "Fear of mess"],
+    "growth": ["Let life be alive. Chaos can be compost."],
+    "prompts": ["What structure supports me—and which one cages me?", "Where can I allow imperfection without collapse?"]
+  },
+  "lum_knight_errant": {
+    "name": "The Knight-Errant",
+    "overview": "You are momentum with a conscience. You protect the vulnerable and move toward the hard thing on purpose.",
+    "traits": ["Courageous", "Restless", "Loyal", "Action-oriented"],
+    "strengths": ["Initiative", "Bravery", "Defending values"],
+    "risks": ["Martyrdom", "Impulsivity", "Burnout from constant battles"],
+    "growth": ["Choose your quests wisely. Rest is not betrayal."],
+    "prompts": ["Which fight is truly mine?", "What would ‘courage with pacing’ look like?"]
+  }
+}

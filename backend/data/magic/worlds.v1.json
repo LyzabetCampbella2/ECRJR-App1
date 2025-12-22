@@ -1,0 +1,96 @@
+{
+  "version": "magic_worlds.v1",
+  "worlds": [
+    {
+      "worldId": "world_01_elyndra",
+      "name": "Elyndra",
+      "subtitle": "The Lantern-Cities and the Oath Sea",
+      "tone": ["mythic", "sailcloth", "luminous", "courtly"],
+      "magicLaws": [
+        "Light must be paid for with memory.",
+        "Names spoken at sea bind stronger than ink."
+      ],
+      "costs": ["memory", "salt-debt", "vow-binding"],
+      "factions": ["The Lantern Synod", "The Salt Archivists", "The Oath Corsairs"],
+      "biomes": ["lantern-harbors", "glass reefs", "storm corridors", "salt libraries"]
+    },
+    {
+      "worldId": "world_02_vyreholm",
+      "name": "Vyreholm",
+      "subtitle": "Iron Abbeys and Bone Engines",
+      "tone": ["gothic", "industrial", "solemn", "mechanized"],
+      "magicLaws": [
+        "All power leaves a residue.",
+        "Metal remembers every hand that shaped it."
+      ],
+      "costs": ["rust-sickness", "blood-oil", "service-tithes"],
+      "factions": ["Abbey of Iron Vows", "The Bonewright Guild", "The Ash Cartel"],
+      "biomes": ["iron marshes", "abbey foundries", "bone tunnels", "ash dunes"]
+    },
+    {
+      "worldId": "world_03_miridell",
+      "name": "Miridell",
+      "subtitle": "The Mirror Forest and the Untrue Sun",
+      "tone": ["surreal", "silvered", "elegant", "unsettling"],
+      "magicLaws": [
+        "Reflections can lie—but they always want something.",
+        "No spell crosses water without changing shape."
+      ],
+      "costs": ["identity-fray", "mirror-debt", "truth-hunger"],
+      "factions": ["The Glass Court", "The Unseen Choir", "The Thorned Envoys"],
+      "biomes": ["mirror woods", "moon ponds", "hollow halls", "shard-fields"]
+    },
+    {
+      "worldId": "world_04_caerth",
+      "name": "Caerth",
+      "subtitle": "Cinder Deserts and Sunken Choirs",
+      "tone": ["ancient", "ashen", "monolithic", "ritual"],
+      "magicLaws": [
+        "Heat is a language. It answers only to sacrifice.",
+        "Old ruins demand offerings before passage."
+      ],
+      "costs": ["breath-drought", "cinder-burn", "oath-tribute"],
+      "factions": ["The Cinder Priories", "The Salt-Barrow Nomads", "The Buried Choir"],
+      "biomes": ["cinder seas", "sunken temples", "glass dunes", "choir pits"]
+    },
+    {
+      "worldId": "world_05_aerovale",
+      "name": "Aerovale",
+      "subtitle": "Sky-Isles and Storm Courts",
+      "tone": ["bright", "dangerous", "electrical", "heroic"],
+      "magicLaws": [
+        "Altitude amplifies truth and punishes lies.",
+        "Storms remember who tried to tame them."
+      ],
+      "costs": ["thunder-faint", "wind-fever", "static scars"],
+      "factions": ["The Storm Court", "The Ropewright Pilots", "The Lightning Scribes"],
+      "biomes": ["sky bridges", "storm bowls", "floating orchards", "cloud halls"]
+    },
+    {
+      "worldId": "world_06_noxmere",
+      "name": "Noxmere",
+      "subtitle": "The Undercity of Soot and Whisper-Water",
+      "tone": ["noir", "secretive", "crowded", "shadowed"],
+      "magicLaws": [
+        "Secrets are currency. Spending them has consequences.",
+        "Whisper-water carries vows downstream."
+      ],
+      "costs": ["secret-loss", "paranoia", "whisper-debt"],
+      "factions": ["The Key Market", "The Soot Lanterns", "The River Oathkeepers"],
+      "biomes": ["pipe cathedrals", "coal canals", "market vaults", "lantern alleys"]
+    },
+    {
+      "worldId": "world_07_frostvein",
+      "name": "Frostvein",
+      "subtitle": "Monasteries of Ice and the White Oath",
+      "tone": ["austere", "holy", "silent", "sharp"],
+      "magicLaws": [
+        "Cold preserves truth and kills pretense.",
+        "Promises spoken in snow become binding."
+      ],
+      "costs": ["nerve-numb", "white-blindness", "oath-chill"],
+      "factions": ["The White Monastery", "The Glacier Wardens", "The Snowbound Heralds"],
+      "biomes": ["ice cloisters", "glacier crypts", "snow libraries", "wind cliffs"]
+    }
+  ]
+}

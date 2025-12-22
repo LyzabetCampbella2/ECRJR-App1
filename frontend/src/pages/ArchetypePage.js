@@ -1,167 +1,246 @@
+// src/pages/ArchetypePage.js
 import React, { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+const DATA_BASE = `${process.env.PUBLIC_URL || ""}/data`;
+
+function safeIncludes(hay, needle) {
+  if (!needle) return true;
+  return String(hay || "").toLowerCase().includes(String(needle).toLowerCase());
+}
 
 export default function ArchetypePage() {
+  const navigate = useNavigate();
+
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
-  const [catalog, setCatalog] = useState([]);
+  const [items, setItems] = useState([]);
 
+  // UI
   const [q, setQ] = useState("");
-  const [family, setFamily] = useState("All");
-  const [tier, setTier] = useState("All");
+  const [constellation, setConstellation] = useState("all");
+  const [sortMode, setSortMode] = useState("name"); // name | id | constellation
+  const [page, setPage] = useState(1);
+  const pageSize = 48;
 
   useEffect(() => {
-    let alive = true;
+    let cancelled = false;
 
-    (async () => {
+    async function load() {
+      setLoading(true);
+      setErr("");
+
       try {
-        setLoading(true);
-        setErr("");
-
-        const res = await fetch(`/data/archetypesCatalog.json?t=${Date.now()}`, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status} loading /data/archetypesCatalog.json`);
-
-        const json = await res.json();
-        if (!Array.isArray(json)) throw new Error("Catalog JSON is not an array");
-
-        if (alive) setCatalog(json);
+        const res = await fetch(`${DATA_BASE}/all900archetypes.json`, { cache: "no-store" });
+        if (!res.ok) throw new Error(`Failed to load all900archetypes.json (${res.status})`);
+        const data = await res.json();
+        if (!cancelled) setItems(Array.isArray(data) ? data : []);
       } catch (e) {
-        if (alive) setErr(String(e?.message || e));
+        if (!cancelled) setErr(e?.message || "Failed to load archetypes");
       } finally {
-        if (alive) setLoading(false);
+        if (!cancelled) setLoading(false);
       }
-    })();
+    }
 
-    return () => { alive = false; };
+    load();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  const families = useMemo(() => {
+  const constellations = useMemo(() => {
     const set = new Set();
-    for (const a of catalog) if (a?.family) set.add(a.family);
-    return ["All", ...Array.from(set).sort()];
-  }, [catalog]);
-
-  const tiers = useMemo(() => {
-    const set = new Set();
-    for (const a of catalog) if (a?.tier) set.add(a.tier);
-    return ["All", ...Array.from(set).sort()];
-  }, [catalog]);
+    for (const a of items) {
+      if (a?.constellation) set.add(a.constellation);
+    }
+    return ["all", ...Array.from(set).sort((a, b) => String(a).localeCompare(String(b)))];
+  }, [items]);
 
   const filtered = useMemo(() => {
-    const s = q.trim().toLowerCase();
+    const out = items.filter((a) => {
+      if (!a) return false;
 
-    return (catalog || []).filter((a) => {
-      if (family !== "All" && (a?.family || "Unassigned") !== family) return false;
-      if (tier !== "All" && (a?.tier || "Common") !== tier) return false;
+      const constOk = constellation === "all" ? true : a.constellation === constellation;
 
-      if (!s) return true;
-
-      const hay = [
-        a?.id,
-        a?.name,
-        a?.family,
-        a?.tier,
-        ...(a?.tags || []),
-        a?.lore?.oneLiner,
-        a?.lore?.overview
+      const text = [
+        a.name,
+        a.id,
+        a.tag,
+        a.subtitle,
+        a.constellation,
+        ...(Array.isArray(a.luminaryTags) ? a.luminaryTags : []),
+        ...(Array.isArray(a.shadowTags) ? a.shadowTags : []),
       ]
         .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
+        .join(" • ");
 
-      return hay.includes(s);
+      const qOk = q ? safeIncludes(text, q) : true;
+
+      return constOk && qOk;
     });
-  }, [catalog, q, family, tier]);
 
-  const shown = filtered.slice(0, 160);
+    out.sort((a, b) => {
+      const ax =
+        sortMode === "id"
+          ? a.id
+          : sortMode === "constellation"
+          ? a.constellation
+          : a.name;
+      const bx =
+        sortMode === "id"
+          ? b.id
+          : sortMode === "constellation"
+          ? b.constellation
+          : b.name;
+
+      return String(ax || "").localeCompare(String(bx || ""), undefined, { sensitivity: "base" });
+    });
+
+    return out;
+  }, [items, q, constellation, sortMode]);
+
+  const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
+
+  useEffect(() => {
+    if (page > pageCount) setPage(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageCount]);
+
+  const visible = useMemo(() => {
+    const start = (page - 1) * pageSize;
+    return filtered.slice(start, start + pageSize);
+  }, [filtered, page]);
+
+  function openProfile(a) {
+    if (!a?.id) return;
+    navigate(`/lore/archetype/${a.id}`);
+  }
 
   return (
-    <div className="container">
-      <div className="card" style={{ marginBottom: 14 }}>
-        <h1 className="h1">Archetypes</h1>
-
-        {loading ? <p className="p">Loading…</p> : null}
-        {err ? (
-          <div style={{ marginTop: 10 }}>
-            <p className="p">Error: {err}</p>
-            <p className="p" style={{ marginTop: 6 }}>
-              Check: <b>http://localhost:3000/data/archetypesCatalog.json</b>
-            </p>
+    <div className="page">
+      <div className="pageHeader">
+        <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+          <div>
+            <h1 className="pageTitle">Archetypes</h1>
+            <p className="pageSubtitle">Browse all 900 archetypes and open their profiles.</p>
           </div>
-        ) : null}
 
-        {!loading && !err ? (
-          <p className="p">
-            Loaded: <b>{catalog.length}</b> • Showing: <b>{filtered.length}</b>
-          </p>
-        ) : null}
-
-        <div style={{ marginTop: 12, display: "grid", gridTemplateColumns: "1fr 220px 180px", gap: 12 }}>
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search name, id, tags, lore…" />
-
-          <select value={family} onChange={(e) => setFamily(e.target.value)}>
-            {families.map((f) => (
-              <option key={f} value={f}>{f}</option>
-            ))}
-          </select>
-
-          <select value={tier} onChange={(e) => setTier(e.target.value)}>
-            {tiers.map((t) => (
-              <option key={t} value={t}>{t}</option>
-            ))}
-          </select>
-        </div>
-
-        <div style={{ marginTop: 12, display: "flex", gap: 12, flexWrap: "wrap" }}>
-          <Link className="btn" to="/dashboard">Dashboard</Link>
-          <Link className="btn btn--primary" to="/tests">Major Test</Link>
+          <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+            <Link className="btn" to="/dashboard">
+              Continue → Dashboard
+            </Link>
+            <Link className="btn" to="/lore">
+              Open Lore Library
+            </Link>
+          </div>
         </div>
       </div>
 
-      {!loading && !err && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-          {shown.map((a) => {
-            const title = a?.name || a?.id;
-            const blurb =
-              a?.lore?.oneLiner ||
-              a?.lore?.overview ||
-              (a?.tags?.length ? `Tags: ${a.tags.join(", ")}` : "No lore yet.");
+      <div className="card">
+        <div className="toolbar">
+          <div className="toolbarLeft">
+            <input
+              className="input"
+              value={q}
+              onChange={(e) => {
+                setQ(e.target.value);
+                setPage(1);
+              }}
+              placeholder="Search archetype name, tag, constellation, linked tags…"
+            />
 
-            return (
-              <div key={a.id} className="card" style={{ padding: 14 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
-                  <div style={{ fontWeight: 900 }}>{title}</div>
-                  <div style={{ opacity: 0.75, fontSize: 12 }}>{a.id}</div>
-                </div>
+            <select
+              className="select"
+              value={constellation}
+              onChange={(e) => {
+                setConstellation(e.target.value);
+                setPage(1);
+              }}
+              title="Filter by constellation"
+            >
+              {constellations.map((c) => (
+                <option key={c} value={c}>
+                  {c === "all" ? "All Constellations" : c}
+                </option>
+              ))}
+            </select>
 
-                <div className="p" style={{ marginTop: 8 }}>
-                  <span style={{ opacity: 0.85 }}>
-                    {(a.family || "Unassigned")} • {(a.tier || "Common")}
-                  </span>
-                </div>
+            <select className="select" value={sortMode} onChange={(e) => setSortMode(e.target.value)}>
+              <option value="name">Sort: Name</option>
+              <option value="id">Sort: ID</option>
+              <option value="constellation">Sort: Constellation</option>
+            </select>
+          </div>
 
-                <div className="p" style={{ marginTop: 8 }}>
-                  {String(blurb).slice(0, 160)}
-                  {String(blurb).length > 160 ? "…" : ""}
-                </div>
+          <div className="toolbarRight">
+            <div className="muted">
+              Showing <strong>{filtered.length}</strong> / {items.length}
+            </div>
+          </div>
+        </div>
 
-                <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap" }}>
-                  <Link className="btn btn--primary" to={`/archetypes/${a.id}`}>Open</Link>
-                  {/* Keep legacy route working if you still use /lore/:id anywhere */}
-                  <Link className="btn" to={`/lore/${a.id}`}>Lore</Link>
+        {loading ? (
+          <div className="muted" style={{ padding: 16 }}>
+            Loading archetypes…
+          </div>
+        ) : err ? (
+          <div className="errorBox" style={{ padding: 16 }}>
+            <div style={{ fontWeight: 800, marginBottom: 6 }}>Could not load archetypes</div>
+            <div className="muted">{err}</div>
+            <div className="muted" style={{ marginTop: 10 }}>
+              Ensure <code>public/data/all900archetypes.json</code> exists.
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="muted" style={{ padding: "6px 14px 0" }}>
+              Page <strong>{page}</strong> / <strong>{pageCount}</strong>
+            </div>
+
+            <div className="grid" style={{ paddingTop: 10 }}>
+              {visible.map((a) => (
+                <div key={a.id} className="loreCard" style={{ cursor: "default" }}>
+                  <div className="loreCardTop">
+                    <span className="badge badge-archetype">archetype</span>
+                    <span className="badge badge-constellation">{a.constellation || "—"}</span>
+                  </div>
+
+                  <div className="loreCardTitle">{a.name || a.id}</div>
+
+                  <div className="loreCardMeta">
+                    <span className="mono">{a.id}</span> · <span className="mono">{a.tag}</span>
+                  </div>
+
+                  {a.subtitle ? <div className="loreCardSubtitle">{a.subtitle}</div> : null}
+
+                  <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap" }}>
+                    <button className="btn" onClick={() => openProfile(a)}>
+                      Profile
+                    </button>
+                    <button className="btn" onClick={() => navigate(`/lore/archetype/${a.id}`)}>
+                      Open Lore →
+                    </button>
+                  </div>
                 </div>
+              ))}
+            </div>
+
+            <div className="pager">
+              <button className="btn" disabled={page <= 1} onClick={() => setPage((p) => Math.max(1, p - 1))}>
+                ← Prev
+              </button>
+
+              <div className="muted">
+                Page {page} of {pageCount}
               </div>
-            );
-          })}
-        </div>
-      )}
 
-      {!loading && !err && filtered.length === 0 ? (
-        <div className="card" style={{ marginTop: 14 }}>
-          <h2 style={{ margin: 0 }}>No matches.</h2>
-          <p className="p" style={{ marginTop: 6 }}>Try removing filters or searching broader terms.</p>
-        </div>
-      ) : null}
+              <button className="btn" disabled={page >= pageCount} onClick={() => setPage((p) => Math.min(pageCount, p + 1))}>
+                Next →
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

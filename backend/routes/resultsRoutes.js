@@ -1,10 +1,10 @@
-// backend/routes/resultsRoutes.js
+// backend/routes/resultRoutes.js
 import express from "express";
-import { getResultsByProfileId } from "../controllers/resultsController.js";
+import { assembleResults } from "../controllers/resultController.js";
 
 const router = express.Router();
 
-// GET /api/results/:profileId
-router.get("/:profileId", getResultsByProfileId);
+// ✅ Assemble final result from Mini Suite (and later Major Test)
+router.get("/assemble", assembleResults);
 
 export default router;

@@ -1,0 +1,26 @@
+{
+  "id": "mini5_identity",
+  "title": "Meaning & Identity",
+  "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]
+  },
+  "questions": [
+    { "id": "i1", "text": "My identity is shaped by seeking truth, even when it’s uncomfortable.", "tag": "lum_sage" },
+    { "id": "i2", "text": "I see myself as a protector of standards, boundaries, and vows.", "tag": "lum_warden" },
+    { "id": "i3", "text": "I feel most myself when I’m organizing knowledge into a usable system.", "tag": "lum_librarian" },
+    { "id": "i4", "text": "I feel called to bring people into understanding, not just agreement.", "tag": "lum_emissary" },
+    { "id": "i5", "text": "Part of me believes I must take control to stay safe.", "tag": "sha_usurper" },
+    { "id": "i6", "text": "Part of me believes love must be earned through sacrifice.", "tag": "sha_martyr" },
+    { "id": "i7", "text": "Part of me would rather stand alone than risk belonging.", "tag": "sha_heretic" },
+    { "id": "i8", "text": "Part of me performs refinement so I won’t be dismissed.", "tag": "sha_gilded_mask" },
+    { "id": "i9", "text": "I feel most aligned when I’m building something real and practical.", "tag": "lum_artificer" },
+    { "id": "i10", "text": "I make meaning through symbols, art, and emotion.", "tag": "lum_poet" },
+    { "id": "i11", "text": "I experience intuition as a form of guidance I can’t ignore.", "tag": "lum_oracle" },
+    { "id": "i12", "text": "I keep a mental record of what I’ve survived and what it taught me.", "tag": "lum_chronicler" },
+    { "id": "i13", "text": "I sometimes identify more with preparing for disaster than living now.", "tag": "sha_void_watcher" },
+    { "id": "i14", "text": "I protect my heart by being composed and unreadable.", "tag": "sha_ice_queen" },
+    { "id": "i15", "text": "I adjust myself to others so I won’t lose connection.", "tag": "sha_fawner" }
+  ]
+}

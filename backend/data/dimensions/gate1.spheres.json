@@ -1,0 +1,22 @@
+[
+  {
+    "id": "cognitive",
+    "name": "Cognitive"
+  },
+  {
+    "id": "relational",
+    "name": "Relational"
+  },
+  {
+    "id": "agentic",
+    "name": "Agentic"
+  },
+  {
+    "id": "creative",
+    "name": "Creative"
+  },
+  {
+    "id": "integrative",
+    "name": "Integrative"
+  }
+]

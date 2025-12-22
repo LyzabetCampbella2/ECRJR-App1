@@ -1,0 +1,588 @@
+{
+  "id": "major_7day",
+  "title": "Major Test — 7 Day Suite",
+  "description": "7-day arc: daily questions + upload-only art assignments with deep prompts. Influences final result.",
+  "kind": "major",
+  "days": 7,
+  "questionsPerDay": 5,
+  "assignmentsPerDay": 3,
+  "questions": [
+    {
+      "id": "M_D1_Q1",
+      "day": 1,
+      "type": "multiple_choice",
+      "prompt": "Day 1: When starting something new, what do you rely on first?",
+      "options": [
+        { "id": "A", "text": "Structure + a plan", "score": { "major": { "M_STRUCTURE": 3 } } },
+        { "id": "B", "text": "Curiosity + improvisation", "score": { "major": { "M_EXPLORATION": 3 } } },
+        { "id": "C", "text": "Emotion + intuition", "score": { "major": { "M_INTUITION": 3 } } },
+        { "id": "D", "text": "Willpower + discipline", "score": { "major": { "M_DISCIPLINE": 3 } } }
+      ]
+    },
+    {
+      "id": "M_D1_Q2",
+      "day": 1,
+      "type": "select_multiple",
+      "prompt": "Day 1: Pick up to 3 things you want your art practice to become known for.",
+      "options": [
+        { "id": "A", "text": "Technique", "score": { "major": { "M_CRAFT": 2 } } },
+        { "id": "B", "text": "Originality", "score": { "major": { "M_INVENTION": 2 } } },
+        { "id": "C", "text": "Storytelling", "score": { "major": { "M_NARRATIVE": 2 } } },
+        { "id": "D", "text": "Mood / atmosphere", "score": { "major": { "M_ATMOSPHERE": 2 } } },
+        { "id": "E", "text": "Speed / output", "score": { "major": { "M_OUTPUT": 2 } } }
+      ]
+    },
+    {
+      "id": "M_D1_Q3",
+      "day": 1,
+      "type": "rating",
+      "prompt": "Day 1: How comfortable are you showing unfinished work?",
+      "ratingScoreMap": {
+        "1": { "major": { "M_VULNERABILITY": 1 } },
+        "2": { "major": { "M_VULNERABILITY": 2 } },
+        "3": { "major": { "M_VULNERABILITY": 3 } },
+        "4": { "major": { "M_VULNERABILITY": 4 } },
+        "5": { "major": { "M_VULNERABILITY": 5 } }
+      }
+    },
+    {
+      "id": "M_D1_Q4",
+      "day": 1,
+      "type": "text",
+      "prompt": "Day 1: In one sentence, what kind of artist do you want to become?",
+      "score": { "major": { "M_CLARITY": 1 } }
+    },
+    {
+      "id": "M_D1_Q5",
+      "day": 1,
+      "type": "multiple_choice",
+      "prompt": "Day 1: What stops you most often?",
+      "options": [
+        { "id": "A", "text": "Perfectionism", "score": { "major": { "M_PERFECTIONISM": 3 } } },
+        { "id": "B", "text": "Overwhelm / too many ideas", "score": { "major": { "M_OVERWHELM": 3 } } },
+        { "id": "C", "text": "Self-doubt", "score": { "major": { "M_DOUBT": 3 } } },
+        { "id": "D", "text": "Time / energy", "score": { "major": { "M_TIME": 3 } } }
+      ]
+    },
+
+    {
+      "id": "M_D2_Q1",
+      "day": 2,
+      "type": "multiple_choice",
+      "prompt": "Day 2: You improve fastest when you…",
+      "options": [
+        { "id": "A", "text": "Repeat drills", "score": { "major": { "M_DRILLS": 3 } } },
+        { "id": "B", "text": "Study masters", "score": { "major": { "M_STUDY": 3 } } },
+        { "id": "C", "text": "Experiment wildly", "score": { "major": { "M_EXPERIMENT": 3 } } },
+        { "id": "D", "text": "Get critique", "score": { "major": { "M_FEEDBACK": 3 } } }
+      ]
+    },
+    {
+      "id": "M_D2_Q2",
+      "day": 2,
+      "type": "rating",
+      "prompt": "Day 2: How consistent are you when motivation is low?",
+      "ratingScoreMap": {
+        "1": { "major": { "M_CONSISTENCY": 1 } },
+        "2": { "major": { "M_CONSISTENCY": 2 } },
+        "3": { "major": { "M_CONSISTENCY": 3 } },
+        "4": { "major": { "M_CONSISTENCY": 4 } },
+        "5": { "major": { "M_CONSISTENCY": 5 } }
+      }
+    },
+    {
+      "id": "M_D2_Q3",
+      "day": 2,
+      "type": "select_multiple",
+      "prompt": "Day 2: Pick 2–4 things you want to study this week.",
+      "options": [
+        { "id": "A", "text": "Value", "score": { "major": { "M_VALUE": 2 } } },
+        { "id": "B", "text": "Color", "score": { "major": { "M_COLOR": 2 } } },
+        { "id": "C", "text": "Composition", "score": { "major": { "M_COMPOSITION": 2 } } },
+        { "id": "D", "text": "Perspective", "score": { "major": { "M_PERSPECTIVE": 2 } } },
+        { "id": "E", "text": "Anatomy", "score": { "major": { "M_ANATOMY": 2 } } }
+      ]
+    },
+    {
+      "id": "M_D2_Q4",
+      "day": 2,
+      "type": "text",
+      "prompt": "Day 2: What does “good enough” look like for you today?",
+      "score": { "major": { "M_GOOD_ENOUGH": 1 } }
+    },
+    {
+      "id": "M_D2_Q5",
+      "day": 2,
+      "type": "multiple_choice",
+      "prompt": "Day 2: Your ideal creative environment is…",
+      "options": [
+        { "id": "A", "text": "Quiet + solitary", "score": { "major": { "M_SOLITUDE": 3 } } },
+        { "id": "B", "text": "Music + motion", "score": { "major": { "M_RHYTHM": 3 } } },
+        { "id": "C", "text": "Social / co-working", "score": { "major": { "M_COLLAB": 3 } } },
+        { "id": "D", "text": "Outdoors / changing scenes", "score": { "major": { "M_WANDER": 3 } } }
+      ]
+    },
+
+    {
+      "id": "M_D3_Q1",
+      "day": 3,
+      "type": "multiple_choice",
+      "prompt": "Day 3: When you hit a wall, you usually…",
+      "options": [
+        { "id": "A", "text": "Push harder", "score": { "major": { "M_GRIT": 3 } } },
+        { "id": "B", "text": "Step away + return", "score": { "major": { "M_RECOVERY": 3 } } },
+        { "id": "C", "text": "Change the approach", "score": { "major": { "M_ADAPT": 3 } } },
+        { "id": "D", "text": "Ask for help", "score": { "major": { "M_SUPPORT": 3 } } }
+      ]
+    },
+    {
+      "id": "M_D3_Q2",
+      "day": 3,
+      "type": "rating",
+      "prompt": "Day 3: How much do you like constraints (limits, prompts, rules)?",
+      "ratingScoreMap": {
+        "1": { "major": { "M_CONSTRAINTS": 1 } },
+        "2": { "major": { "M_CONSTRAINTS": 2 } },
+        "3": { "major": { "M_CONSTRAINTS": 3 } },
+        "4": { "major": { "M_CONSTRAINTS": 4 } },
+        "5": { "major": { "M_CONSTRAINTS": 5 } }
+      }
+    },
+    {
+      "id": "M_D3_Q3",
+      "day": 3,
+      "type": "select_multiple",
+      "prompt": "Day 3: What do you want your work to evoke? (Pick 2–4)",
+      "options": [
+        { "id": "A", "text": "Awe", "score": { "major": { "M_AWE": 2 } } },
+        { "id": "B", "text": "Comfort", "score": { "major": { "M_COMFORT": 2 } } },
+        { "id": "C", "text": "Unrest", "score": { "major": { "M_UNREST": 2 } } },
+        { "id": "D", "text": "Wonder", "score": { "major": { "M_WONDER": 2 } } },
+        { "id": "E", "text": "Longing", "score": { "major": { "M_LONGING": 2 } } }
+      ]
+    },
+    {
+      "id": "M_D3_Q4",
+      "day": 3,
+      "type": "text",
+      "prompt": "Day 3: What’s one theme you can’t stop returning to?",
+      "score": { "major": { "M_THEME": 1 } }
+    },
+    {
+      "id": "M_D3_Q5",
+      "day": 3,
+      "type": "multiple_choice",
+      "prompt": "Day 3: Your creative strength is most often…",
+      "options": [
+        { "id": "A", "text": "Vision", "score": { "major": { "M_VISION": 3 } } },
+        { "id": "B", "text": "Execution", "score": { "major": { "M_EXECUTION": 3 } } },
+        { "id": "C", "text": "Taste", "score": { "major": { "M_TASTE": 3 } } },
+        { "id": "D", "text": "Courage", "score": { "major": { "M_COURAGE": 3 } } }
+      ]
+    },
+
+    {
+      "id": "M_D4_Q1",
+      "day": 4,
+      "type": "multiple_choice",
+      "prompt": "Day 4: You feel most alive when creating…",
+      "options": [
+        { "id": "A", "text": "Characters", "score": { "major": { "M_CHARACTERS": 3 } } },
+        { "id": "B", "text": "Worlds", "score": { "major": { "M_WORLDS": 3 } } },
+        { "id": "C", "text": "Objects / design", "score": { "major": { "M_DESIGN": 3 } } },
+        { "id": "D", "text": "Mood scenes", "score": { "major": { "M_SCENES": 3 } } }
+      ]
+    },
+    {
+      "id": "M_D4_Q2",
+      "day": 4,
+      "type": "rating",
+      "prompt": "Day 4: How much do you enjoy long projects?",
+      "ratingScoreMap": {
+        "1": { "major": { "M_LONGPROJECT": 1 } },
+        "2": { "major": { "M_LONGPROJECT": 2 } },
+        "3": { "major": { "M_LONGPROJECT": 3 } },
+        "4": { "major": { "M_LONGPROJECT": 4 } },
+        "5": { "major": { "M_LONGPROJECT": 5 } }
+      }
+    },
+    {
+      "id": "M_D4_Q3",
+      "day": 4,
+      "type": "select_multiple",
+      "prompt": "Day 4: Pick 2 tools you want to strengthen.",
+      "options": [
+        { "id": "A", "text": "Line", "score": { "major": { "M_LINE": 2 } } },
+        { "id": "B", "text": "Shape", "score": { "major": { "M_SHAPE": 2 } } },
+        { "id": "C", "text": "Value", "score": { "major": { "M_VALUE": 2 } } },
+        { "id": "D", "text": "Color", "score": { "major": { "M_COLOR": 2 } } }
+      ]
+    },
+    {
+      "id": "M_D4_Q4",
+      "day": 4,
+      "type": "text",
+      "prompt": "Day 4: What would you attempt if you couldn’t fail?",
+      "score": { "major": { "M_BOLDNESS": 1 } }
+    },
+    {
+      "id": "M_D4_Q5",
+      "day": 4,
+      "type": "multiple_choice",
+      "prompt": "Day 4: When planning, you prefer…",
+      "options": [
+        { "id": "A", "text": "A detailed roadmap", "score": { "major": { "M_PLANNING": 3 } } },
+        { "id": "B", "text": "A flexible sketch", "score": { "major": { "M_PLANNING": 2, "M_ADAPT": 1 } } },
+        { "id": "C", "text": "No plan, just begin", "score": { "major": { "M_IMPROV": 3 } } },
+        { "id": "D", "text": "A partner/mentor to guide", "score": { "major": { "M_SUPPORT": 3 } } }
+      ]
+    },
+
+    {
+      "id": "M_D5_Q1",
+      "day": 5,
+      "type": "multiple_choice",
+      "prompt": "Day 5: If you could master one thing first, it would be…",
+      "options": [
+        { "id": "A", "text": "Rendering/finish", "score": { "major": { "M_RENDER": 3 } } },
+        { "id": "B", "text": "Composition", "score": { "major": { "M_COMPOSITION": 3 } } },
+        { "id": "C", "text": "Design", "score": { "major": { "M_DESIGN": 3 } } },
+        { "id": "D", "text": "Speed", "score": { "major": { "M_OUTPUT": 3 } } }
+      ]
+    },
+    {
+      "id": "M_D5_Q2",
+      "day": 5,
+      "type": "rating",
+      "prompt": "Day 5: How strongly do you identify with being an artist?",
+      "ratingScoreMap": {
+        "1": { "major": { "M_IDENTITY": 1 } },
+        "2": { "major": { "M_IDENTITY": 2 } },
+        "3": { "major": { "M_IDENTITY": 3 } },
+        "4": { "major": { "M_IDENTITY": 4 } },
+        "5": { "major": { "M_IDENTITY": 5 } }
+      }
+    },
+    {
+      "id": "M_D5_Q3",
+      "day": 5,
+      "type": "select_multiple",
+      "prompt": "Day 5: Which feedback helps most? (Pick up to 3)",
+      "options": [
+        { "id": "A", "text": "Specific fixes", "score": { "major": { "M_FEEDBACK": 2 } } },
+        { "id": "B", "text": "Encouragement", "score": { "major": { "M_MORALE": 2 } } },
+        { "id": "C", "text": "Harsh truth", "score": { "major": { "M_GRIT": 2 } } },
+        { "id": "D", "text": "Examples / paintovers", "score": { "major": { "M_STUDY": 2 } } }
+      ]
+    },
+    {
+      "id": "M_D5_Q4",
+      "day": 5,
+      "type": "text",
+      "prompt": "Day 5: What does “refined” mean to you in your work?",
+      "score": { "major": { "M_REFINED": 1 } }
+    },
+    {
+      "id": "M_D5_Q5",
+      "day": 5,
+      "type": "multiple_choice",
+      "prompt": "Day 5: Your biggest creative fuel is…",
+      "options": [
+        { "id": "A", "text": "Beauty", "score": { "major": { "M_BEAUTY": 3 } } },
+        { "id": "B", "text": "Meaning", "score": { "major": { "M_MEANING": 3 } } },
+        { "id": "C", "text": "Challenge", "score": { "major": { "M_CHALLENGE": 3 } } },
+        { "id": "D", "text": "Freedom", "score": { "major": { "M_FREEDOM": 3 } } }
+      ]
+    },
+
+    {
+      "id": "M_D6_Q1",
+      "day": 6,
+      "type": "multiple_choice",
+      "prompt": "Day 6: Your creative pace is best described as…",
+      "options": [
+        { "id": "A", "text": "Slow + meticulous", "score": { "major": { "M_METICULOUS": 3 } } },
+        { "id": "B", "text": "Steady + consistent", "score": { "major": { "M_CONSISTENCY": 3 } } },
+        { "id": "C", "text": "Bursts + sprints", "score": { "major": { "M_SPRINTS": 3 } } },
+        { "id": "D", "text": "Chaotic but prolific", "score": { "major": { "M_OUTPUT": 2, "M_OVERWHELM": 1 } } }
+      ]
+    },
+    {
+      "id": "M_D6_Q2",
+      "day": 6,
+      "type": "rating",
+      "prompt": "Day 6: How willing are you to redo something to improve it?",
+      "ratingScoreMap": {
+        "1": { "major": { "M_REVISION": 1 } },
+        "2": { "major": { "M_REVISION": 2 } },
+        "3": { "major": { "M_REVISION": 3 } },
+        "4": { "major": { "M_REVISION": 4 } },
+        "5": { "major": { "M_REVISION": 5 } }
+      }
+    },
+    {
+      "id": "M_D6_Q3",
+      "day": 6,
+      "type": "select_multiple",
+      "prompt": "Day 6: Choose 2 things that make you feel “in flow.”",
+      "options": [
+        { "id": "A", "text": "Music", "score": { "major": { "M_RHYTHM": 2 } } },
+        { "id": "B", "text": "Timer / sprints", "score": { "major": { "M_SPRINTS": 2 } } },
+        { "id": "C", "text": "Clear reference", "score": { "major": { "M_STUDY": 2 } } },
+        { "id": "D", "text": "No interruptions", "score": { "major": { "M_SOLITUDE": 2 } } }
+      ]
+    },
+    {
+      "id": "M_D6_Q4",
+      "day": 6,
+      "type": "text",
+      "prompt": "Day 6: What do you want to be braver about?",
+      "score": { "major": { "M_COURAGE": 1 } }
+    },
+    {
+      "id": "M_D6_Q5",
+      "day": 6,
+      "type": "multiple_choice",
+      "prompt": "Day 6: Your creative “signature” is most likely…",
+      "options": [
+        { "id": "A", "text": "Atmosphere", "score": { "major": { "M_ATMOSPHERE": 3 } } },
+        { "id": "B", "text": "Design language", "score": { "major": { "M_DESIGN": 3 } } },
+        { "id": "C", "text": "Narrative", "score": { "major": { "M_NARRATIVE": 3 } } },
+        { "id": "D", "text": "Craft polish", "score": { "major": { "M_CRAFT": 3 } } }
+      ]
+    },
+
+    {
+      "id": "M_D7_Q1",
+      "day": 7,
+      "type": "multiple_choice",
+      "prompt": "Day 7: Looking back, what mattered most this week?",
+      "options": [
+        { "id": "A", "text": "Consistency", "score": { "major": { "M_CONSISTENCY": 3 } } },
+        { "id": "B", "text": "Breakthrough learning", "score": { "major": { "M_STUDY": 3 } } },
+        { "id": "C", "text": "Finishing pieces", "score": { "major": { "M_EXECUTION": 3 } } },
+        { "id": "D", "text": "Enjoyment", "score": { "major": { "M_MORALE": 3 } } }
+      ]
+    },
+    {
+      "id": "M_D7_Q2",
+      "day": 7,
+      "type": "rating",
+      "prompt": "Day 7: How proud are you of your follow-through this week?",
+      "ratingScoreMap": {
+        "1": { "major": { "M_FOLLOWTHROUGH": 1 } },
+        "2": { "major": { "M_FOLLOWTHROUGH": 2 } },
+        "3": { "major": { "M_FOLLOWTHROUGH": 3 } },
+        "4": { "major": { "M_FOLLOWTHROUGH": 4 } },
+        "5": { "major": { "M_FOLLOWTHROUGH": 5 } }
+      }
+    },
+    {
+      "id": "M_D7_Q3",
+      "day": 7,
+      "type": "select_multiple",
+      "prompt": "Day 7: Choose 2 outcomes you want to keep building next week.",
+      "options": [
+        { "id": "A", "text": "Better studies", "score": { "major": { "M_STUDY": 2 } } },
+        { "id": "B", "text": "More output", "score": { "major": { "M_OUTPUT": 2 } } },
+        { "id": "C", "text": "More refined work", "score": { "major": { "M_REFINED": 2 } } },
+        { "id": "D", "text": "More courage", "score": { "major": { "M_COURAGE": 2 } } }
+      ]
+    },
+    {
+      "id": "M_D7_Q4",
+      "day": 7,
+      "type": "text",
+      "prompt": "Day 7: What’s your next small promise to yourself?",
+      "score": { "major": { "M_CLARITY": 1 } }
+    },
+    {
+      "id": "M_D7_Q5",
+      "day": 7,
+      "type": "multiple_choice",
+      "prompt": "Day 7: What kind of creator do you feel like now?",
+      "options": [
+        { "id": "A", "text": "Builder", "score": { "major": { "M_DISCIPLINE": 2, "M_STRUCTURE": 1 } } },
+        { "id": "B", "text": "Explorer", "score": { "major": { "M_EXPLORATION": 2, "M_WANDER": 1 } } },
+        { "id": "C", "text": "Refiner", "score": { "major": { "M_REFINED": 2, "M_REVISION": 1 } } },
+        { "id": "D", "text": "Visionary", "score": { "major": { "M_VISION": 3 } } }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "id": "M_D1_A1",
+      "day": 1,
+      "type": "upload",
+      "prompt": "Day 1 — The True Want: Create an image that shows what you want most right now, but rarely admit. Use metaphor only (no text, no obvious symbols like dollar signs).",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D1_A2",
+      "day": 1,
+      "type": "upload",
+      "prompt": "Day 1 — First Memory, First Color: Make a piece built from a childhood memory. Choose ONE dominant color that carries the emotion and let everything else serve it.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D1_A3",
+      "day": 1,
+      "type": "upload",
+      "prompt": "Day 1 — Self-Portrait as Objects: Create a portrait of yourself without a face. Use 5 objects, shapes, or motifs that describe you better than words.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "M_D2_A1",
+      "day": 2,
+      "type": "upload",
+      "prompt": "Day 2 — The Boundary as Architecture: Design a doorway, gate, wall, or threshold that represents a boundary you need. Make it protective and beautiful, not hostile.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D2_A2",
+      "day": 2,
+      "type": "upload",
+      "prompt": "Day 2 — The Wound + The Gift: Depict a limitation you carry that also keeps you safe. Show both sides in the same image, without splitting it in half.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D2_A3",
+      "day": 2,
+      "type": "upload",
+      "prompt": "Day 2 — Comfort vs Truth (Triptych): Make 3 small panels: (1) what you do to feel safe, (2) what you do to feel true, (3) what it would look like to combine them.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "M_D3_A1",
+      "day": 3,
+      "type": "upload",
+      "prompt": "Day 3 — The Inner Critic (Creature Design): Design your inner critic as a creature. Give it a strength, a weakness, and one thing it is secretly afraid of.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D3_A2",
+      "day": 3,
+      "type": "upload",
+      "prompt": "Day 3 — The Hidden Room: Illustrate a room inside you that you rarely let anyone enter. Include 3 objects that explain what it protects.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D3_A3",
+      "day": 3,
+      "type": "upload",
+      "prompt": "Day 3 — Decision Under Moonlight: Create a scene where two paths are visible. Make the harder path luminous and inviting (not scary), and make the easy path subtly costly.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "M_D4_A1",
+      "day": 4,
+      "type": "upload",
+      "prompt": "Day 4 — Sacred Practice (Ritual Still Life): Create a still life of the tools you’d use if your craft was a sacred daily ritual. Show reverence through composition and light.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D4_A2",
+      "day": 4,
+      "type": "upload",
+      "prompt": "Day 4 — The Price (Without Guilt): Make an image of the real cost of your dream: time, comfort, identity, relationships, or rest. It must be honest but not self-punishing.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D4_A3",
+      "day": 4,
+      "type": "upload",
+      "prompt": "Day 4 — Mercy Scene: Depict a moment where you would normally judge yourself, but instead you offer yourself grace. Show the ‘before’ emotion and the ‘after’ tenderness in one frame.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "M_D5_A1",
+      "day": 5,
+      "type": "upload",
+      "prompt": "Day 5 — Inheritance (Family Weather Map): Create an image of something you inherited (belief, fear, strength, habit). Represent it as weather, climate, or seasons moving through a landscape.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D5_A2",
+      "day": 5,
+      "type": "upload",
+      "prompt": "Day 5 — The Apology You Don’t Owe: Create a piece about something you keep apologizing for that is actually part of your nature. No words—use gesture, posture, and environment.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D5_A3",
+      "day": 5,
+      "type": "upload",
+      "prompt": "Day 5 — Refined vs Raw (Same Subject): Draw/paint the same subject twice: one version raw/instinctive, one version refined/controlled. The contrast should reveal something true.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "M_D6_A1",
+      "day": 6,
+      "type": "upload",
+      "prompt": "Day 6 — Power Held Cleanly: Depict yourself holding power in a way that feels calm, ethical, and steady. No domination, no shrinking—just ownership.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D6_A2",
+      "day": 6,
+      "type": "upload",
+      "prompt": "Day 6 — Alchemy Diagram (Emotion → Fuel): Create a visual ‘alchemy’ diagram transforming one painful emotion into something useful. Show the stages as symbols, objects, or creatures.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D6_A3",
+      "day": 6,
+      "type": "upload",
+      "prompt": "Day 6 — The Lie You’re Retiring: Illustrate a belief about yourself that you’re done carrying. Show it leaving the body/room/landscape—quietly, not dramatically.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    },
+
+    {
+      "id": "M_D7_A1",
+      "day": 7,
+      "type": "upload",
+      "prompt": "Day 7 — Future Artifact: Create an artifact from your future that proves you became who you’re becoming. Show age, wear, history—make it feel real.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D7_A2",
+      "day": 7,
+      "type": "upload",
+      "prompt": "Day 7 — Your Crest (Symbol System): Design a crest/sigil that represents your core values. Include exactly 3 symbols: one for your strength, one for your shadow, one for your vow.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 2 } }
+    },
+    {
+      "id": "M_D7_A3",
+      "day": 7,
+      "type": "upload",
+      "prompt": "Day 7 — Integration Scene (Quiet Triumph): Create a scene that shows ‘quiet triumph’—not winning loudly, but becoming steady. It should feel resolved, refined, and unmistakably you.",
+      "accept": ["image/*"],
+      "score": { "major": { "M_ART_DAILY": 1 } }
+    }
+  ]
+}

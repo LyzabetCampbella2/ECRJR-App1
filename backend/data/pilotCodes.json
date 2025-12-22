@@ -1,0 +1,14 @@
+{
+  "codes": [
+    {
+      "code": "EIRDEN-ADE90D-6475",
+      "label": "Pilot",
+      "maxUses": 1,
+      "uses": 1,
+      "isRevoked": false,
+      "createdAt": 1766360762608,
+      "expiresAt": 1768952762608,
+      "lastUsedAt": 1766360779389
+    }
+  ]
+}

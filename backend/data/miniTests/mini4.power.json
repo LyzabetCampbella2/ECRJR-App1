@@ -1,0 +1,26 @@
+{
+  "id": "mini4_power",
+  "title": "Power & Control",
+  "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]
+  },
+  "questions": [
+    { "id": "p1", "text": "I respect power most when it is guided by ethics and reason.", "tag": "lum_sage" },
+    { "id": "p2", "text": "I’m comfortable enforcing boundaries without needing applause.", "tag": "lum_warden" },
+    { "id": "p3", "text": "I prefer influence through expertise and knowledge.", "tag": "lum_librarian" },
+    { "id": "p4", "text": "I can negotiate outcomes without humiliating anyone.", "tag": "lum_emissary" },
+    { "id": "p5", "text": "I feel a surge of calm when I have control over the outcome.", "tag": "sha_usurper" },
+    { "id": "p6", "text": "I feel guilty asserting my needs when others are struggling.", "tag": "sha_martyr" },
+    { "id": "p7", "text": "If a system feels unfair, I reject it rather than play along.", "tag": "sha_heretic" },
+    { "id": "p8", "text": "I feel safer when people admire me than when they truly know me.", "tag": "sha_gilded_mask" },
+    { "id": "p9", "text": "I gain authority by building results that can’t be ignored.", "tag": "lum_artificer" },
+    { "id": "p10", "text": "I can lead through inspiration, not just direction.", "tag": "lum_benedictor" },
+    { "id": "p11", "text": "I create structure and ritual that helps people thrive.", "tag": "lum_abbess" },
+    { "id": "p12", "text": "I’m willing to step into danger if it protects what matters.", "tag": "lum_knight_errant" },
+    { "id": "p13", "text": "I assume betrayal is possible, so I keep safeguards in place.", "tag": "sha_void_watcher" },
+    { "id": "p14", "text": "I keep emotions out of the room so I can stay in control.", "tag": "sha_ice_queen" },
+    { "id": "p15", "text": "I agree outwardly, but privately I feel trapped and resentful.", "tag": "sha_fawner" }
+  ]
+}

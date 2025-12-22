@@ -1,44 +1,136 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// frontend/src/pages/TestsHub.js
+import React, { useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-// IMPORTANT: your tests.js exports named exports, not default.
-import { TESTS, TEST_LIST } from "../data/tests";
+function safeArr(x) {
+  return Array.isArray(x) ? x : [];
+}
+function safeStr(x) {
+  return String(x ?? "").trim();
+}
+function readProfileKey(search) {
+  const sp = new URLSearchParams(search || "");
+  return safeStr(sp.get("profileKey")) || "debug_profile";
+}
 
 export default function TestsHub() {
-  const ids =
-    Array.isArray(TEST_LIST) && TEST_LIST.length
-      ? TEST_LIST
-      : Object.keys(TESTS || {});
+  const location = useLocation();
+  const profileKey = useMemo(() => readProfileKey(location.search), [location.search]);
+
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState("");
+  const [tests, setTests] = useState([]);
+
+  // ✅ Your backend provides: GET /api/tests/catalog
+  const endpoint = "/api/tests/catalog";
+
+  async function loadTests() {
+    setLoading(true);
+    setErr("");
+    try {
+      const res = await fetch(endpoint);
+      const data = await res.json();
+
+      // Accept common shapes:
+      // - { ok:true, tests:[...] }
+      // - { ok:true, catalog:[...] }
+      // - [...] directly
+      const list =
+        Array.isArray(data) ? data : safeArr(data?.tests || data?.catalog || data?.items);
+
+      const normalized = list.map((t, idx) => ({
+        id: safeStr(t?.id || t?._id || t?.testId || `test_${idx + 1}`),
+        title: safeStr(t?.title || t?.name || t?.label || "Untitled Test"),
+        description: safeStr(t?.description || t?.desc || ""),
+        totalQuestions:
+          Number.isFinite(Number(t?.totalQuestions)) ? Number(t.totalQuestions) :
+          Number.isFinite(Number(t?.questionCount)) ? Number(t.questionCount) :
+          Number.isFinite(Number(t?.questions?.length)) ? Number(t.questions.length) :
+          null,
+        kind: safeStr(t?.kind || t?.type || ""),
+      }));
+
+      setTests(normalized);
+    } catch (e) {
+      setErr(e?.message || "Failed to load tests catalog");
+      setTests([]);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadTests();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className="container">
-      <div className="card">
-        <h1 className="h1">Major Test</h1>
-        <p className="p">Choose a test to run.</p>
-
-        <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-          {ids.map((id) => {
-            const t = TESTS?.[id] || {};
-            return (
-              <div key={id} className="card" style={{ padding: 14 }}>
-                <div style={{ fontWeight: 800 }}>{t.title || t.name || id}</div>
-                <div className="p" style={{ marginTop: 8 }}>
-                  {t.description || "Run this test."}
-                </div>
-                <div style={{ marginTop: 10 }}>
-                  <Link className="btn btn--primary" to={`/test/${id}`}>Start</Link>
-                </div>
-              </div>
-            );
-          })}
+    <div className="page">
+      <div className="pageHeader">
+        <div>
+          <h1 className="pageTitle">Tests Hub</h1>
+          <div className="muted">
+            ProfileKey: <code>{profileKey}</code>
+          </div>
+          <div className="muted small">
+            Source: <code>{endpoint}</code>
+          </div>
         </div>
 
-        {ids.length === 0 && (
-          <div style={{ marginTop: 14 }}>
-            <p className="p">No tests found. Check src/data/tests.js exports: TESTS / TEST_LIST.</p>
-          </div>
-        )}
+        <div className="headerActions">
+          <Link className="btn btnGhost" to={`/dashboard?profileKey=${encodeURIComponent(profileKey)}`}>
+            Dashboard
+          </Link>
+          <button className="btn" onClick={loadTests} disabled={loading}>
+            {loading ? "Loading…" : "Refresh"}
+          </button>
+        </div>
       </div>
+
+      {err ? <div className="card error">{err}</div> : null}
+
+      {loading ? (
+        <div className="card">Loading tests catalog…</div>
+      ) : tests.length === 0 ? (
+        <div className="card">
+          <div className="cardTitle">No tests returned</div>
+          <div className="muted small">
+            Your backend says <code>/api/tests/catalog</code> exists. If it returns an empty array,
+            we’ll populate the catalog next.
+          </div>
+        </div>
+      ) : (
+        <div className="grid">
+          {tests.map((t) => (
+            <div className="card" key={t.id}>
+              <div className="cardHeader">
+                <div>
+                  <div className="kicker">{t.id}</div>
+                  <div className="cardTitle">{t.title}</div>
+                  {t.description ? <div className="muted">{t.description}</div> : null}
+                </div>
+
+                {/* TestRunner route is /test/:testId */}
+                <Link
+                  className="btn"
+                  to={`/test/${encodeURIComponent(t.id)}?profileKey=${encodeURIComponent(profileKey)}`}
+                >
+                  Start / Continue
+                </Link>
+              </div>
+
+              <div className="pillRow">
+                {t.kind ? <span className="pill">{t.kind}</span> : null}
+                {t.totalQuestions != null ? (
+                  <span className="pill">{t.totalQuestions} questions</span>
+                ) : (
+                  <span className="pill muted">questions unknown</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

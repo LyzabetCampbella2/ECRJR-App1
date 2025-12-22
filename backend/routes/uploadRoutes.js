@@ -1,81 +1,53 @@
+// backend/routes/uploadRoutes.js
 import express from "express";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 
 const router = express.Router();
 
-// Ensure uploads folder exists
-const UPLOAD_DIR = path.resolve("uploads");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const UPLOAD_DIR = path.join(__dirname, "..", "uploads");
 if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
-// Multer storage (keeps original extension)
+function safeName(name) {
+  const base = String(name || "file")
+    .replace(/[^a-zA-Z0-9._-]+/g, "_")
+    .slice(0, 120);
+  const stamp = Date.now();
+  return `${stamp}_${base}`;
+}
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, UPLOAD_DIR),
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname || "");
-    const safeExt = ext.slice(0, 12);
-    const unique = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
-    cb(null, `${unique}${safeExt}`);
-  },
+  filename: (req, file, cb) => cb(null, safeName(file.originalname)),
 });
 
 const upload = multer({
   storage,
-  limits: {
-    fileSize: 80 * 1024 * 1024, // 80MB per file (adjust as needed)
-  },
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
 });
 
-/**
- * POST /api/uploads
- * multipart/form-data:
- *  - fields: testId, questionId
- *  - files: "files" (array)
- *
- * Returns: { success:true, urls:[...], files:[...] }
- */
-router.post("/", upload.array("files", 10), async (req, res) => {
-  try {
-    const { testId, questionId } = req.body;
-
-    if (!testId || !questionId) {
-      return res.status(400).json({
-        success: false,
-        message: "testId and questionId are required",
-      });
-    }
-
-    const files = req.files || [];
-    if (!files.length) {
-      return res.status(400).json({
-        success: false,
-        message: "No files received",
-      });
-    }
-
-    // URLs your frontend can store
-    const urls = files.map((f) => `/uploads/${f.filename}`);
-
-    return res.json({
-      success: true,
-      testId,
-      questionId,
-      urls,
-      files: files.map((f) => ({
-        originalname: f.originalname,
-        filename: f.filename,
-        mimetype: f.mimetype,
-        size: f.size,
-      })),
-    });
-  } catch (err) {
-    return res.status(500).json({
-      success: false,
-      message: "Upload failed",
-      error: err.message,
-    });
+// POST /api/uploads  (field name must be "file")
+router.post("/", upload.single("file"), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ ok: false, message: "No file uploaded (field name: file)" });
   }
+
+  const fileKey = req.file.filename; // store this in answers as fileKey
+  const url = `/uploads/${encodeURIComponent(fileKey)}`;
+
+  return res.json({
+    ok: true,
+    fileKey,
+    originalName: req.file.originalname,
+    size: req.file.size,
+    mime: req.file.mimetype,
+    url,
+  });
 });
 
 export default router;

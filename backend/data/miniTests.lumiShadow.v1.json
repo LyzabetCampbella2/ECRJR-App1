@@ -1,0 +1,343 @@
+{
+  "id": "mini_suite_lumiShadow_v1",
+  "title": "Lumi/Shadow Mini Suite (5 Tests)",
+  "version": 1,
+  "defaults": {
+    "choiceWeight": 2,
+    "multi": { "maxPicksDefault": 2 },
+    "scale": { "min": 1, "max": 7, "neutral": 4 }
+  },
+  "suite": {
+    "mode": "five_mini_tests",
+    "tests": [
+      { "miniTestId": "MS1", "title": "Signal: Clarity vs Comfort", "notes": "How you handle truth, conflict, and honesty." },
+      { "miniTestId": "MS2", "title": "Signal: Control vs Trust", "notes": "How you handle responsibility, uncertainty, and standards." },
+      { "miniTestId": "MS3", "title": "Signal: Belonging vs Autonomy", "notes": "How you attach, detach, and protect your selfhood." },
+      { "miniTestId": "MS4", "title": "Signal: Craft vs Chaos", "notes": "Discipline, refinement, finishing, and overwhelm." },
+      { "miniTestId": "MS5", "title": "Signal: Myth vs Reality", "notes": "Meaning-making, symbolism, escape, and integration." }
+    ]
+  },
+  "tests": [
+    {
+      "miniTestId": "MS1",
+      "title": "Signal: Clarity vs Comfort",
+      "questions": [
+        {
+          "id": "MS1_Q01",
+          "type": "single",
+          "prompt": "Someone misunderstands you publicly. Your first move is:",
+          "required": true,
+          "options": [
+            { "id": 0, "label": "Clarify directly, even if it’s awkward.", "signal": { "const": ["C05", "C01"], "tone": "lum", "weight": 2 } },
+            { "id": 1, "label": "Smooth the moment and fix it privately later.", "signal": { "const": ["C07", "C11"], "tone": "mix", "weight": 2 } },
+            { "id": 2, "label": "Withdraw. I don’t want to be perceived.", "signal": { "const": ["C09", "C06"], "tone": "shd", "weight": 2 } },
+            { "id": 3, "label": "Make a decisive move to regain the room.", "signal": { "const": ["C08", "C10"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS1_Q02",
+          "type": "multi",
+          "prompt": "Pick up to TWO behaviors you do when conflict is near.",
+          "required": true,
+          "maxPicks": 2,
+          "options": [
+            { "id": 0, "label": "I sharpen my language and get blunt.", "signal": { "const": ["C05", "C01"], "tone": "mix", "weight": 2 } },
+            { "id": 1, "label": "I keep the peace and swallow my preference.", "signal": { "const": ["C07", "C11"], "tone": "shd", "weight": 2 } },
+            { "id": 2, "label": "I disappear—avoidance is easier.", "signal": { "const": ["C09", "C06"], "tone": "shd", "weight": 2 } },
+            { "id": 3, "label": "I push for resolution fast.", "signal": { "const": ["C08", "C10"], "tone": "mix", "weight": 2 } },
+            { "id": 4, "label": "I enforce a standard/rule to make it clean.", "signal": { "const": ["C04", "C14"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS1_Q03",
+          "type": "scale",
+          "prompt": "I can tell the truth without turning it into a weapon.",
+          "required": true,
+          "scale": { "min": 1, "max": 7, "neutral": 4 },
+          "anchors": {
+            "low": { "signal": { "const": ["C05", "C01"], "tone": "shd", "weight": 2 } },
+            "high": { "signal": { "const": ["C05", "C12"], "tone": "lum", "weight": 2 } }
+          }
+        },
+        {
+          "id": "MS1_Q04",
+          "type": "rank",
+          "prompt": "Rank what matters MOST (1) to LEAST (5) when resolving tension.",
+          "required": true,
+          "items": [
+            { "id": "A", "label": "Truth and clarity" },
+            { "id": "B", "label": "Harmony and stability" },
+            { "id": "C", "label": "Freedom to leave" },
+            { "id": "D", "label": "Standards and respect" },
+            { "id": "E", "label": "Meaning and closure" }
+          ],
+          "rankSignals": {
+            "A": { "const": ["C05", "C01"], "tone": "lum", "weight": 1 },
+            "B": { "const": ["C07", "C11"], "tone": "mix", "weight": 1 },
+            "C": { "const": ["C09", "C06"], "tone": "shd", "weight": 1 },
+            "D": { "const": ["C14", "C04"], "tone": "mix", "weight": 1 },
+            "E": { "const": ["C15", "C12"], "tone": "mix", "weight": 1 }
+          }
+        },
+        {
+          "id": "MS1_Q05",
+          "type": "text",
+          "prompt": "In 2–3 sentences: what do you avoid saying out loud?",
+          "required": false,
+          "signal": { "const": ["C06", "C15"], "tone": "mix", "weight": 1 }
+        }
+      ]
+    },
+
+    {
+      "miniTestId": "MS2",
+      "title": "Signal: Control vs Trust",
+      "questions": [
+        {
+          "id": "MS2_Q01",
+          "type": "single",
+          "prompt": "When something breaks, you look first at:",
+          "required": true,
+          "options": [
+            { "id": 0, "label": "The system and incentives.", "signal": { "const": ["C13", "C01"], "tone": "lum", "weight": 2 } },
+            { "id": 1, "label": "The rules and enforcement.", "signal": { "const": ["C04", "C14"], "tone": "mix", "weight": 2 } },
+            { "id": 2, "label": "The people and their needs.", "signal": { "const": ["C03", "C11"], "tone": "lum", "weight": 2 } },
+            { "id": 3, "label": "The rupture point—what must change now.", "signal": { "const": ["C08", "C10"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS2_Q02",
+          "type": "scale",
+          "prompt": "I can delegate without rewriting everything afterwards.",
+          "required": true,
+          "scale": { "min": 1, "max": 7, "neutral": 4 },
+          "anchors": {
+            "low": { "signal": { "const": ["C13", "C14"], "tone": "shd", "weight": 2 } },
+            "high": { "signal": { "const": ["C03", "C11"], "tone": "lum", "weight": 2 } }
+          }
+        },
+        {
+          "id": "MS2_Q03",
+          "type": "multi",
+          "prompt": "Pick up to TWO ways you try to control uncertainty.",
+          "required": true,
+          "maxPicks": 2,
+          "options": [
+            { "id": 0, "label": "I track details and verify everything.", "signal": { "const": ["C01", "C14"], "tone": "mix", "weight": 2 } },
+            { "id": 1, "label": "I tighten standards and correct others.", "signal": { "const": ["C14", "C04"], "tone": "mix", "weight": 2 } },
+            { "id": 2, "label": "I isolate to avoid dependence.", "signal": { "const": ["C09", "C06"], "tone": "shd", "weight": 2 } },
+            { "id": 3, "label": "I push momentum and force a decision.", "signal": { "const": ["C10", "C08"], "tone": "mix", "weight": 2 } },
+            { "id": 4, "label": "I soothe the room so nothing escalates.", "signal": { "const": ["C07", "C11"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS2_Q04",
+          "type": "check",
+          "prompt": "Mark complete: You set ONE clear standard today (for time, money, or work).",
+          "required": false,
+          "signal": { "const": ["C04", "C12"], "tone": "lum", "weight": 1 }
+        },
+        {
+          "id": "MS2_Q05",
+          "type": "rank",
+          "prompt": "Rank what you want MOST (1) to LEAST (5) from a team.",
+          "required": true,
+          "items": [
+            { "id": "A", "label": "Clear standards" },
+            { "id": "B", "label": "Warm loyalty" },
+            { "id": "C", "label": "Freedom/autonomy" },
+            { "id": "D", "label": "Vision/momentum" },
+            { "id": "E", "label": "Calm refinement" }
+          ],
+          "rankSignals": {
+            "A": { "const": ["C04", "C14"], "tone": "mix", "weight": 1 },
+            "B": { "const": ["C11", "C07"], "tone": "lum", "weight": 1 },
+            "C": { "const": ["C09", "C08"], "tone": "mix", "weight": 1 },
+            "D": { "const": ["C10", "C05"], "tone": "lum", "weight": 1 },
+            "E": { "const": ["C12", "C16"], "tone": "mix", "weight": 1 }
+          }
+        }
+      ]
+    },
+
+    {
+      "miniTestId": "MS3",
+      "title": "Signal: Belonging vs Autonomy",
+      "questions": [
+        {
+          "id": "MS3_Q01",
+          "type": "single",
+          "prompt": "In relationships, you feel safest when:",
+          "required": true,
+          "options": [
+            { "id": 0, "label": "Loyalty is proven over time.", "signal": { "const": ["C11", "C07"], "tone": "lum", "weight": 2 } },
+            { "id": 1, "label": "Honesty is sharp and clean.", "signal": { "const": ["C05", "C01"], "tone": "mix", "weight": 2 } },
+            { "id": 2, "label": "Privacy is respected.", "signal": { "const": ["C09", "C06"], "tone": "mix", "weight": 2 } },
+            { "id": 3, "label": "We share a mission and direction.", "signal": { "const": ["C10", "C13"], "tone": "lum", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS3_Q02",
+          "type": "scale",
+          "prompt": "I keep parts of myself private even with people I love.",
+          "required": true,
+          "scale": { "min": 1, "max": 7, "neutral": 4 },
+          "anchors": {
+            "low": { "signal": { "const": ["C07", "C11"], "tone": "lum", "weight": 2 } },
+            "high": { "signal": { "const": ["C09", "C06"], "tone": "mix", "weight": 2 } }
+          }
+        },
+        {
+          "id": "MS3_Q03",
+          "type": "multi",
+          "prompt": "Pick up to TWO: when you feel crowded, you…",
+          "required": true,
+          "maxPicks": 2,
+          "options": [
+            { "id": 0, "label": "Become distant and hard to reach.", "signal": { "const": ["C09", "C06"], "tone": "shd", "weight": 2 } },
+            { "id": 1, "label": "Become agreeable to avoid conflict.", "signal": { "const": ["C07", "C11"], "tone": "shd", "weight": 2 } },
+            { "id": 2, "label": "Say the truth bluntly and end it.", "signal": { "const": ["C05", "C01"], "tone": "mix", "weight": 2 } },
+            { "id": 3, "label": "Take control of the plan.", "signal": { "const": ["C13", "C14"], "tone": "mix", "weight": 2 } },
+            { "id": 4, "label": "Create movement—change the environment.", "signal": { "const": ["C08", "C10"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS3_Q04",
+          "type": "text",
+          "prompt": "One sentence: what does ‘belonging’ mean to you right now?",
+          "required": false,
+          "signal": { "const": ["C07", "C15"], "tone": "mix", "weight": 1 }
+        },
+        {
+          "id": "MS3_Q05",
+          "type": "check",
+          "prompt": "Mark complete: You asked for space (or gave yourself space) without guilt.",
+          "required": false,
+          "signal": { "const": ["C09", "C04"], "tone": "lum", "weight": 1 }
+        }
+      ]
+    },
+
+    {
+      "miniTestId": "MS4",
+      "title": "Signal: Craft vs Chaos",
+      "questions": [
+        {
+          "id": "MS4_Q01",
+          "type": "single",
+          "prompt": "When you start a creative session, you prefer:",
+          "required": true,
+          "options": [
+            { "id": 0, "label": "A clean plan and structure first.", "signal": { "const": ["C13", "C12"], "tone": "lum", "weight": 2 } },
+            { "id": 1, "label": "Warm-up repetition and skill drills.", "signal": { "const": ["C02", "C14"], "tone": "lum", "weight": 2 } },
+            { "id": 2, "label": "A bold experiment to break inertia.", "signal": { "const": ["C08", "C10"], "tone": "mix", "weight": 2 } },
+            { "id": 3, "label": "A quiet private entry—no audience.", "signal": { "const": ["C09", "C06"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS4_Q02",
+          "type": "scale",
+          "prompt": "I can finish work even when it’s imperfect.",
+          "required": true,
+          "scale": { "min": 1, "max": 7, "neutral": 4 },
+          "anchors": {
+            "low": { "signal": { "const": ["C14", "C12"], "tone": "shd", "weight": 2 } },
+            "high": { "signal": { "const": ["C02", "C04"], "tone": "lum", "weight": 2 } }
+          }
+        },
+        {
+          "id": "MS4_Q03",
+          "type": "multi",
+          "prompt": "Pick up to TWO: when overwhelmed, you…",
+          "required": true,
+          "maxPicks": 2,
+          "options": [
+            { "id": 0, "label": "Over-edit and never call it done.", "signal": { "const": ["C12", "C14"], "tone": "shd", "weight": 2 } },
+            { "id": 1, "label": "Work harder and harder until depleted.", "signal": { "const": ["C02", "C16"], "tone": "shd", "weight": 2 } },
+            { "id": 2, "label": "Avoid and numb out.", "signal": { "const": ["C09", "C15"], "tone": "shd", "weight": 2 } },
+            { "id": 3, "label": "Tighten structure and organize the mess.", "signal": { "const": ["C13", "C04"], "tone": "mix", "weight": 2 } },
+            { "id": 4, "label": "Change direction abruptly.", "signal": { "const": ["C08", "C10"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS4_Q04",
+          "type": "file",
+          "prompt": "Upload a small study you did with restraint (2 values OR 2 colors).",
+          "required": false,
+          "accept": ["image/png", "image/jpeg", "image/webp"],
+          "signal": { "const": ["C12", "C16"], "tone": "lum", "weight": 1 }
+        },
+        {
+          "id": "MS4_Q05",
+          "type": "check",
+          "prompt": "Mark complete: 10 minutes of repetition practice (lines, shapes, or values).",
+          "required": false,
+          "signal": { "const": ["C02", "C14"], "tone": "lum", "weight": 1 }
+        }
+      ]
+    },
+
+    {
+      "miniTestId": "MS5",
+      "title": "Signal: Myth vs Reality",
+      "questions": [
+        {
+          "id": "MS5_Q01",
+          "type": "single",
+          "prompt": "When life gets heavy, your mind tends to:",
+          "required": true,
+          "options": [
+            { "id": 0, "label": "Make meaning and symbols out of it.", "signal": { "const": ["C15", "C06"], "tone": "mix", "weight": 2 } },
+            { "id": 1, "label": "Seek structure and concrete steps.", "signal": { "const": ["C13", "C02"], "tone": "lum", "weight": 2 } },
+            { "id": 2, "label": "Hide and minimize exposure.", "signal": { "const": ["C09", "C06"], "tone": "shd", "weight": 2 } },
+            { "id": 3, "label": "Force change to escape stagnation.", "signal": { "const": ["C08", "C10"], "tone": "mix", "weight": 2 } }
+          ]
+        },
+        {
+          "id": "MS5_Q02",
+          "type": "scale",
+          "prompt": "I can stay present with reality even when it’s uncomfortable.",
+          "required": true,
+          "scale": { "min": 1, "max": 7, "neutral": 4 },
+          "anchors": {
+            "low": { "signal": { "const": ["C15", "C09"], "tone": "shd", "weight": 2 } },
+            "high": { "signal": { "const": ["C04", "C05"], "tone": "lum", "weight": 2 } }
+        }        },
+        {
+          "id": "MS5_Q03",
+          "type": "rank",
+          "prompt": "Rank what pulls you back into alignment MOST (1) to LEAST (5).",
+          "required": true,
+          "items": [
+            { "id": "A", "label": "Craft / practice" },
+            { "id": "B", "label": "Belonging / warmth" },
+            { "id": "C", "label": "Solitude / privacy" },
+            { "id": "D", "label": "Vision / direction" },
+            { "id": "E", "label": "Meaning / myth" }
+          ],
+          "rankSignals": {
+            "A": { "const": ["C02", "C12"], "tone": "lum", "weight": 1 },
+            "B": { "const": ["C11", "C07"], "tone": "lum", "weight": 1 },
+            "C": { "const": ["C09", "C06"], "tone": "mix", "weight": 1 },
+            "D": { "const": ["C10", "C13"], "tone": "mix", "weight": 1 },
+            "E": { "const": ["C15", "C06"], "tone": "mix", "weight": 1 }
+          }
+        },
+        {
+          "id": "MS5_Q04",
+          "type": "text",
+          "prompt": "2–4 sentences: what story do you tell yourself when you’re afraid?",
+          "required": false,
+          "signal": { "const": ["C15", "C09"], "tone": "mix", "weight": 1 }
+        },
+        {
+          "id": "MS5_Q05",
+          "type": "check",
+          "prompt": "Mark complete: You chose one small real action instead of spiraling.",
+          "required": false,
+          "signal": { "const": ["C04", "C02"], "tone": "lum", "weight": 1 }
+        }
+      ]
+    }
+  ]
+}

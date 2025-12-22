@@ -1,197 +1,138 @@
 // backend/controllers/resultController.js
-const mongoose = require("mongoose");
-const Result = require("../models/Result");
+import TestAttempt from "../models/TestAttempt.js";
+import { assembleFinalResult } from "../lib/resultAssembler.js";
 
-/**
- * Canonical API-safe result object
- * - No raw mongoose doc fields leak into the frontend
- * - Ensures arrays/objects are always defined
- */
-function normalizeResult(doc) {
-  if (!doc) return null;
+function safeObj(x) {
+  return x && typeof x === "object" ? x : {};
+}
+function n(x) {
+  const v = Number(x);
+  return Number.isFinite(v) ? v : 0;
+}
+function s(x) {
+  return String(x ?? "").trim();
+}
 
-  return {
-    id: String(doc._id || ""),
-    userId: String(doc.userId || ""),
-    testId: String(doc.testId || ""),
-    resultType: doc.resultType || "primary",
-    title: doc.title || "",
-    overview: doc.overview || "",
-    traits: Array.isArray(doc.traits) ? doc.traits : [],
-    scores: doc.scores && typeof doc.scores === "object" ? doc.scores : {},
-    nextUnlocked: doc.nextUnlocked || "",
-    createdAt: doc.createdAt || null,
-    updatedAt: doc.updatedAt || null,
-  };
+function mergeNumberMaps(a = {}, b = {}) {
+  const out = { ...safeObj(a) };
+  for (const [k, v] of Object.entries(safeObj(b))) {
+    out[k] = n(out[k]) + n(v);
+  }
+  return out;
+}
+
+async function latestSubmittedAttempt(profileKey, testId) {
+  return await TestAttempt.findOne({
+    profileKey,
+    testId,
+    status: "submitted",
+  })
+    .sort({ submittedAt: -1, createdAt: -1 })
+    .lean();
 }
 
 /**
- * GET /api/results/:resultId
- * Get a single result by its id.
+ * Mini suite aggregation:
+ * - For each mini test id, take the latest submitted attempt
+ * - Sum totals.luminary and totals.shadow across them
  */
-exports.getResultById = async (req, res) => {
+async function aggregateMiniSuite(profileKey, miniIds) {
+  let luminary = {};
+  let shadow = {};
+
+  const used = [];
+
+  for (const id of miniIds) {
+    const doc = await latestSubmittedAttempt(profileKey, id);
+    if (!doc) continue;
+
+    const t = safeObj(doc.totals);
+    luminary = mergeNumberMaps(luminary, safeObj(t.luminary));
+    shadow = mergeNumberMaps(shadow, safeObj(t.shadow));
+
+    used.push({
+      testId: id,
+      submittedAt: doc.submittedAt || doc.createdAt,
+      attemptId: doc.attemptId || String(doc._id),
+    });
+  }
+
+  return { luminary, shadow, used };
+}
+
+export async function assembleResults(req, res) {
   try {
-    const { resultId } = req.params;
+    const profileKey = s(req.query.profileKey) || "debug_profile";
 
-    if (!mongoose.Types.ObjectId.isValid(resultId)) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid resultId",
-      });
-    }
+    // ---- 1) MAJOR totals (latest submitted major_7day) ----
+    const majorAttempt = await latestSubmittedAttempt(profileKey, "major_7day");
+    const majorTotals = safeObj(majorAttempt?.totals?.major);
 
-    const result = await Result.findById(resultId).lean();
+    // ---- 2) MINI totals (sum latest for each mini) ----
+    const MINI_IDS = [
+      "mini_lumi_shadow_01",
+      "mini_lumi_shadow_02",
+      "mini_lumi_shadow_03",
+      "mini_lumi_shadow_04",
+      "mini_lumi_shadow_05",
+    ];
 
-    if (!result) {
-      return res.status(404).json({
-        success: false,
-        message: "Result not found",
-      });
-    }
+    const miniAgg = await aggregateMiniSuite(profileKey, MINI_IDS);
+    const miniTotals = {
+      luminary: miniAgg.luminary,
+      shadow: miniAgg.shadow,
+    };
+
+    // ---- 3) ARCHETYPE totals (optional: if you later store archetype test totals as totals.archetype) ----
+    // If you have a dedicated archetype test id, put it here.
+    // For now: try "archetype_main" if it exists, else empty.
+    const archetypeAttempt = await latestSubmittedAttempt(profileKey, "archetype_main");
+    const archetypeTotals = safeObj(archetypeAttempt?.totals?.archetype);
+
+    // ---- 4) Assemble final ----
+    const finalResult = assembleFinalResult({
+      profileKey,
+      miniTotals,
+      archetypeTotals,
+      majorTotals,
+    });
 
     return res.json({
-      success: true,
-      result: normalizeResult(result),
+      ok: true,
+      profileKey,
+      sources: {
+        major: majorAttempt
+          ? {
+              testId: "major_7day",
+              submittedAt: majorAttempt.submittedAt || majorAttempt.createdAt,
+              attemptId: majorAttempt.attemptId || String(majorAttempt._id),
+            }
+          : null,
+        miniUsed: miniAgg.used,
+        archetype: archetypeAttempt
+          ? {
+              testId: "archetype_main",
+              submittedAt: archetypeAttempt.submittedAt || archetypeAttempt.createdAt,
+              attemptId: archetypeAttempt.attemptId || String(archetypeAttempt._id),
+            }
+          : null,
+      },
+      finalResult,
     });
   } catch (err) {
-    console.error("getResultById error:", err);
+    console.error("assembleResults error:", err);
     return res.status(500).json({
-      success: false,
-      message: "Server error fetching result",
+      ok: false,
+      message: err?.message || "Server error assembling results",
     });
   }
-};
+}
 
 /**
- * GET /api/results/user/:userId
- * List all results for a given user (newest first).
+ * Convenience endpoint:
+ * GET /api/results/latest?profileKey=...
+ * For now, it simply re-assembles on demand and returns the finalResult.
  */
-exports.listResultsByUser = async (req, res) => {
-  try {
-    const { userId } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid userId",
-      });
-    }
-
-    const results = await Result.find({ userId })
-      .sort({ createdAt: -1 })
-      .lean();
-
-    return res.json({
-      success: true,
-      results: results.map(normalizeResult),
-    });
-  } catch (err) {
-    console.error("listResultsByUser error:", err);
-    return res.status(500).json({
-      success: false,
-      message: "Server error listing results",
-    });
-  }
-};
-
-/**
- * GET /api/results/user/:userId/latest?testId=archetype_v1
- * Return the latest result for a user (optionally filtered by testId).
- */
-exports.getLatestResultForUser = async (req, res) => {
-  try {
-    const { userId } = req.params;
-    const { testId } = req.query;
-
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid userId",
-      });
-    }
-
-    const query = { userId };
-    if (testId && typeof testId === "string") query.testId = testId;
-
-    const latest = await Result.findOne(query).sort({ createdAt: -1 }).lean();
-
-    if (!latest) {
-      return res.json({
-        success: true,
-        result: null,
-        message: "No results found",
-      });
-    }
-
-    return res.json({
-      success: true,
-      result: normalizeResult(latest),
-    });
-  } catch (err) {
-    console.error("getLatestResultForUser error:", err);
-    return res.status(500).json({
-      success: false,
-      message: "Server error fetching latest result",
-    });
-  }
-};
-
-/**
- * POST /api/results
- * Create a result (used by your orchestrator after a test completes).
- *
- * Expected body:
- * {
- *   userId, testId, resultType?, title, overview,
- *   traits?, scores?, nextUnlocked?
- * }
- */
-exports.createResult = async (req, res) => {
-  try {
-    const {
-      userId,
-      testId,
-      resultType = "primary",
-      title,
-      overview,
-      traits = [],
-      scores = {},
-      nextUnlocked = "",
-    } = req.body || {};
-
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(400).json({ success: false, message: "Invalid userId" });
-    }
-    if (!testId || typeof testId !== "string") {
-      return res.status(400).json({ success: false, message: "testId is required" });
-    }
-    if (!title || typeof title !== "string") {
-      return res.status(400).json({ success: false, message: "title is required" });
-    }
-    if (!overview || typeof overview !== "string") {
-      return res.status(400).json({ success: false, message: "overview is required" });
-    }
-
-    const created = await Result.create({
-      userId,
-      testId,
-      resultType,
-      title,
-      overview,
-      traits: Array.isArray(traits) ? traits : [],
-      scores: scores && typeof scores === "object" ? scores : {},
-      nextUnlocked: typeof nextUnlocked === "string" ? nextUnlocked : "",
-    });
-
-    return res.status(201).json({
-      success: true,
-      result: normalizeResult(created.toObject()),
-    });
-  } catch (err) {
-    console.error("createResult error:", err);
-    return res.status(500).json({
-      success: false,
-      message: "Server error creating result",
-    });
-  }
-};
+export async function latestResults(req, res) {
+  return assembleResults(req, res);
+}

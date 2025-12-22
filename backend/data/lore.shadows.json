@@ -1,0 +1,110 @@
+{
+  "sha_usurper": {
+    "name": "The Usurper",
+    "overview": "The shadow that believes power must be taken before it is taken from you. It fears being irrelevant, so it seizes control.",
+    "traits": ["Dominating", "Competitive", "Restless", "Suspicious"],
+    "strengths": ["Decisiveness", "Survival instincts", "Command under chaos"],
+    "risks": ["Manipulation", "Control addiction", "Burning alliances"],
+    "integration": "Turn control into leadership: ask, listen, delegate.",
+    "prompts": ["What am I afraid will happen if I do not control this?", "Where can I share power and still be safe?"]
+  },
+  "sha_martyr": {
+    "name": "The Martyr",
+    "overview": "The shadow that trades needs for moral superiority. It suffers loudly or silently, then resents the world for not noticing.",
+    "traits": ["Overgiving", "Self-denying", "Resentful", "Tired"],
+    "strengths": ["Endurance", "Loyalty", "Service"],
+    "risks": ["Passive aggression", "Chronic depletion", "Victim identity"],
+    "integration": "Ask directly. Receive without apology.",
+    "prompts": ["What do I need that I will not say out loud?", "What boundary would end my resentment?"]
+  },
+  "sha_heretic": {
+    "name": "The Heretic",
+    "overview": "The shadow that rejects belonging before it can be rejected. It attacks the system to avoid feeling small inside it.",
+    "traits": ["Contrarian", "Defensive", "Sharp-tongued", "Proud"],
+    "strengths": ["Independence", "Critical thinking", "Freedom instincts"],
+    "risks": ["Isolation", "Sabotage", "Refusing help"],
+    "integration": "Rebellion with purpose: critique, then build.",
+    "prompts": ["What am I protecting by refusing to belong?", "Where could I contribute without losing myself?"]
+  },
+  "sha_gilded_mask": {
+    "name": "The Gilded Mask",
+    "overview": "The shadow that performs refinement to hide insecurity. It fears being ordinary, so it curates a persona instead of intimacy.",
+    "traits": ["Image-aware", "Polished", "Avoidant", "Secretive"],
+    "strengths": ["Presentation", "Taste", "Social navigation"],
+    "risks": ["Inauthenticity", "Loneliness", "Shame cycles"],
+    "integration": "Let one person see the unedited draft of you.",
+    "prompts": ["Who would I be if nobody were watching?", "What truth am I disguising as taste?"]
+  },
+  "sha_void_watcher": {
+    "name": "The Void-Watcher",
+    "overview": "The shadow that expects collapse. It scans for disaster to avoid being surprised by it.",
+    "traits": ["Anxious", "Hypervigilant", "Pessimistic", "Controlling"],
+    "strengths": ["Risk awareness", "Preparedness", "Protective care"],
+    "risks": ["Catastrophizing", "Exhaustion", "Seeing threats everywhere"],
+    "integration": "Practice safe-enough and return to the present body.",
+    "prompts": ["What evidence exists that I am safe today?", "What would I do if I trusted the next hour?"]
+  },
+  "sha_ice_queen": {
+    "name": "The Ice Queen",
+    "overview": "The shadow that freezes to avoid heartbreak. It looks calm, but it is self-protection in a crown.",
+    "traits": ["Detached", "Controlled", "Private", "Unmoved"],
+    "strengths": ["Composure", "Boundaries", "Self-reliance"],
+    "risks": ["Emotional shutdown", "Lack of intimacy", "Dismissiveness"],
+    "integration": "Warmth is not weakness. Choose one honest feeling per day.",
+    "prompts": ["What feeling am I refusing to name?", "Where is it safe to soften 1%?"]
+  },
+  "sha_fawner": {
+    "name": "The Fawner",
+    "overview": "The shadow that survives through approval. It adapts so much it forgets its own shape.",
+    "traits": ["Agreeable", "Anxious", "Over-accommodating", "Conflict-avoidant"],
+    "strengths": ["Social intelligence", "Kindness", "Harmony-making"],
+    "risks": ["Loss of identity", "Hidden resentment", "Poor boundaries"],
+    "integration": "Trade approval for honesty, one sentence at a time.",
+    "prompts": ["What do I actually want?", "What is a boundary I can say without explanation?"]
+  },
+  "sha_hoarder": {
+    "name": "The Hoarder",
+    "overview": "The shadow that stores resources, information, and love for later because it expects scarcity.",
+    "traits": ["Possessive", "Guarded", "Cautious", "Collecting"],
+    "strengths": ["Resource management", "Preparedness", "Long-range planning"],
+    "risks": ["Withholding", "Stagnation", "Distrust"],
+    "integration": "Share strategically. Abundance grows through circulation.",
+    "prompts": ["What am I afraid to lose?", "What could I give that would not endanger me?"]
+  },
+  "sha_pyromaniac": {
+    "name": "The Pyromaniac",
+    "overview": "The shadow that burns it all down when intimacy or responsibility feels too heavy.",
+    "traits": ["Impulsive", "Intense", "Avoidant", "All-or-nothing"],
+    "strengths": ["Courage to change", "Energy", "Unstoppable starts"],
+    "risks": ["Self-sabotage", "Chaos cycles", "Broken trust"],
+    "integration": "Pause before ignition. Choose repair over rupture.",
+    "prompts": ["What am I trying to escape?", "What would staying look like for 24 hours?"]
+  },
+  "sha_judge": {
+    "name": "The Judge",
+    "overview": "The shadow that keeps the world clean by condemning it. It fears impurity, weakness, and being wrong.",
+    "traits": ["Critical", "Severe", "Exacting", "Moralizing"],
+    "strengths": ["Standards", "Discernment", "Accountability"],
+    "risks": ["Cruelty", "Shame projection", "No room for learning"],
+    "integration": "Hold standards with mercy. Correct without contempt.",
+    "prompts": ["What am I afraid will happen if I forgive?", "Where can I practice firm but kind?"]
+  },
+  "sha_wound_keeper": {
+    "name": "The Wound-Keeper",
+    "overview": "The shadow that clings to pain for identity. It confuses memory with meaning and suffering with depth.",
+    "traits": ["Nostalgic", "Heavy", "Self-protective", "Fixed"],
+    "strengths": ["Sensitivity", "Empathy", "Depth"],
+    "risks": ["Stagnation", "Victim narrative", "Fear of joy"],
+    "integration": "Honor the wound, then release the throne it sits on.",
+    "prompts": ["What would healing cost me and what would it give me?", "Who am I without this story?"]
+  },
+  "sha_deceiver": {
+    "name": "The Deceiver",
+    "overview": "The shadow that bends truth to secure safety. It lies not always to harm, but to survive.",
+    "traits": ["Strategic", "Secretive", "Charming", "Avoidant"],
+    "strengths": ["Adaptability", "Social agility", "Quick thinking"],
+    "risks": ["Erosion of trust", "Self-alienation", "Chronic anxiety"],
+    "integration": "Practice honest simplicity. Truth is a nervous system reset.",
+    "prompts": ["What truth am I afraid will make me unsafe?", "Where can I tell the truth and still be okay?"]
+  }
+}

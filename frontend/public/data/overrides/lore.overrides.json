@@ -1,0 +1,27 @@
+{
+  "archetype:arch_001": {
+    "name": "YOUR CANON NAME HERE",
+    "subtitle": "YOUR CANON SUBTITLE HERE",
+    "lore": {
+      "A": { "summary": "…", "long": "…", "cues": ["…"] },
+      "B": { "summary": "…", "long": "…", "cues": ["…"] },
+      "C": { "summary": "…", "long": "…", "cues": ["…"] },
+      "D": { "summary": "…", "long": "…", "cues": ["…"] }
+    },
+    "signals": {
+      "gifts": ["…"],
+      "strengths": ["…"],
+      "risks": ["…"],
+      "triggers": ["…"],
+      "growth": ["…"],
+      "relationships": ["…"],
+      "signature": ["…"]
+    },
+    "domains": {
+      "psychology": { "notes": "…" },
+      "sociology": { "notes": "…" },
+      "pedagogy": { "notes": "…" },
+      "anthropology": { "notes": "…" }
+    }
+  }
+}

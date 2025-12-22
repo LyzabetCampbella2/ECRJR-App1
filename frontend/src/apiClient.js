@@ -1,90 +1,189 @@
 // src/apiClient.js
-
-const API_ORIGIN =
-  process.env.REACT_APP_API_ORIGIN ||
-  process.env.REACT_APP_API_URL ||
-  "http://localhost:5000";
-
 /**
- * Ensures we never end up with /api/api or double slashes
+ * Eirden API Client (CRA proxy mode)
+ * ---------------------------------
+ * You have "proxy": "http://localhost:5000" in frontend/package.json
+ * That means:
+ *   fetch("/api/....") -> http://localhost:3000/api/... -> proxied to http://localhost:5000/api/...
+ *
+ * IMPORTANT:
+ * - API_BASE should be "" (relative) in dev.
+ * - For production builds, you can set REACT_APP_API_BASE to your deployed backend origin.
  */
-function joinUrl(origin, path) {
-  const o = String(origin || "").replace(/\/+$/, "");
-  let p = String(path || "");
-  if (!p.startsWith("/")) p = `/${p}`;
-  // collapse accidental double /api/api -> /api
-  p = p.replace(/^\/api\/api\//, "/api/");
-  // collapse any double slashes (keep protocol //)
-  return `${o}${p}`.replace(/([^:]\/)\/+/g, "$1");
+
+const RAW_BASE = (process.env.REACT_APP_API_BASE || "").trim();
+export const API_BASE = RAW_BASE.replace(/\/+$/, ""); // usually "" in dev
+
+function joinUrl(base, path) {
+  const p = String(path || "");
+  if (!p) return base || "";
+  if (/^https?:\/\//i.test(p)) return p;
+
+  if (!base) {
+    // CRA proxy mode
+    return p.startsWith("/") ? p : `/${p}`;
+  }
+
+  if (p.startsWith("/")) return base + p;
+  return base + "/" + p;
 }
 
-async function request(method, path, body) {
-  const url = joinUrl(API_ORIGIN, path);
+async function readResponseBody(res) {
+  // Always read as text first, then try JSON. Prevents:
+  // Unexpected token 'P', "Proxy erro"... is not valid JSON
+  const text = await res.text().catch(() => "");
+  if (!text) return null;
 
-  const opts = {
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text; // return raw text (proxy errors, html, etc.)
+  }
+}
+
+function normalizeFetchError(err) {
+  const msg = String(err?.message || err || "");
+
+  // Browser network error often shows "Failed to fetch"
+  if (err?.name === "TypeError" && /failed to fetch/i.test(msg)) {
+    return new Error(
+      "Failed to fetch. Check:\n" +
+        "• backend is running: http://localhost:5000\n" +
+        "• CRA proxy is set (it is) and frontend is running: http://localhost:3000\n" +
+        "• endpoint path is correct (no /api/api double prefix)\n"
+    );
+  }
+
+  return err instanceof Error ? err : new Error(msg || "Unknown error");
+}
+
+async function request(method, path, options = {}) {
+  const url = joinUrl(API_BASE, path);
+
+  const {
+    body,
+    headers = {},
+    credentials = "include",
+    signal,
+    raw = false,
+  } = options;
+
+  const init = {
     method,
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
+    credentials,
+    signal,
+    headers: { ...headers },
   };
 
+  // If body is FormData, do not set Content-Type
+  const isFormData = typeof FormData !== "undefined" && body instanceof FormData;
+
   if (body !== undefined) {
-    opts.body = JSON.stringify(body);
+    if (isFormData) {
+      init.body = body;
+    } else {
+      init.headers["Content-Type"] = init.headers["Content-Type"] || "application/json";
+      init.body = typeof body === "string" ? body : JSON.stringify(body);
+    }
   }
 
-  let res;
   try {
-    res = await fetch(url, opts);
-  } catch (err) {
-    // Network / CORS / server down
-    throw new Error(`Failed to fetch: ${url}`);
+    const res = await fetch(url, init);
+    if (raw) return res;
+
+    const data = await readResponseBody(res);
+
+    if (!res.ok) {
+      // Prefer JSON message fields if present, else raw text.
+      let msgOut =
+        (data && typeof data === "object" && (data.message || data.error)) ||
+        (typeof data === "string" && data) ||
+        `Request failed (${res.status})`;
+
+      // Special hint if proxy error text returned
+      if (typeof data === "string" && /^proxy error/i.test(data.trim())) {
+        msgOut =
+          data +
+          "\n\nProxy notes:\n" +
+          "• Make sure backend is running on port 5000.\n" +
+          "• Restart CRA dev server after changing proxy/package.json.\n";
+      }
+
+      const e = new Error(msgOut);
+      e.status = res.status;
+      e.data = data;
+      e.url = url;
+      throw e;
+    }
+
+    return data;
+  } catch (e) {
+    throw normalizeFetchError(e);
   }
-
-  const contentType = res.headers.get("content-type") || "";
-  const isJson = contentType.includes("application/json");
-
-  const payload = isJson ? await res.json().catch(() => null) : await res.text().catch(() => "");
-
-  if (!res.ok) {
-    // Prefer backend JSON message if present
-    const msg =
-      (payload && typeof payload === "object" && (payload.message || payload.error)) ||
-      (typeof payload === "string" && payload) ||
-      `Request failed (${res.status})`;
-    throw new Error(msg);
-  }
-
-  return payload;
 }
 
-export function apiGet(path) {
-  return request("GET", path);
+/** Basic JSON helpers */
+export function apiGet(path, opts) {
+  return request("GET", path, opts);
+}
+export function apiPost(path, body, opts = {}) {
+  return request("POST", path, { ...opts, body });
+}
+export function apiPut(path, body, opts = {}) {
+  return request("PUT", path, { ...opts, body });
+}
+export function apiDelete(path, opts) {
+  return request("DELETE", path, opts);
 }
 
-export function apiPost(path, body) {
-  return request("POST", path, body);
+/**
+ * Upload helper
+ * Backend: POST /api/uploads/image (multipart/form-data field "file")
+ * Returns: { ok:true, file:{ url, filename, ... } }
+ */
+export async function apiUploadImage(file) {
+  if (!file) throw new Error("No file selected.");
+
+  const form = new FormData();
+  form.append("file", file);
+
+  const data = await request("POST", "/api/uploads/image", { body: form });
+
+  const url = data?.file?.url;
+  if (!url) throw new Error("Upload succeeded but no URL returned.");
+  return data;
 }
 
-export function apiPut(path, body) {
-  return request("PUT", path, body);
+/**
+ * Compatibility exports (some pages import these names).
+ * Adjust endpoints if your backend differs.
+ */
+export function submitMiniTest(payload) {
+  return apiPost("/api/mini-tests/score", payload);
 }
-
-export function apiDelete(path) {
-  return request("DELETE", path);
+export function finishMiniSuite(payload) {
+  return apiPost("/api/mini-tests/finish", payload);
 }
-// ---- Mini suite helpers (wrappers used by MiniSuiteRunner) ----
-
 export function startTest(payload) {
-  // payload: { profileId } (or whatever your backend expects)
   return apiPost("/api/tests/start", payload);
 }
 
-export function submitMiniTest(payload) {
-  // payload: { profileId, miniTestId, answers } (adjust keys if your backend expects different)
-  return apiPost("/api/mini-tests/submit", payload);
-}
+/**
+ * Convert returned paths like "/uploads/xyz.png" into an absolute URL.
+ * In CRA proxy mode, <img src="/uploads/xyz.png"> would hit 3000 (not proxied),
+ * so we point directly to backend when API_BASE is empty.
+ */
+export function toAbsoluteUrl(maybePath) {
+  const p = String(maybePath || "");
+  if (!p) return "";
+  if (/^https?:\/\//i.test(p)) return p;
 
-export function finishMiniSuite(payload) {
-  // payload: { profileId } or { profileId, suiteId }
-  return apiPost("/api/mini-tests/finish", payload);
-}
+  // If API_BASE is set (prod), use it
+  if (API_BASE) return joinUrl(API_BASE, p);
 
+  // Dev proxy mode: uploads must be fetched from backend static server
+  // because CRA proxy does NOT proxy static <img> requests reliably.
+  // (It proxies API calls; images are better direct)
+  const normalized = p.startsWith("/") ? p : `/${p}`;
+  return `http://localhost:5000${normalized}`;
+}

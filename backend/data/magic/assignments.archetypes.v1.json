@@ -1,0 +1,10 @@
+{
+  "version": "magic_assign_archetypes.v1",
+  "byArchetypeTag": {
+    "arch_mystic": { "worldId": "world_03_miridell", "school": "Sigilcraft", "aspects": ["Star", "Veil"], "packIds": ["pack_mystic_01"], "uniqueAbilities": [] },
+    "arch_commander": { "worldId": "world_05_aerovale", "school": "Oathcraft", "aspects": ["Banner", "Storm"], "packIds": ["pack_commander_01"], "uniqueAbilities": [] },
+    "arch_trickster": { "worldId": "world_06_noxmere", "school": "Illusionweave", "aspects": ["Smoke", "Mirror"], "packIds": ["pack_trickster_01"], "uniqueAbilities": [] },
+    "arch_craftsman": { "worldId": "world_02_vyreholm", "school": "Runeforge", "aspects": ["Forge", "Rune"], "packIds": ["pack_craftsman_01"], "uniqueAbilities": [] }
+  },
+  "fallback": { "worldId": "world_01_elyndra", "school": "Sigilcraft", "aspects": ["Star", "Veil"], "packIds": ["pack_mystic_01"], "uniqueAbilities": [] }
+}

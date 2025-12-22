@@ -1,0 +1,26 @@
+{
+  "id": "mini2_conflict",
+  "title": "Conflict Style",
+  "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]
+  },
+  "questions": [
+    { "id": "c1", "text": "In conflict, I look for the principle underneath the emotion.", "tag": "lum_sage" },
+    { "id": "c2", "text": "I can hold the line calmly, even when others are reactive.", "tag": "lum_warden" },
+    { "id": "c3", "text": "I take mental notes during arguments so nothing important gets lost.", "tag": "lum_librarian" },
+    { "id": "c4", "text": "I can translate tension into a conversation people can survive.", "tag": "lum_emissary" },
+    { "id": "c5", "text": "When things get tense, I feel compelled to win—not just resolve.", "tag": "sha_usurper" },
+    { "id": "c6", "text": "I’d rather sacrifice my needs than risk being seen as selfish.", "tag": "sha_martyr" },
+    { "id": "c7", "text": "If I feel cornered, I attack the rules or authority instead.", "tag": "sha_heretic" },
+    { "id": "c8", "text": "I keep my true feelings hidden so I don’t lose power in the room.", "tag": "sha_gilded_mask" },
+    { "id": "c9", "text": "I try to fix the problem immediately instead of talking around it.", "tag": "lum_artificer" },
+    { "id": "c10", "text": "I notice the unspoken meaning in people’s words and tone.", "tag": "lum_poet" },
+    { "id": "c11", "text": "I sense where conflict is heading before others see it.", "tag": "lum_oracle" },
+    { "id": "c12", "text": "I remember patterns—who says what, who avoids what—over time.", "tag": "lum_chronicler" },
+    { "id": "c13", "text": "I scan for danger in disagreement, even when nothing is happening yet.", "tag": "sha_void_watcher" },
+    { "id": "c14", "text": "When I’m hurt, I become cold instead of expressing it.", "tag": "sha_ice_queen" },
+    { "id": "c15", "text": "I soften my stance quickly to keep the peace, even when I disagree.", "tag": "sha_fawner" }
+  ]
+}
